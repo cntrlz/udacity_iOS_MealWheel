@@ -1,0 +1,1013 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C1C4BE638069029BF46F69BBF45C6DD /* Pods-MealWheelTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 107CD0B47E47CBE9DDB8503944D82876 /* Pods-MealWheelTests-dummy.m */; };
+		5A458507171388904C5DCB110B13A55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		7152D4239F76E5D2F87FB9B43C34F243 /* SpinWheelWedge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3C682CEAB2A9B6166D2B0B694F5D6 /* SpinWheelWedge.swift */; };
+		7DBB1C4E498FAC53876282FCC90D62B0 /* SpinWheelWedgeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824D42B0F375F0205622E98A33781EB /* SpinWheelWedgeShape.swift */; };
+		7F0C61EFE0108F6639727E6ACA4CF846 /* SpinWheelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B56B0BC712C2D6DA6E4B711BABC22 /* SpinWheelControl.swift */; };
+		802CA6B8AAC2C3D92CB2CE654B510098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		867A9D4555814CD8866F27AF56779CD9 /* Degrees+MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399C47C40926C8E0D3D6D4EB43A8825 /* Degrees+MathMethods.swift */; };
+		87D404ECA1A572E74775CD4A03932B56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		891B54245AA6997AC8D69B7A75A5EE43 /* Pods-MealWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */; };
+		93C3A8FB6D6FCE05BA663BBA01817DE6 /* SpinWheelControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE986C1006F51964FBBE70AEBBE2DF0 /* SpinWheelControl-dummy.m */; };
+		97EB515242D49E31F83AE60AE8DA47DA /* Pods-MealWheelUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73120B63E7BE6FDF5CBB45831F29A762 /* Pods-MealWheelUITests-dummy.m */; };
+		A0F9B42C63F3186C7F3F204DFB9D8FAE /* SpinWheelControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA79BCCE2DC1E6F7994E557AA7B2EA25 /* SpinWheelControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3FB97A969750249F41323524831809 /* SpinWheelControlDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751852662274BFA4AB9DD41385847F9A /* SpinWheelControlDataSource.swift */; };
+		D1CBADF02A13841FB0E9268A4A56385C /* Pods-MealWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECF8F2D45E8D0DE5DB2D323951D9CA17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		EE668027159F8DE6243FFB92C7202C50 /* SpinWheelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = A81952E06BFF511EC30923C0452556D8 /* SpinWheelControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5DAA4D8379B5300AD2CCC15BECC0A67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		F6494583F798C131774ECC57D2E0E499 /* Pods-MealWheelTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A6A5960118CEF1C916C4B21FA21822 /* Pods-MealWheelTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F66FC58242E56BF9226D0E2EA312CC77 /* SpinWheelWedgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2FE6F915973493BDA32687D8FE127 /* SpinWheelWedgeLabel.swift */; };
+		F87A5CF4534996A7A2250D1E75F6E1B2 /* Pods-MealWheelUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A7BFA6A5E664839A2C3F1676BC214F /* Pods-MealWheelUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB327F9B3324806DB061BC632D4BA21F /* SpinWheelControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8A4E97B2941C13F8989E7106D6DC /* SpinWheelControlDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		204B5DFD044B2E0032F88414E9C4887C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E54CBAF498305D63312B79D47AD85D6;
+			remoteInfo = "Pods-MealWheel";
+		};
+		93E8AB2D07866D3892D80ACAD30C73C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E54CBAF498305D63312B79D47AD85D6;
+			remoteInfo = "Pods-MealWheel";
+		};
+		C7AAD910D908DF680DFB8BA81D9FE69E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E38173DA3B02EB9662CBD25EEB9D4498;
+			remoteInfo = SpinWheelControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheel.debug.xcconfig"; sourceTree = "<group>"; };
+		02C41BEB5D8387F907BCE49603E44875 /* Pods-MealWheelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0CDCA3205EA04116A0325574D4EBAD34 /* Pods-MealWheelUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheelUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		107CD0B47E47CBE9DDB8503944D82876 /* Pods-MealWheelTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheelTests-dummy.m"; sourceTree = "<group>"; };
+		13DC38F474F64998F961C02D64AA2F7E /* SpinWheelControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpinWheelControl.framework; path = SpinWheelControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1927FE90BAE6846278A28259783FA175 /* Pods-MealWheelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B0B56B0BC712C2D6DA6E4B711BABC22 /* SpinWheelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControl.swift; path = SpinWheelControl/SpinWheelControl.swift; sourceTree = "<group>"; };
+		27A6A5960118CEF1C916C4B21FA21822 /* Pods-MealWheelTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheelTests-umbrella.h"; sourceTree = "<group>"; };
+		2ADB8A4E97B2941C13F8989E7106D6DC /* SpinWheelControlDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDelegate.swift; path = SpinWheelControl/SpinWheelControlDelegate.swift; sourceTree = "<group>"; };
+		3E32E176872E2AB7270051DEF5AA038D /* Pods-MealWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheel.modulemap"; sourceTree = "<group>"; };
+		4C69CC89E0171EAD4D82732C924C4696 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED3C682CEAB2A9B6166D2B0B694F5D6 /* SpinWheelWedge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedge.swift; path = SpinWheelControl/SpinWheelWedge.swift; sourceTree = "<group>"; };
+		636C28549F4F56F201BC73CD1FCB3BDC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64BB53C327DF4022DFBBF8AC0F9841C5 /* Pods-MealWheelTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheelTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6AE8591BE82B433DF5683231387267D1 /* Pods-MealWheel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheel-frameworks.sh"; sourceTree = "<group>"; };
+		6DFD450CC7A830355628E1E136D853C2 /* Pods-MealWheelTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheelTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheel.release.xcconfig"; sourceTree = "<group>"; };
+		7245B7CF5BD5DA43B2077501B3A607E6 /* Pods-MealWheelTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelTests-frameworks.sh"; sourceTree = "<group>"; };
+		73120B63E7BE6FDF5CBB45831F29A762 /* Pods-MealWheelUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheelUITests-dummy.m"; sourceTree = "<group>"; };
+		7399C47C40926C8E0D3D6D4EB43A8825 /* Degrees+MathMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Degrees+MathMethods.swift"; path = "SpinWheelControl/Degrees+MathMethods.swift"; sourceTree = "<group>"; };
+		751852662274BFA4AB9DD41385847F9A /* SpinWheelControlDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDataSource.swift; path = SpinWheelControl/SpinWheelControlDataSource.swift; sourceTree = "<group>"; };
+		791F908A92D5928DFBE9D04F68EAFF3E /* Pods-MealWheelTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelTests-resources.sh"; sourceTree = "<group>"; };
+		7B2140BE44B078D3F02E9A539C188E05 /* Pods-MealWheelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelTests.release.xcconfig"; sourceTree = "<group>"; };
+		84A7BFA6A5E664839A2C3F1676BC214F /* Pods-MealWheelUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheelUITests-umbrella.h"; sourceTree = "<group>"; };
+		8AD2F4103D649F704F168E88A81928A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		998D3FF80DC4A8AADA8DC5E02B3DF703 /* Pods-MealWheel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheel-resources.sh"; sourceTree = "<group>"; };
+		9AC18FB159F242630DB567A94E9EA0F3 /* Pods_MealWheelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelTests.framework; path = "Pods-MealWheelTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5592653DAC172E610F0E1EAC719CE2A /* Pods-MealWheelUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelUITests-frameworks.sh"; sourceTree = "<group>"; };
+		A81952E06BFF511EC30923C0452556D8 /* SpinWheelControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpinWheelControl.h; path = SpinWheelControl/SpinWheelControl.h; sourceTree = "<group>"; };
+		AA79BCCE2DC1E6F7994E557AA7B2EA25 /* SpinWheelControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-umbrella.h"; sourceTree = "<group>"; };
+		B49154804C1140B410D18402C5BA0951 /* Pods-MealWheelUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelUITests-resources.sh"; sourceTree = "<group>"; };
+		B5888DCE6B446BE38CBACA8076F1F378 /* Pods-MealWheelUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheelUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C0487D5B556E458D403CF1B886A7AC01 /* SpinWheelControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpinWheelControl.modulemap; sourceTree = "<group>"; };
+		C36AA1684E1AB824E0F9785B667EA9C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheel-dummy.m"; sourceTree = "<group>"; };
+		D08D2AC760EEACFA31CD5693CBA23495 /* Pods-MealWheelTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheelTests.modulemap"; sourceTree = "<group>"; };
+		D27284939AF0BB00C593F57EE44A9493 /* Pods-MealWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DB2737DBA407C2F3708217BE5D68D358 /* Pods-MealWheelUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheelUITests.modulemap"; sourceTree = "<group>"; };
+		DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheel-umbrella.h"; sourceTree = "<group>"; };
+		DF31519AE58BBDFECA969BE6BB9BAD49 /* Pods-MealWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheel-acknowledgements.plist"; sourceTree = "<group>"; };
+		E824D42B0F375F0205622E98A33781EB /* SpinWheelWedgeShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeShape.swift; path = SpinWheelControl/SpinWheelWedgeShape.swift; sourceTree = "<group>"; };
+		EFD24FBFB1E051D9833B79D02AD1CA25 /* Pods-MealWheelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F5FAB7580DA62DE3EB8E92DE27676611 /* SpinWheelControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-prefix.pch"; sourceTree = "<group>"; };
+		F647EF4C3653D00122F1A7A49DC75762 /* Pods_MealWheelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelUITests.framework; path = "Pods-MealWheelUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B44838D910342AE0084158FC6B90EC /* Pods_MealWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheel.framework; path = "Pods-MealWheel.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE986C1006F51964FBBE70AEBBE2DF0 /* SpinWheelControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpinWheelControl-dummy.m"; sourceTree = "<group>"; };
+		FD45224989E560A441196F184471C1FF /* SpinWheelControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpinWheelControl.xcconfig; sourceTree = "<group>"; };
+		FED2FE6F915973493BDA32687D8FE127 /* SpinWheelWedgeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeLabel.swift; path = SpinWheelControl/SpinWheelWedgeLabel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CA1D0F95E123875855D2C7D14F6D1D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A458507171388904C5DCB110B13A55B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD0868AC42CF21F10F4B0318943385C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D404ECA1A572E74775CD4A03932B56 /* Foundation.framework in Frameworks */,
+				F5DAA4D8379B5300AD2CCC15BECC0A67 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8856B844832940BEF91CF970E2FC7437 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				802CA6B8AAC2C3D92CB2CE654B510098 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E0D42830AF7416DED2B9244578BAAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF8F2D45E8D0DE5DB2D323951D9CA17 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060E8E4E1766C14D034910F977432C01 /* Pods-MealWheelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C36AA1684E1AB824E0F9785B667EA9C6 /* Info.plist */,
+				DB2737DBA407C2F3708217BE5D68D358 /* Pods-MealWheelUITests.modulemap */,
+				B5888DCE6B446BE38CBACA8076F1F378 /* Pods-MealWheelUITests-acknowledgements.markdown */,
+				0CDCA3205EA04116A0325574D4EBAD34 /* Pods-MealWheelUITests-acknowledgements.plist */,
+				73120B63E7BE6FDF5CBB45831F29A762 /* Pods-MealWheelUITests-dummy.m */,
+				A5592653DAC172E610F0E1EAC719CE2A /* Pods-MealWheelUITests-frameworks.sh */,
+				B49154804C1140B410D18402C5BA0951 /* Pods-MealWheelUITests-resources.sh */,
+				84A7BFA6A5E664839A2C3F1676BC214F /* Pods-MealWheelUITests-umbrella.h */,
+				02C41BEB5D8387F907BCE49603E44875 /* Pods-MealWheelUITests.debug.xcconfig */,
+				EFD24FBFB1E051D9833B79D02AD1CA25 /* Pods-MealWheelUITests.release.xcconfig */,
+			);
+			name = "Pods-MealWheelUITests";
+			path = "Target Support Files/Pods-MealWheelUITests";
+			sourceTree = "<group>";
+		};
+		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
+				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2DF63F2EAF0E6DEB7BFF8F9CE30D375F /* Pods-MealWheel */ = {
+			isa = PBXGroup;
+			children = (
+				4C69CC89E0171EAD4D82732C924C4696 /* Info.plist */,
+				3E32E176872E2AB7270051DEF5AA038D /* Pods-MealWheel.modulemap */,
+				D27284939AF0BB00C593F57EE44A9493 /* Pods-MealWheel-acknowledgements.markdown */,
+				DF31519AE58BBDFECA969BE6BB9BAD49 /* Pods-MealWheel-acknowledgements.plist */,
+				C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */,
+				6AE8591BE82B433DF5683231387267D1 /* Pods-MealWheel-frameworks.sh */,
+				998D3FF80DC4A8AADA8DC5E02B3DF703 /* Pods-MealWheel-resources.sh */,
+				DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */,
+				02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */,
+				6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */,
+			);
+			name = "Pods-MealWheel";
+			path = "Target Support Files/Pods-MealWheel";
+			sourceTree = "<group>";
+		};
+		2DF720BC8852674A95FD1FDC722A61C4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				636C28549F4F56F201BC73CD1FCB3BDC /* Info.plist */,
+				C0487D5B556E458D403CF1B886A7AC01 /* SpinWheelControl.modulemap */,
+				FD45224989E560A441196F184471C1FF /* SpinWheelControl.xcconfig */,
+				FCE986C1006F51964FBBE70AEBBE2DF0 /* SpinWheelControl-dummy.m */,
+				F5FAB7580DA62DE3EB8E92DE27676611 /* SpinWheelControl-prefix.pch */,
+				AA79BCCE2DC1E6F7994E557AA7B2EA25 /* SpinWheelControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SpinWheelControl";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6429A531D213E68036E78DA7A530E8A0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DF63F2EAF0E6DEB7BFF8F9CE30D375F /* Pods-MealWheel */,
+				CB739CC06DB32FD7101B21B6F6CD9AFC /* Pods-MealWheelTests */,
+				060E8E4E1766C14D034910F977432C01 /* Pods-MealWheelUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7A32009FFC00BA894D66A2825D11BE91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9B44838D910342AE0084158FC6B90EC /* Pods_MealWheel.framework */,
+				9AC18FB159F242630DB567A94E9EA0F3 /* Pods_MealWheelTests.framework */,
+				F647EF4C3653D00122F1A7A49DC75762 /* Pods_MealWheelUITests.framework */,
+				13DC38F474F64998F961C02D64AA2F7E /* SpinWheelControl.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				E0128AD5EE09577341DB50CF535B1829 /* Pods */,
+				7A32009FFC00BA894D66A2825D11BE91 /* Products */,
+				6429A531D213E68036E78DA7A530E8A0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BB1657567D76535B16C432E599D7A1F1 /* SpinWheelControl */ = {
+			isa = PBXGroup;
+			children = (
+				7399C47C40926C8E0D3D6D4EB43A8825 /* Degrees+MathMethods.swift */,
+				A81952E06BFF511EC30923C0452556D8 /* SpinWheelControl.h */,
+				1B0B56B0BC712C2D6DA6E4B711BABC22 /* SpinWheelControl.swift */,
+				751852662274BFA4AB9DD41385847F9A /* SpinWheelControlDataSource.swift */,
+				2ADB8A4E97B2941C13F8989E7106D6DC /* SpinWheelControlDelegate.swift */,
+				4ED3C682CEAB2A9B6166D2B0B694F5D6 /* SpinWheelWedge.swift */,
+				FED2FE6F915973493BDA32687D8FE127 /* SpinWheelWedgeLabel.swift */,
+				E824D42B0F375F0205622E98A33781EB /* SpinWheelWedgeShape.swift */,
+				2DF720BC8852674A95FD1FDC722A61C4 /* Support Files */,
+			);
+			name = SpinWheelControl;
+			path = SpinWheelControl;
+			sourceTree = "<group>";
+		};
+		CB739CC06DB32FD7101B21B6F6CD9AFC /* Pods-MealWheelTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AD2F4103D649F704F168E88A81928A3 /* Info.plist */,
+				D08D2AC760EEACFA31CD5693CBA23495 /* Pods-MealWheelTests.modulemap */,
+				6DFD450CC7A830355628E1E136D853C2 /* Pods-MealWheelTests-acknowledgements.markdown */,
+				64BB53C327DF4022DFBBF8AC0F9841C5 /* Pods-MealWheelTests-acknowledgements.plist */,
+				107CD0B47E47CBE9DDB8503944D82876 /* Pods-MealWheelTests-dummy.m */,
+				7245B7CF5BD5DA43B2077501B3A607E6 /* Pods-MealWheelTests-frameworks.sh */,
+				791F908A92D5928DFBE9D04F68EAFF3E /* Pods-MealWheelTests-resources.sh */,
+				27A6A5960118CEF1C916C4B21FA21822 /* Pods-MealWheelTests-umbrella.h */,
+				1927FE90BAE6846278A28259783FA175 /* Pods-MealWheelTests.debug.xcconfig */,
+				7B2140BE44B078D3F02E9A539C188E05 /* Pods-MealWheelTests.release.xcconfig */,
+			);
+			name = "Pods-MealWheelTests";
+			path = "Target Support Files/Pods-MealWheelTests";
+			sourceTree = "<group>";
+		};
+		E0128AD5EE09577341DB50CF535B1829 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB1657567D76535B16C432E599D7A1F1 /* SpinWheelControl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0989906FCF9A3632AEB472646076ED45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F9B42C63F3186C7F3F204DFB9D8FAE /* SpinWheelControl-umbrella.h in Headers */,
+				EE668027159F8DE6243FFB92C7202C50 /* SpinWheelControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CC738F0BA58497AAC6AF77E926EDA37 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87A5CF4534996A7A2250D1E75F6E1B2 /* Pods-MealWheelUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5582F69B7560133A26E83A02CEC5AA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6494583F798C131774ECC57D2E0E499 /* Pods-MealWheelTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA61798258599009912856C43B5C4320 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1CBADF02A13841FB0E9268A4A56385C /* Pods-MealWheel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		403E11E8F876C9C322E70E43BC7DE64E /* Pods-MealWheelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 751C338BB4B2AF8DD8BD6765648C0242 /* Build configuration list for PBXNativeTarget "Pods-MealWheelUITests" */;
+			buildPhases = (
+				8CC738F0BA58497AAC6AF77E926EDA37 /* Headers */,
+				FDEC72C69865C80EC9B5669752A62855 /* Sources */,
+				3CA1D0F95E123875855D2C7D14F6D1D6 /* Frameworks */,
+				9C4D29930489798707C661FE651F7383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D17A6C9FCAF0612FC91B60EB2D52419 /* PBXTargetDependency */,
+			);
+			name = "Pods-MealWheelUITests";
+			productName = "Pods-MealWheelUITests";
+			productReference = F647EF4C3653D00122F1A7A49DC75762 /* Pods_MealWheelUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6E54CBAF498305D63312B79D47AD85D6 /* Pods-MealWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFBC2D0C663CDE991615CF27C828F345 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */;
+			buildPhases = (
+				DA61798258599009912856C43B5C4320 /* Headers */,
+				551B6033E130EB25B828EBC442EA9B36 /* Sources */,
+				9E0D42830AF7416DED2B9244578BAAD2 /* Frameworks */,
+				88CCC87A64C4C411E58D41F72562514F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				095056313178B9111C511E7205C1A68B /* PBXTargetDependency */,
+			);
+			name = "Pods-MealWheel";
+			productName = "Pods-MealWheel";
+			productReference = F9B44838D910342AE0084158FC6B90EC /* Pods_MealWheel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D94D50D50F0404079C738886E082A725 /* Pods-MealWheelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F7C8B61AA8712A14011662BB867570 /* Build configuration list for PBXNativeTarget "Pods-MealWheelTests" */;
+			buildPhases = (
+				D5582F69B7560133A26E83A02CEC5AA4 /* Headers */,
+				9133D6EE0F5ABBBC5242EFF1EBD6692C /* Sources */,
+				8856B844832940BEF91CF970E2FC7437 /* Frameworks */,
+				4073A9ACC315376851C15567B6CC92C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7A5DE0507C5E59417651A110F36D891 /* PBXTargetDependency */,
+			);
+			name = "Pods-MealWheelTests";
+			productName = "Pods-MealWheelTests";
+			productReference = 9AC18FB159F242630DB567A94E9EA0F3 /* Pods_MealWheelTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E38173DA3B02EB9662CBD25EEB9D4498 /* SpinWheelControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB34A25ADDD3A1926E310FF72E7492C /* Build configuration list for PBXNativeTarget "SpinWheelControl" */;
+			buildPhases = (
+				0989906FCF9A3632AEB472646076ED45 /* Headers */,
+				34901F6A44830042C57EE8726A005E0A /* Sources */,
+				5CD0868AC42CF21F10F4B0318943385C /* Frameworks */,
+				2BBE257A8899C3A0DA62E9B4C0F986C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpinWheelControl;
+			productName = SpinWheelControl;
+			productReference = 13DC38F474F64998F961C02D64AA2F7E /* SpinWheelControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7A32009FFC00BA894D66A2825D11BE91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E54CBAF498305D63312B79D47AD85D6 /* Pods-MealWheel */,
+				D94D50D50F0404079C738886E082A725 /* Pods-MealWheelTests */,
+				403E11E8F876C9C322E70E43BC7DE64E /* Pods-MealWheelUITests */,
+				E38173DA3B02EB9662CBD25EEB9D4498 /* SpinWheelControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BBE257A8899C3A0DA62E9B4C0F986C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4073A9ACC315376851C15567B6CC92C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CCC87A64C4C411E58D41F72562514F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C4D29930489798707C661FE651F7383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34901F6A44830042C57EE8726A005E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				867A9D4555814CD8866F27AF56779CD9 /* Degrees+MathMethods.swift in Sources */,
+				93C3A8FB6D6FCE05BA663BBA01817DE6 /* SpinWheelControl-dummy.m in Sources */,
+				7F0C61EFE0108F6639727E6ACA4CF846 /* SpinWheelControl.swift in Sources */,
+				AE3FB97A969750249F41323524831809 /* SpinWheelControlDataSource.swift in Sources */,
+				FB327F9B3324806DB061BC632D4BA21F /* SpinWheelControlDelegate.swift in Sources */,
+				7152D4239F76E5D2F87FB9B43C34F243 /* SpinWheelWedge.swift in Sources */,
+				F66FC58242E56BF9226D0E2EA312CC77 /* SpinWheelWedgeLabel.swift in Sources */,
+				7DBB1C4E498FAC53876282FCC90D62B0 /* SpinWheelWedgeShape.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		551B6033E130EB25B828EBC442EA9B36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891B54245AA6997AC8D69B7A75A5EE43 /* Pods-MealWheel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9133D6EE0F5ABBBC5242EFF1EBD6692C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1C4BE638069029BF46F69BBF45C6DD /* Pods-MealWheelTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDEC72C69865C80EC9B5669752A62855 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97EB515242D49E31F83AE60AE8DA47DA /* Pods-MealWheelUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		095056313178B9111C511E7205C1A68B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpinWheelControl;
+			target = E38173DA3B02EB9662CBD25EEB9D4498 /* SpinWheelControl */;
+			targetProxy = C7AAD910D908DF680DFB8BA81D9FE69E /* PBXContainerItemProxy */;
+		};
+		1D17A6C9FCAF0612FC91B60EB2D52419 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MealWheel";
+			target = 6E54CBAF498305D63312B79D47AD85D6 /* Pods-MealWheel */;
+			targetProxy = 93E8AB2D07866D3892D80ACAD30C73C0 /* PBXContainerItemProxy */;
+		};
+		B7A5DE0507C5E59417651A110F36D891 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MealWheel";
+			target = 6E54CBAF498305D63312B79D47AD85D6 /* Pods-MealWheel */;
+			targetProxy = 204B5DFD044B2E0032F88414E9C4887C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0081D05286BD0C0C4838200E34BC9FCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02C41BEB5D8387F907BCE49603E44875 /* Pods-MealWheelUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheelUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheelUITests/Pods-MealWheelUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		449D6987E4E10C73C67C55736E04DF0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B2140BE44B078D3F02E9A539C188E05 /* Pods-MealWheelTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheelTests/Pods-MealWheelTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5377AE23DCD4C9C91C3BCF5C38289296 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD45224989E560A441196F184471C1FF /* SpinWheelControl.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
+				PRODUCT_MODULE_NAME = SpinWheelControl;
+				PRODUCT_NAME = SpinWheelControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		75346081C382550A767991A888DF2439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1927FE90BAE6846278A28259783FA175 /* Pods-MealWheelTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheelTests/Pods-MealWheelTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		767991A893F6A236F57FE4590DE96CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD45224989E560A441196F184471C1FF /* SpinWheelControl.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
+				PRODUCT_MODULE_NAME = SpinWheelControl;
+				PRODUCT_NAME = SpinWheelControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1E99F0017BE27545DBF3BD80184D9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD24FBFB1E051D9833B79D02AD1CA25 /* Pods-MealWheelUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheelUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheelUITests/Pods-MealWheelUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A94134020AA87FD7326D23199DC7ED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C34F456ACBD9636D9E83BAFC2ED07AFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C92782E717C52E3633C9A5F211E7987A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EA8C7AF90938697605468604B2A17B9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C92782E717C52E3633C9A5F211E7987A /* Debug */,
+				EA8C7AF90938697605468604B2A17B9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BB34A25ADDD3A1926E310FF72E7492C /* Build configuration list for PBXNativeTarget "SpinWheelControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767991A893F6A236F57FE4590DE96CDA /* Debug */,
+				5377AE23DCD4C9C91C3BCF5C38289296 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		751C338BB4B2AF8DD8BD6765648C0242 /* Build configuration list for PBXNativeTarget "Pods-MealWheelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0081D05286BD0C0C4838200E34BC9FCB /* Debug */,
+				A1E99F0017BE27545DBF3BD80184D9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F7C8B61AA8712A14011662BB867570 /* Build configuration list for PBXNativeTarget "Pods-MealWheelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75346081C382550A767991A888DF2439 /* Debug */,
+				449D6987E4E10C73C67C55736E04DF0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFBC2D0C663CDE991615CF27C828F345 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A94134020AA87FD7326D23199DC7ED5B /* Debug */,
+				C34F456ACBD9636D9E83BAFC2ED07AFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_MealWheelUITests {
+  umbrella header "Pods-MealWheelUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

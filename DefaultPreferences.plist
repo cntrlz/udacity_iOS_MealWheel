@@ -10,9 +10,17 @@
 	<integer>0</integer>
 	<key>maxDistance</key>
 	<integer>25</integer>
+	<key>minFrequency</key>
+	<integer>0</integer>
+	<key>maxFrequency</key>
+	<integer>100</integer>
 	<key>minResults</key>
 	<integer>3</integer>
 	<key>maxResults</key>
 	<integer>20</integer>
+	<key>filterDistance</key>
+	<real>0.5</real>
+	<key>filterFrequency</key>
+	<real>0.5</real>
 </dict>
 </plist>

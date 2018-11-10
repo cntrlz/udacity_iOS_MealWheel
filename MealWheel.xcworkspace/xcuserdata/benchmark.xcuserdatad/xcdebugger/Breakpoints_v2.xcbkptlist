@@ -6,32 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppDelegate.swift"
-            timestampString = "560307311.448835"
+            filePath = "Controllers/FilterViewController.swift"
+            timestampString = "562566780.703141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "distanceChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppDelegate.swift"
-            timestampString = "560307311.449463"
+            filePath = "Controllers/FilterViewController.swift"
+            timestampString = "562566780.703894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "registerUserDefaults()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "frequencyChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

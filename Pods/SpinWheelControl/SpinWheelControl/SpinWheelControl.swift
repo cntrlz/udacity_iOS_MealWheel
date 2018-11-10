@@ -353,9 +353,15 @@ open class SpinWheelControl: UIControl {
         let touchRadiansDifference: Radians = currentTouchRadians - previousTouchRadians
         
         self.spinWheelView.transform = self.spinWheelView.transform.rotated(by: touchRadiansDifference)
-        
+		
         delegate?.spinWheelDidRotateByRadians?(radians: touchRadiansDifference)
-        
+		// EDIT
+		let nearestWedgeCurrentTouch: Int = Int(round(((currentTouchRadians + (radiansPerWedge / 2)) + snappingPositionRadians) / radiansPerWedge))
+		let nearestWedgeDifference: Int = Int(round(((touchRadiansDifference + (radiansPerWedge / 2)) + snappingPositionRadians) / radiansPerWedge))
+		let hybrid = currentTouchRadians - touchRadiansDifference
+		let nearestWedgeHybrid: Int = Int(round(((hybrid + (radiansPerWedge / 2)) + snappingPositionRadians) / radiansPerWedge))
+		delegate?.spinWheelDidUpdateSelectedIndex?(radians: touchRadiansDifference, description: "continueTracking using currentTouchRadians - current: \(nearestWedgeCurrentTouch) difference: \(nearestWedgeDifference) hybrid: \(nearestWedgeHybrid)")
+		
         return true
     }
     
@@ -420,6 +426,8 @@ open class SpinWheelControl: UIControl {
             currentDecelerationVelocity = newVelocity
             self.spinWheelView.transform = self.spinWheelView.transform.rotated(by: -radiansToRotate)
             delegate?.spinWheelDidRotateByRadians?(radians: -radiansToRotate)
+			// EDIT
+			delegate?.spinWheelDidUpdateSelectedIndex?(radians: radiansToRotate, description: "deceleratingStep")
         }
     }
     
@@ -454,6 +462,8 @@ open class SpinWheelControl: UIControl {
             self.spinWheelView.transform = CGAffineTransform(rotationAngle: newPositionRadians)
             
             delegate?.spinWheelDidRotateByRadians?(radians: newPositionRadians)
+			// EDIT
+			delegate?.spinWheelDidUpdateSelectedIndex?(radians: newPositionRadians, description: "snapStep")
         }
     }
     

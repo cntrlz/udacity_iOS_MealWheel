@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		registerUserDefaults()
 		
-		if (!UserDefaults.standard.bool(forKey: "firstRun")){
+		if (!UserDefaults.standard.bool(forKey: "firstRun")){ 
 			print("No first run")
 		} else {
 			let maxDist = UserDefaults.standard.integer(forKey: "maxDistance")
@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
+	func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+		return UIInterfaceOrientationMask.portrait
+	}
 }
 
 // Separate MealWheel-specific functions

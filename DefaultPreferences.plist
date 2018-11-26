@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>distrustfulMode</key>
+	<false/>
 	<key>firstRun</key>
 	<false/>
 	<key>customPlaces</key>
@@ -13,13 +15,27 @@
 	<key>minFrequency</key>
 	<integer>0</integer>
 	<key>maxFrequency</key>
-	<integer>100</integer>
+	<integer>10</integer>
 	<key>minResults</key>
 	<integer>3</integer>
 	<key>maxResults</key>
 	<integer>20</integer>
 	<key>filterDistance</key>
 	<real>0.5</real>
+	<key>swipeToggleExpansion</key>
+	<false/>
+	<key>showTips</key>
+	<true/>
+	<key>landingPage</key>
+	<true/>
+	<key>blacklistEnabled</key>
+	<true/>
+	<key>whitelistEnabled</key>
+	<true/>
+	<key>cuisineEnabled</key>
+	<true/>
+	<key>customTypesEnabled</key>
+	<true/>
 	<key>filterFrequency</key>
 	<real>0.5</real>
 </dict>

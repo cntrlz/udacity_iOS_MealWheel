@@ -7,24 +7,65 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 	var window: UIWindow?
+	let locationManager = CLLocationManager()
+	var lastLocation: CLLocation = CLLocation()
+	
 
+	let apiClient = YelpAPI()
+	let dataController = DataController(modelName: "MealWheel")
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		// Use this for inspecting the Core Data
+//		if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+//			print("Documents Directory: \(directoryLocation)Application Support")
+//			print("Home Directory: \(NSHomeDirectory())")
+//		}
 		
+		let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+		print(urls[urls.count-1] as URL)
+
+		setUpLocationManager()
 		registerUserDefaults()
-		
-		if (!UserDefaults.standard.bool(forKey: "firstRun")){ 
+		dataController.load()
+
+		if !UserDefaults.standard.bool(forKey: "firstRun") {
 			print("No first run")
 		} else {
 			let maxDist = UserDefaults.standard.integer(forKey: "maxDistance")
 			print("We have firstRun. MaxDist is: \(maxDist)")
 		}
 		
+		if !UserDefaults.standard.bool(forKey: "landingPage") {
+			window = UIWindow(frame: UIScreen.main.bounds)
+			let storyboard = UIStoryboard(name: "Main", bundle: nil)
+			let initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+			window?.rootViewController = initialViewController
+			window?.makeKeyAndVisible()
+		}
+
+//		let tabController = window?.rootViewController as! UITabBarController
+//		let navController = tabController.viewControllers?.first as! UINavigationController
+//		let wheelViewController = navController.topViewController as! WheelViewController
+//		wheelViewController.dataController = dataController
+		
+		
+
+//		let fileName = "appGUID.txt"
+//		let path = NSURL(fileURLWithPath:
+//			NSTemporaryDirectory()).appendingPathComponent(fileName)
+//		let myText = "\(NSHomeDirectory())"
+//		do {
+//			try myText.write(to: path!, atomically: true, encoding: .utf8)
+//
+//		} catch {
+//			// Handle error
+//		}
+
 		return true
 	}
 
@@ -62,5 +103,25 @@ extension AppDelegate {
 			UserDefaults.standard.register(defaults: dict)
 			print("User defaults registered")
 		}
+	}
+}
+
+
+// MARK: - Location
+extension AppDelegate: CLLocationManagerDelegate {
+	func setUpLocationManager() {
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.startUpdatingLocation()
+	}
+	
+	func updateLocation(_ location: CLLocation) {
+//		print("updated location")
+		lastLocation = location
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		updateLocation(locations.last! as CLLocation)
 	}
 }

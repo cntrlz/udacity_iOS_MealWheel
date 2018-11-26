@@ -7,275 +7,237 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D9FD2DF20F0603F3CAF7C8117D63850 /* YLPClient+Business.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FBAD77EB0F06FF5C4B2467856DED9D /* YLPClient+Business.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DCE228D66ECA279212465E7511E9431 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5D1AE0B4C9C3C9844744E61CBEFE0 /* Collections.swift */; };
-		0F8355A2932AA048A6AAF913EA21C15A /* YLPCoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 92162ADCA48348A4B3F54F1B851DB275 /* YLPCoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		102A91FAAADC6F29DA40FC6C99E59693 /* NetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC8571D8A4FB1F1AFC2B161C41C6E5 /* NetworkTransport.swift */; };
-		17AA985FDEE1C5CA7FDFD531A0750E2B /* GraphQLSelectionSetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACE8353741338C52BB76EED87495D2 /* GraphQLSelectionSetMapper.swift */; };
-		1B075750C204F575FA2E3EACA8CBDAD6 /* YLPUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 32AC86B7DF81248EA406E5F255A3BFE1 /* YLPUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B2AC3FEBB2421EF31C30FD48CF5AF9D /* HTTPNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB2BF113910EFF76D57E2A111DBD42 /* HTTPNetworkTransport.swift */; };
-		1B4BA5EB745DAE064A4ED02B91B69A02 /* JSONSerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE78A8F44E537BCD1E71DC0632AF75E /* JSONSerializationFormat.swift */; };
+		0518AA0A31FC2D18CFE7BC7EAA61EACB /* SpinWheelControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CB2D02B4E496373BB3A41C7EC9AC1 /* SpinWheelControlDelegate.swift */; };
+		0DCE228D66ECA279212465E7511E9431 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95C5E554CBA05F02B6A0AB539760F3 /* Collections.swift */; };
+		102A91FAAADC6F29DA40FC6C99E59693 /* NetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F909845C78E43B60E1EEB2894A4FDBD /* NetworkTransport.swift */; };
+		10C72CA340D056D1A7BE9DA242D6F08C /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7361CCBAF0B62AF7F0BBF7D0FB17C768 /* CosmosLayerHelper.swift */; };
+		118C076D9E6E5FD64FCA60C5F3078EA0 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF5812656DC7447C9420C91348E020 /* CosmosRating.swift */; };
+		1526A18178605EA3D74C85FF15C38C8B /* SpinWheelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ACB34D337EF45ECB564F325037074B /* SpinWheelControl.swift */; };
+		16D57147D348BC07A56A24AD39CC6CB7 /* SpinWheelControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CBC4E4132435D2D676C6009C27520 /* SpinWheelControl-dummy.m */; };
+		17AA985FDEE1C5CA7FDFD531A0750E2B /* GraphQLSelectionSetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7267DDEF79D39EB94268DC4C00CBE72 /* GraphQLSelectionSetMapper.swift */; };
+		1B2AC3FEBB2421EF31C30FD48CF5AF9D /* HTTPNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA88E788EAA50CBFF96B27E181B61CF /* HTTPNetworkTransport.swift */; };
+		1B4BA5EB745DAE064A4ED02B91B69A02 /* JSONSerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE421D6710C3784B7E48FA8E2FA893A /* JSONSerializationFormat.swift */; };
 		1C1C4BE638069029BF46F69BBF45C6DD /* Pods-MealWheelTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 107CD0B47E47CBE9DDB8503944D82876 /* Pods-MealWheelTests-dummy.m */; };
-		1E074A868361E94D2ECFD0F04A9EB88E /* YLPReview.m in Sources */ = {isa = PBXBuildFile; fileRef = C600751E5994045C69F253D7D09DC47A /* YLPReview.m */; };
-		2015497EAB96615527E13752D95CB57C /* Apollo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0930ED8EE17A79486BC50E36FB24628 /* Apollo-dummy.m */; };
-		20263783BC313615A55C4C70B42C90D8 /* GraphQLSelectionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D32EBC0422C873D3862AF2327ECB276 /* GraphQLSelectionSet.swift */; };
+		2015497EAB96615527E13752D95CB57C /* Apollo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4FC48C8C7AB629078C609A3341F6D9 /* Apollo-dummy.m */; };
+		20263783BC313615A55C4C70B42C90D8 /* GraphQLSelectionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6C44F687CFEB3C8A4060271655245 /* GraphQLSelectionSet.swift */; };
 		2185829C76A6BA9FB2A70A30F48A441A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		2367B212AC3C019D8AD9B037679544D7 /* NSDictionary+YLPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ADBFA548FE810C497C89D30DF8B651 /* NSDictionary+YLPUtils.m */; };
-		23ECA5E8654863D78C4DD64F6FCE797F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		27B1B53FDC2588E4D1D6F7CEDBF6CE96 /* Pods-MealWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */; };
-		281F60FBF9965711AE4ADE1EDADB9479 /* YLPBusinessReviews.h in Headers */ = {isa = PBXBuildFile; fileRef = 90114D09E30F372C73C93F0E1A64BFC5 /* YLPBusinessReviews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28FF7A464D3E1CC2AFF72EA79964645E /* SpinWheelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AFF993D0CF5CD262BB7238AC00900 /* SpinWheelControl.swift */; };
-		29598142F2AFDF449BB6317ECF926B1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
-		30F691F253927A030206F80149F23525 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B956F5DCD2A5E94CF837CF688160F324 /* Record.swift */; };
-		3AA6CF283A74D69156F0858BA5E8412D /* YLPCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197A5518B84F86FC20F44BE481D83AF0 /* YLPCoordinate.m */; };
-		3D98342AAF6386AABA36492E3221311C /* SpinWheelControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907AE210EC73AE9394F21C1F5FA706D /* SpinWheelControlDelegate.swift */; };
-		3E9D28CD5812DF049B8A5D2366F6D367 /* YLPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B05225E47C27246F293FFBD89DF5D3 /* YLPClient.m */; };
-		41838F40A7A023C9EDB401EF66511F14 /* SpinWheelWedgeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D96E60C499A9306C6FCA04D85B99A5 /* SpinWheelWedgeShape.swift */; };
-		490EF62EF860DE7D233D027DDCD3A978 /* YelpAPI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9E5B8F6EFFBC90E3264644E624B317E /* YelpAPI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A146F4489662CFA494D8C509E94FA06 /* YLPSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D04161322106E70C5EE4E41026570D4 /* YLPSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F1BB7E6C8823785106477863EAB40CB /* SpinWheelControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 838FC435F8DD5D3042246B129452FAC3 /* SpinWheelControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		511D0AC9225DE5D887726E9604EB8442 /* YLPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC9CFD127EC660ADFC59BC2B64E5B /* YLPSearch.m */; };
-		5518314ACDE877C5B4279297A6DB87DC /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8885E9247E7EA25892B42DE24B1347B /* DataLoader.swift */; };
-		56038C246B83375D49C3C10621DDF866 /* YLPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DE00D3D1BE86C23AE8C5D639ECDF6E /* YLPUser.m */; };
-		57A8B327FDFDCB3BF3B763CE103AB5C2 /* YLPQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F4617F3E3CAEC38C4FC0F5B26AE4B0C /* YLPQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57CE96F18127DECE004EE0E540C9564C /* GraphQLExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED15CA51947D23520F5D82CF2F2CF64 /* GraphQLExecutor.swift */; };
-		5889CF7631652DE7468EBEC2E36E5C2B /* YLPClient+PhoneSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DF4E19C83466F9306B6B552780C665C /* YLPClient+PhoneSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5942A9A2695D26A2AE44031D089D7AC0 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619D659BE5BD2730890A29CF1AA39FEB /* InMemoryNormalizedCache.swift */; };
+		30F691F253927A030206F80149F23525 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01F540E0493C6CA89706E606EF92F2B /* Record.swift */; };
+		363D5829F9E47F9020700ACE35418F5A /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97585EB877E52811AFB24F65701378A3 /* CosmosLayers.swift */; };
+		3AB236AD57AFEF156C2683CFAAE4B11A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		426B106CFF2ECB155D3B3D761809771E /* SpinWheelControlDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E514847B1B81DFF2CDE42A73A1C42 /* SpinWheelControlDataSource.swift */; };
+		496AB2DC00CE6ECB251B780DB0B46378 /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05E30F58490C00E7DA78B24DBEE3C1 /* CosmosDefaultSettings.swift */; };
+		4CE94770E88B40DD3F06797F9B35B81A /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B902E3FF6CAC5588F734F05A3FB4C7 /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		541706202C03B3EAE135235945337763 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4660BEF8911F0FF599A4E5561A81786 /* CosmosView.swift */; };
+		5518314ACDE877C5B4279297A6DB87DC /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09C16802730F8C5691E132BD78FF0F /* DataLoader.swift */; };
+		57CE96F18127DECE004EE0E540C9564C /* GraphQLExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BB56B9435EC24FD7AB5C78F66EB69 /* GraphQLExecutor.swift */; };
+		5942A9A2695D26A2AE44031D089D7AC0 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019225A10C95119311C540AF7FE8A673 /* InMemoryNormalizedCache.swift */; };
 		5A458507171388904C5DCB110B13A55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		602A26256E524A2435F52906A0D9DBA9 /* YLPBusiness.h in Headers */ = {isa = PBXBuildFile; fileRef = AA074D165EDBA6D6007182A825A57915 /* YLPBusiness.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62AE59E5238F1A1FC11D2DE5D37FB348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		647CE2B9260E1FCC521B2F7A40E63606 /* check-and-run-apollo-codegen.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8C962C4534A71837C89B0E366252500 /* check-and-run-apollo-codegen.sh */; };
-		6C47C898CB335BC1892F76DE81F0C714 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25149D1715D6591A6B9701AB2D006A6 /* ApolloClient.swift */; };
-		6E20F6C0E19A17F4201104D4B1DF20FA /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F8C531AAAEDFB43ECF23BCE558DC7 /* GraphQLResponse.swift */; };
-		7087DEAAF16C46C156762A5E7B4E990E /* GraphQLDependencyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CFF752DFFA89DFE81FBD6AE4A7E710 /* GraphQLDependencyTracker.swift */; };
-		738DF62595001E071241A12B12FC6AD3 /* YLPQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AD255D26FC95FAB1ECBE0435AF1C22 /* YLPQuery.m */; };
-		76D8BA5EA32BCA7813F5AA78D17B31AA /* YLPLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CA1A04276D0F78D4EB329A0E56446D /* YLPLocation.m */; };
-		76F169CDD7C5048CF901C6894091FD83 /* GraphQLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861577B211173A449E374755BBAA829 /* GraphQLError.swift */; };
-		7F45C7E0E734A8EFECF503A984165800 /* YLPBusinessReviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 65946988F22C38759430E37C7E3F7BDA /* YLPBusinessReviews.m */; };
-		7F98AE7AC8C2C580BE10AE6381A99FF0 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D78E35DBC9AB5B2E3B380440AF334D /* AsynchronousOperation.swift */; };
+		5D3718CCFBD5AA94C8BCA2DE00867B14 /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9523A274FC5923F939821CEFF308C876 /* Cosmos-dummy.m */; };
+		5D998C85604F5977322F2D27F492E264 /* SpinWheelWedgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1519D67CB9285C0946E23DC10EAD83E /* SpinWheelWedgeLabel.swift */; };
+		6222CE64391DFA14E8CDF450B3912E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		647CE2B9260E1FCC521B2F7A40E63606 /* check-and-run-apollo-codegen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6FB781F6CBE94F16D0FE90F60D06B2F9 /* check-and-run-apollo-codegen.sh */; };
+		6C47C898CB335BC1892F76DE81F0C714 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A523FC6523E5944EE0D091EAC6D209 /* ApolloClient.swift */; };
+		6E20F6C0E19A17F4201104D4B1DF20FA /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299326CFF3FD969577E1BA5399BE5947 /* GraphQLResponse.swift */; };
+		7087DEAAF16C46C156762A5E7B4E990E /* GraphQLDependencyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E430A71B6A3CBD459C494E9F77D2C45 /* GraphQLDependencyTracker.swift */; };
+		76F169CDD7C5048CF901C6894091FD83 /* GraphQLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFE4CBF526A387FDD8B0C251B5F203D /* GraphQLError.swift */; };
+		78FEE17EA2A65083E5EC747785D98101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		79FCAEB6D480B693844C178AB64F3B86 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E77A9FC8E854D12C65C948147BE33D /* CosmosTouch.swift */; };
+		7AA178E3AD0E96C61E790206C44DBB23 /* SpinWheelWedge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA567AEE5454A9A6416CBD630C5773 /* SpinWheelWedge.swift */; };
+		7F98AE7AC8C2C580BE10AE6381A99FF0 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7C086744606D1C3188C96230D9EC9 /* AsynchronousOperation.swift */; };
 		802CA6B8AAC2C3D92CB2CE654B510098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		83945EFF960DD7F3F4C175C12B5D087F /* GraphQLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0ADBAD0F5DCD5F9A2B96C9B2E36A6 /* GraphQLResult.swift */; };
-		842B7BA4DDBC42ACAF98873DDFA89704 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA03224A5271559510E9CC4393EDB8BC /* Locking.swift */; };
-		8789F54BEDB989D49F5933BA8FBAF1ED /* NormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D9BB536DE3FC5AB788B9512BD1CEA /* NormalizedCache.swift */; };
-		8F66226AC023375AA94B2AB55D711536 /* YLPLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C9EA3D448CFD9A2A9006F4D50231BD /* YLPLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		926F9A65885C8830F857A9107EBE9507 /* SpinWheelControlDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E35E7092692F11825CF2E47F98EB4 /* SpinWheelControlDataSource.swift */; };
+		83945EFF960DD7F3F4C175C12B5D087F /* GraphQLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3B034FE43EAFCE29067884BBFA4A86 /* GraphQLResult.swift */; };
+		842B7BA4DDBC42ACAF98873DDFA89704 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3820F14904C220CA3FA732FD9F96853A /* Locking.swift */; };
+		8789F54BEDB989D49F5933BA8FBAF1ED /* NormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66C7CAABFFDBF764986F2018E0B895 /* NormalizedCache.swift */; };
+		87BE14A38733F873845312E95B7B752D /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF1B13E50D01DDB0140E1192527994 /* CosmosTouchTarget.swift */; };
+		891B8D6785AB17B44C213D6518955588 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1068CC9052085A5D986B7B543B6957F8 /* StarFillMode.swift */; };
+		8A6B7AE8E4CFA6A4B1545D7A3CC15E23 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6586FAF125E3CB3BAFF0236BD6E8C1F /* CosmosSettings.swift */; };
+		8C2240C22986B7FC9DF709BAE84992A4 /* Degrees+MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05661B7D5B9E895F4D8F1AAECC44FDFC /* Degrees+MathMethods.swift */; };
+		8E41DFDA668DB5FDF7D9F86BBDB72CA1 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCFCBED63886C7422EBEA2B10D6AC90 /* RightToLeft.swift */; };
+		8FFD6B7CB3018E250891ADC206EE4025 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631ED9EA19A59ECF27FC19F6B970815 /* CosmosSize.swift */; };
+		9273D94FB02ED96D761EFC2320E2245E /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CDB31859046A662B9F895171C4B8 /* StarLayer.swift */; };
 		97EB515242D49E31F83AE60AE8DA47DA /* Pods-MealWheelUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73120B63E7BE6FDF5CBB45831F29A762 /* Pods-MealWheelUITests-dummy.m */; };
-		998F2C9D1767736CE2C03021DE982BDB /* YLPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443457A00DCC7BCA9807FC5E40B6196 /* YLPCategory.m */; };
-		99C6F1A3C2C396A6DA3793B520BEDD2E /* ApolloStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3308D0FB24CB0D9FE70948A18EFEF8D /* ApolloStore.swift */; };
-		9C941C3F4327C825201CF5B0F55981D9 /* SpinWheelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 81614E41DC7115A3AD21A2B3A6D4F302 /* SpinWheelControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D3AA01C0581C726FB0FB25C1EF459AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		9DFADD6E6A6F095E166C2C1B007215ED /* YelpAPI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F641B2B0EA5F24884FB6FB7E0F3EDAAB /* YelpAPI-dummy.m */; };
-		9E0862D792B9A348100D4BEFB02DEF41 /* YLPClient+Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 794907075DA830E7FF12BD341A4B3AE3 /* YLPClient+Search.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A465B1293D37420034178C40004FA0A7 /* YLPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E3054D2FF2CF960BAEE60E68430AA7D7 /* YLPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A76868EF28ED296F2434351EF062A594 /* YLPResponsePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A650E65D2C27659DA9A27797D40042B /* YLPResponsePrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A82E4E43855DA861F19664B892D730CD /* YLPBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = AD20B8784F95D687E13EE4F718DD95AD /* YLPBusiness.m */; };
-		A8A880424EE3C6956471C361E43090A9 /* YelpAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 82553E24E1D4EDECA3C155300015653A /* YelpAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC66F689BBA684C0929D9D02079E53A4 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16C0A940F56B87396DB9D737078D017 /* Promise.swift */; };
-		ACC87673AEECFDBBADE4D074D178E68B /* GraphQLResultAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B2C4DA7D3821443D7598D1E89410 /* GraphQLResultAccumulator.swift */; };
-		AF46CB36B27EABF6E8B6480799F20346 /* GraphQLResponseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8548A47E7DA8CF8AF5E047A4222B0C /* GraphQLResponseGenerator.swift */; };
-		B25E75942C67E4341E7B0DA16149F726 /* YLPClient+Reviews.h in Headers */ = {isa = PBXBuildFile; fileRef = 1221CC763E6D0774348C9AE2ECD812D5 /* YLPClient+Reviews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7380A90C01A9BC18A2BF90F39EE0457 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE0A49A96F5E2A087E67291EDBFD207 /* JSON.swift */; };
-		BABAE4DFC8CF4724086B7315BCDF2D7D /* GraphQLInputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3666DD40CA8E33E746EFDA0926714FC /* GraphQLInputValue.swift */; };
-		BD7737D70EE16A0169251F84B6C7F491 /* GraphQLQueryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DC3F11BE4EF6E0C132548CDA1512 /* GraphQLQueryWatcher.swift */; };
-		C423093E10E1C7478D03753CF78A27F0 /* YLPClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = EFB4EE46D96DB774A6943903307F6168 /* YLPClientPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		C5656D55017A739B2ECD5422AB929E5C /* YLPCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 948AE2306E2BCFF2E591AD08062F141F /* YLPCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA78F0A1BE2CB88B2E1AF10A5D8526D9 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978515204D59341331DC8F49512A12A /* GraphQLOperation.swift */; };
-		CB4AA335D076B3D1D6ECC6689AFDF45A /* YLPQueryPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C188A99999A919628550D45711C5041 /* YLPQueryPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		CF374393D4F950C4AA23DCCAB6D82F01 /* YLPSortType.h in Headers */ = {isa = PBXBuildFile; fileRef = 997C1540CAC32808C410F61241682C18 /* YLPSortType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0FE36279D445AF9DD88E57EBB7719F7 /* YLPReview.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE1621D3A98F7E0268454B4CFF989A9 /* YLPReview.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D564C7401DD18D31DE6D66035CEC2260 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063EEA21B9CAA9042213EAEE5360401B /* Result.swift */; };
-		D5EDB5DFC1613253FB37E254E9F6EFA0 /* SpinWheelWedgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACC325E50B803D3F3CC57BB8522569 /* SpinWheelWedgeLabel.swift */; };
-		D79B88FA15AC9F21295E67E3AEB5BC3B /* GraphQLResultNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C196BC4F813914A89A5FE1FE1424E9 /* GraphQLResultNormalizer.swift */; };
-		D8AACB1EE534D70176190170B0CF7725 /* Pods-MealWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE6A8DA2837AD31BE1722182B243A164 /* check-and-run-apollo-cli.sh in Resources */ = {isa = PBXBuildFile; fileRef = C99A44E49A44968F80F9DA700686E923 /* check-and-run-apollo-cli.sh */; };
-		E13760C7696E733EF5A7F83A231CDD74 /* YLPClient+PhoneSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 83053E67B130D546B7CCF379AA53A54A /* YLPClient+PhoneSearch.m */; };
-		E69A1013D87D1805CC344CFB037FB561 /* YLPClient+Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D02E96B27BE742F0100DB097D9F0D8 /* YLPClient+Business.m */; };
-		E7945E7D6CF59C48F68296A90A38BC7C /* Apollo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C4336B56DF46D953AC0D12D11708CE /* Apollo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E94BB0B983D1064A50720A9B817D2689 /* JSONStandardTypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A8B4AA66959E251D319ADDC2426E6 /* JSONStandardTypeConversions.swift */; };
-		EAE1336DF66D5F1FE393592DC2913D7A /* YLPClient+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 61066DD170196D323317D1C9CC0B4A3C /* YLPClient+Search.m */; };
-		EEB5AB482994FAA469524B2C5E0571C4 /* SpinWheelWedge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E6666A759734F40BD397EC49B91A28 /* SpinWheelWedge.swift */; };
-		EF462FBF620906511C831419C2B84362 /* SpinWheelControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D3AD9F365762E02F41BF897E1A532E /* SpinWheelControl-dummy.m */; };
-		F149895183290FA2B196AB9830737269 /* YLPClient+Reviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2E382C33B3ED70DB933CF92E93624 /* YLPClient+Reviews.m */; };
-		F34D8D98C4B26D6F32461871F7A85D52 /* RecordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D236208DB16C0AF03427AC9A8D16823 /* RecordSet.swift */; };
+		99C6F1A3C2C396A6DA3793B520BEDD2E /* ApolloStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15776ED9A9FFE8F115F3B7E684F23339 /* ApolloStore.swift */; };
+		9CBC6F42B7AC89B965BD15BBD6F75BC7 /* SpinWheelWedgeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B70A621DA546E309A29B6037BE810C0 /* SpinWheelWedgeShape.swift */; };
+		A5ECEDAE40D5D120B69F05A869123DB3 /* Pods-MealWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */; };
+		AC66F689BBA684C0929D9D02079E53A4 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB85BDFA3692E065901B9B24BB1D61 /* Promise.swift */; };
+		ACC87673AEECFDBBADE4D074D178E68B /* GraphQLResultAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015C90156FDA675002F11EBFED77B492 /* GraphQLResultAccumulator.swift */; };
+		AF46CB36B27EABF6E8B6480799F20346 /* GraphQLResponseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6226E55A9CAABC4F9864B3938801516 /* GraphQLResponseGenerator.swift */; };
+		B49BA8D5A3F686E5B5BB38FE7940B474 /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D8FFCB896F753E141D67EC721FCAEC /* CosmosAccessibility.swift */; };
+		B7380A90C01A9BC18A2BF90F39EE0457 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E4FB67C137AD0CF52993F8CE10FBF4 /* JSON.swift */; };
+		BA7DC569036729BBE7146746A2140663 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		BABAE4DFC8CF4724086B7315BCDF2D7D /* GraphQLInputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D60C39DBE26B4950AC1E9FEEE3C9E1C /* GraphQLInputValue.swift */; };
+		BD7737D70EE16A0169251F84B6C7F491 /* GraphQLQueryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5DA0ABD80432060EBDA9BF3744A4 /* GraphQLQueryWatcher.swift */; };
+		C0371A41E85344C8DAA7DF4B5B663CF7 /* SpinWheelControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02873DFFF025F3845E1DA3996CA74747 /* SpinWheelControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C217704F02251CFCAA0625F3232DFD67 /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52821D7DD3AEE8988D3000FACD7880BB /* CosmosLocalizedRating.swift */; };
+		C45FA8CB44F4618C1ABB7F76942289CC /* Pods-MealWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA78F0A1BE2CB88B2E1AF10A5D8526D9 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04F5F38E0BDB1F8E39BAA6B66E85AB9 /* GraphQLOperation.swift */; };
+		D564C7401DD18D31DE6D66035CEC2260 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F526A7C498BE55E15B4F7FEEE81011 /* Result.swift */; };
+		D79B88FA15AC9F21295E67E3AEB5BC3B /* GraphQLResultNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B149025C3428FF9DF8151BF3EC250D /* GraphQLResultNormalizer.swift */; };
+		DE6A8DA2837AD31BE1722182B243A164 /* check-and-run-apollo-cli.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1FF8188A037BD0773080FA658B164BFC /* check-and-run-apollo-cli.sh */; };
+		E15606419A5C4A73632A6C2F651773CC /* SpinWheelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B2E1CCDB8D79C72FB6417A23E7CD73F /* SpinWheelControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7945E7D6CF59C48F68296A90A38BC7C /* Apollo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B80A9F983027A438F8897ADD29E405F6 /* Apollo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94BB0B983D1064A50720A9B817D2689 /* JSONStandardTypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3630BDC4B251D6B23D36E37228550B9E /* JSONStandardTypeConversions.swift */; };
+		F34D8D98C4B26D6F32461871F7A85D52 /* RecordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8736247792CFD1BB194CC05DC9A18 /* RecordSet.swift */; };
+		F448526CB611E263DD42BE54E5444F6A /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283FA19B67CFFA2B59D71C02B3E7C73 /* CosmosText.swift */; };
 		F6494583F798C131774ECC57D2E0E499 /* Pods-MealWheelTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A6A5960118CEF1C916C4B21FA21822 /* Pods-MealWheelTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F87A5CF4534996A7A2250D1E75F6E1B2 /* Pods-MealWheelUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A7BFA6A5E664839A2C3F1676BC214F /* Pods-MealWheelUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9389447C47F4EA23DC5FFC6C8ACF103 /* Degrees+MathMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D46D7F700B156C6F1D552998F571F0 /* Degrees+MathMethods.swift */; };
-		FC7E998F35F8896283904A0E5E18553C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742833C959B22051A62853559778222 /* Utilities.swift */; };
-		FEE654610692510CDCB9925E695B864E /* ResultOrPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61ABF1B3DC7D4C4706ED217ABCD13C /* ResultOrPromise.swift */; };
+		FC7E998F35F8896283904A0E5E18553C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9494919A7BF27109DF68F128EA4AEB14 /* Utilities.swift */; };
+		FEE654610692510CDCB9925E695B864E /* ResultOrPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E547006D407B0F24A0D875BFDEE9BB8 /* ResultOrPromise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0CF8FE6B2D3D9AEF7B07136BF9A2E93C /* PBXContainerItemProxy */ = {
+		204B5DFD044B2E0032F88414E9C4887C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 422D08A8948E32B86F5D2D126E915567;
+			remoteGlobalIDString = 1B4DD7AA85BAAABC7E1A9C6500ACC0B4;
+			remoteInfo = "Pods-MealWheel";
+		};
+		4869B2D3D8A948642711EA350ED7B6EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91B0C32F630B2C042D921BDA52E62487;
 			remoteInfo = SpinWheelControl;
 		};
-		191D07A916B675A8DBC41DD36F2E8961 /* PBXContainerItemProxy */ = {
+		558C4DFEBAEAD3E27AD7F91D5DA75525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 224580824D4276BBCB37A928CF5E9482;
+			remoteInfo = Cosmos;
+		};
+		93E8AB2D07866D3892D80ACAD30C73C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B4DD7AA85BAAABC7E1A9C6500ACC0B4;
+			remoteInfo = "Pods-MealWheel";
+		};
+		F4D33604892EEE7826DA3799EE5252DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 75DFC7B7A0E0F5FCEF1D11EAB25E2323;
 			remoteInfo = Apollo;
 		};
-		204B5DFD044B2E0032F88414E9C4887C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D45F6CAD448C0D99AF38B3F332BFF01E;
-			remoteInfo = "Pods-MealWheel";
-		};
-		88A5C00AADD968C30249438252E67A38 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACB0F936BAC8AEE5EEEB3A6FF934A609;
-			remoteInfo = YelpAPI;
-		};
-		93E8AB2D07866D3892D80ACAD30C73C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D45F6CAD448C0D99AF38B3F332BFF01E;
-			remoteInfo = "Pods-MealWheel";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		013F6C36A162DD17D69FA55AE2B94D6B /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Apollo.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E6666A759734F40BD397EC49B91A28 /* SpinWheelWedge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedge.swift; path = SpinWheelControl/SpinWheelWedge.swift; sourceTree = "<group>"; };
+		015C90156FDA675002F11EBFED77B492 /* GraphQLResultAccumulator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultAccumulator.swift; path = Sources/Apollo/GraphQLResultAccumulator.swift; sourceTree = "<group>"; };
+		019225A10C95119311C540AF7FE8A673 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InMemoryNormalizedCache.swift; path = Sources/Apollo/InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
+		02873DFFF025F3845E1DA3996CA74747 /* SpinWheelControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-umbrella.h"; sourceTree = "<group>"; };
 		02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheel.debug.xcconfig"; sourceTree = "<group>"; };
 		02C41BEB5D8387F907BCE49603E44875 /* Pods-MealWheelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0443457A00DCC7BCA9807FC5E40B6196 /* YLPCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPCategory.m; path = Classes/Response/YLPCategory.m; sourceTree = "<group>"; };
-		063EEA21B9CAA9042213EAEE5360401B /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Apollo/Result.swift; sourceTree = "<group>"; };
-		08F1A4416F7269205CE4D24B6CE1C753 /* Pods_MealWheelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelTests.framework; path = "Pods-MealWheelTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A650E65D2C27659DA9A27797D40042B /* YLPResponsePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPResponsePrivate.h; path = Classes/Response/YLPResponsePrivate.h; sourceTree = "<group>"; };
-		0C188A99999A919628550D45711C5041 /* YLPQueryPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPQueryPrivate.h; path = Classes/Request/YLPQueryPrivate.h; sourceTree = "<group>"; };
+		049BB56B9435EC24FD7AB5C78F66EB69 /* GraphQLExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLExecutor.swift; path = Sources/Apollo/GraphQLExecutor.swift; sourceTree = "<group>"; };
+		05661B7D5B9E895F4D8F1AAECC44FDFC /* Degrees+MathMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Degrees+MathMethods.swift"; path = "SpinWheelControl/Degrees+MathMethods.swift"; sourceTree = "<group>"; };
 		0CDCA3205EA04116A0325574D4EBAD34 /* Pods-MealWheelUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheelUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0D32EBC0422C873D3862AF2327ECB276 /* GraphQLSelectionSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSet.swift; path = Sources/Apollo/GraphQLSelectionSet.swift; sourceTree = "<group>"; };
-		0FCD56BDF1B1235ED8C3E00ABB9CE905 /* SpinWheelControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpinWheelControl.xcconfig; sourceTree = "<group>"; };
+		0D3B034FE43EAFCE29067884BBFA4A86 /* GraphQLResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResult.swift; path = Sources/Apollo/GraphQLResult.swift; sourceTree = "<group>"; };
+		0DE421D6710C3784B7E48FA8E2FA893A /* JSONSerializationFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONSerializationFormat.swift; path = Sources/Apollo/JSONSerializationFormat.swift; sourceTree = "<group>"; };
+		0F2CB2D02B4E496373BB3A41C7EC9AC1 /* SpinWheelControlDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDelegate.swift; path = SpinWheelControl/SpinWheelControlDelegate.swift; sourceTree = "<group>"; };
+		0FDA27E827617A1F574D6106BD1A1FB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1068CC9052085A5D986B7B543B6957F8 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
 		107CD0B47E47CBE9DDB8503944D82876 /* Pods-MealWheelTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheelTests-dummy.m"; sourceTree = "<group>"; };
-		11891F2965AE5E379CDD3B4D96C5F31B /* SpinWheelControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpinWheelControl.framework; path = SpinWheelControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1221CC763E6D0774348C9AE2ECD812D5 /* YLPClient+Reviews.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "YLPClient+Reviews.h"; path = "Classes/Client/YLPClient+Reviews.h"; sourceTree = "<group>"; };
-		12ACC325E50B803D3F3CC57BB8522569 /* SpinWheelWedgeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeLabel.swift; path = SpinWheelControl/SpinWheelWedgeLabel.swift; sourceTree = "<group>"; };
+		142E819C9D2F18A8289C6B9D93611C47 /* Apollo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-prefix.pch"; sourceTree = "<group>"; };
+		15776ED9A9FFE8F115F3B7E684F23339 /* ApolloStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloStore.swift; path = Sources/Apollo/ApolloStore.swift; sourceTree = "<group>"; };
 		1927FE90BAE6846278A28259783FA175 /* Pods-MealWheelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelTests.debug.xcconfig"; sourceTree = "<group>"; };
-		197A5518B84F86FC20F44BE481D83AF0 /* YLPCoordinate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPCoordinate.m; path = Classes/Common/YLPCoordinate.m; sourceTree = "<group>"; };
-		1AB4B2C4DA7D3821443D7598D1E89410 /* GraphQLResultAccumulator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultAccumulator.swift; path = Sources/Apollo/GraphQLResultAccumulator.swift; sourceTree = "<group>"; };
-		1CE78A8F44E537BCD1E71DC0632AF75E /* JSONSerializationFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONSerializationFormat.swift; path = Sources/Apollo/JSONSerializationFormat.swift; sourceTree = "<group>"; };
-		1D7E35E7092692F11825CF2E47F98EB4 /* SpinWheelControlDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDataSource.swift; path = SpinWheelControl/SpinWheelControlDataSource.swift; sourceTree = "<group>"; };
+		1EA88E788EAA50CBFF96B27E181B61CF /* HTTPNetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPNetworkTransport.swift; path = Sources/Apollo/HTTPNetworkTransport.swift; sourceTree = "<group>"; };
+		1FF8188A037BD0773080FA658B164BFC /* check-and-run-apollo-cli.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-cli.sh"; path = "scripts/check-and-run-apollo-cli.sh"; sourceTree = "<group>"; };
+		22ACB34D337EF45ECB564F325037074B /* SpinWheelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControl.swift; path = SpinWheelControl/SpinWheelControl.swift; sourceTree = "<group>"; };
+		2623166A81D1E1EAD12F9BB2DAA68B64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2631ED9EA19A59ECF27FC19F6B970815 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
+		26FF5812656DC7447C9420C91348E020 /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
 		27A6A5960118CEF1C916C4B21FA21822 /* Pods-MealWheelTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheelTests-umbrella.h"; sourceTree = "<group>"; };
-		27CFF752DFFA89DFE81FBD6AE4A7E710 /* GraphQLDependencyTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLDependencyTracker.swift; path = Sources/Apollo/GraphQLDependencyTracker.swift; sourceTree = "<group>"; };
-		2CA5D1AE0B4C9C3C9844744E61CBEFE0 /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = Sources/Apollo/Collections.swift; sourceTree = "<group>"; };
-		305D9BB536DE3FC5AB788B9512BD1CEA /* NormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NormalizedCache.swift; path = Sources/Apollo/NormalizedCache.swift; sourceTree = "<group>"; };
-		32AC86B7DF81248EA406E5F255A3BFE1 /* YLPUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPUser.h; path = Classes/Response/YLPUser.h; sourceTree = "<group>"; };
-		33CC8571D8A4FB1F1AFC2B161C41C6E5 /* NetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkTransport.swift; path = Sources/Apollo/NetworkTransport.swift; sourceTree = "<group>"; };
-		36E2E382C33B3ED70DB933CF92E93624 /* YLPClient+Reviews.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "YLPClient+Reviews.m"; path = "Classes/Client/YLPClient+Reviews.m"; sourceTree = "<group>"; };
-		39ADBFA548FE810C497C89D30DF8B651 /* NSDictionary+YLPUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+YLPUtils.m"; path = "Classes/Response/NSDictionary+YLPUtils.m"; sourceTree = "<group>"; };
-		3B8F8C531AAAEDFB43ECF23BCE558DC7 /* GraphQLResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponse.swift; path = Sources/Apollo/GraphQLResponse.swift; sourceTree = "<group>"; };
+		299326CFF3FD969577E1BA5399BE5947 /* GraphQLResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponse.swift; path = Sources/Apollo/GraphQLResponse.swift; sourceTree = "<group>"; };
+		2B2E1CCDB8D79C72FB6417A23E7CD73F /* SpinWheelControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpinWheelControl.h; path = SpinWheelControl/SpinWheelControl.h; sourceTree = "<group>"; };
+		30B149025C3428FF9DF8151BF3EC250D /* GraphQLResultNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultNormalizer.swift; path = Sources/Apollo/GraphQLResultNormalizer.swift; sourceTree = "<group>"; };
+		3630BDC4B251D6B23D36E37228550B9E /* JSONStandardTypeConversions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONStandardTypeConversions.swift; path = Sources/Apollo/JSONStandardTypeConversions.swift; sourceTree = "<group>"; };
+		3820F14904C220CA3FA732FD9F96853A /* Locking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locking.swift; path = Sources/Apollo/Locking.swift; sourceTree = "<group>"; };
+		3A96CDB31859046A662B9F895171C4B8 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		3B05E30F58490C00E7DA78B24DBEE3C1 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		3CCFCBED63886C7422EBEA2B10D6AC90 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
+		3DF667D563B582F33CCDCABA339A2171 /* SpinWheelControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpinWheelControl.xcconfig; sourceTree = "<group>"; };
 		3E32E176872E2AB7270051DEF5AA038D /* Pods-MealWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheel.modulemap"; sourceTree = "<group>"; };
-		41F0C9A3A159A34D147AC22F9DE41F8E /* SpinWheelControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-prefix.pch"; sourceTree = "<group>"; };
-		42ECFC26930305696C796B545F22C7DE /* Apollo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Apollo.xcconfig; sourceTree = "<group>"; };
-		4BE0A49A96F5E2A087E67291EDBFD207 /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Sources/Apollo/JSON.swift; sourceTree = "<group>"; };
+		402F2CCC35620B31381D779C11FAE5C4 /* Apollo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Apollo.modulemap; sourceTree = "<group>"; };
+		46B902E3FF6CAC5588F734F05A3FB4C7 /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
 		4C69CC89E0171EAD4D82732C924C4696 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51FBAD77EB0F06FF5C4B2467856DED9D /* YLPClient+Business.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "YLPClient+Business.h"; path = "Classes/Client/YLPClient+Business.h"; sourceTree = "<group>"; };
-		52D3AD9F365762E02F41BF897E1A532E /* SpinWheelControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpinWheelControl-dummy.m"; sourceTree = "<group>"; };
-		5978515204D59341331DC8F49512A12A /* GraphQLOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLOperation.swift; path = Sources/Apollo/GraphQLOperation.swift; sourceTree = "<group>"; };
-		61066DD170196D323317D1C9CC0B4A3C /* YLPClient+Search.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "YLPClient+Search.m"; path = "Classes/Client/YLPClient+Search.m"; sourceTree = "<group>"; };
-		619D659BE5BD2730890A29CF1AA39FEB /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InMemoryNormalizedCache.swift; path = Sources/Apollo/InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
+		52821D7DD3AEE8988D3000FACD7880BB /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		5ACB85BDFA3692E065901B9B24BB1D61 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Apollo/Promise.swift; sourceTree = "<group>"; };
 		64BB53C327DF4022DFBBF8AC0F9841C5 /* Pods-MealWheelTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheelTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		65946988F22C38759430E37C7E3F7BDA /* YLPBusinessReviews.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPBusinessReviews.m; path = Classes/Response/YLPBusinessReviews.m; sourceTree = "<group>"; };
-		6742833C959B22051A62853559778222 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/Apollo/Utilities.swift; sourceTree = "<group>"; };
+		66D8FFCB896F753E141D67EC721FCAEC /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
 		6AE8591BE82B433DF5683231387267D1 /* Pods-MealWheel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheel-frameworks.sh"; sourceTree = "<group>"; };
-		6DF4E19C83466F9306B6B552780C665C /* YLPClient+PhoneSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "YLPClient+PhoneSearch.h"; path = "Classes/Client/YLPClient+PhoneSearch.h"; sourceTree = "<group>"; };
 		6DFD450CC7A830355628E1E136D853C2 /* Pods-MealWheelTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheelTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6E1A8B4AA66959E251D319ADDC2426E6 /* JSONStandardTypeConversions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONStandardTypeConversions.swift; path = Sources/Apollo/JSONStandardTypeConversions.swift; sourceTree = "<group>"; };
 		6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheel.release.xcconfig"; sourceTree = "<group>"; };
+		6FB781F6CBE94F16D0FE90F60D06B2F9 /* check-and-run-apollo-codegen.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-codegen.sh"; path = "scripts/check-and-run-apollo-codegen.sh"; sourceTree = "<group>"; };
 		7245B7CF5BD5DA43B2077501B3A607E6 /* Pods-MealWheelTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelTests-frameworks.sh"; sourceTree = "<group>"; };
-		72C196BC4F813914A89A5FE1FE1424E9 /* GraphQLResultNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultNormalizer.swift; path = Sources/Apollo/GraphQLResultNormalizer.swift; sourceTree = "<group>"; };
-		72D96E60C499A9306C6FCA04D85B99A5 /* SpinWheelWedgeShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeShape.swift; path = SpinWheelControl/SpinWheelWedgeShape.swift; sourceTree = "<group>"; };
 		73120B63E7BE6FDF5CBB45831F29A762 /* Pods-MealWheelUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheelUITests-dummy.m"; sourceTree = "<group>"; };
-		73CA1A04276D0F78D4EB329A0E56446D /* YLPLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPLocation.m; path = Classes/Response/YLPLocation.m; sourceTree = "<group>"; };
-		764B882A2442536F0871B85E03C8D738 /* Apollo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Apollo.modulemap; sourceTree = "<group>"; };
+		7361CCBAF0B62AF7F0BBF7D0FB17C768 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
 		791F908A92D5928DFBE9D04F68EAFF3E /* Pods-MealWheelTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelTests-resources.sh"; sourceTree = "<group>"; };
-		794907075DA830E7FF12BD341A4B3AE3 /* YLPClient+Search.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "YLPClient+Search.h"; path = "Classes/Client/YLPClient+Search.h"; sourceTree = "<group>"; };
 		7B2140BE44B078D3F02E9A539C188E05 /* Pods-MealWheelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelTests.release.xcconfig"; sourceTree = "<group>"; };
-		7D04161322106E70C5EE4E41026570D4 /* YLPSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPSearch.h; path = Classes/Response/YLPSearch.h; sourceTree = "<group>"; };
-		8105FBBACD8FC3B9163C446E73D2BF6B /* YelpAPI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YelpAPI.xcconfig; sourceTree = "<group>"; };
-		81614E41DC7115A3AD21A2B3A6D4F302 /* SpinWheelControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpinWheelControl.h; path = SpinWheelControl/SpinWheelControl.h; sourceTree = "<group>"; };
-		8190E3BD4E8ED6064B59291125AF8901 /* Apollo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-prefix.pch"; sourceTree = "<group>"; };
-		82553E24E1D4EDECA3C155300015653A /* YelpAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YelpAPI.h; path = Classes/YelpAPI.h; sourceTree = "<group>"; };
-		8269F4BBDF5C0CF8B99A65027164238D /* YelpAPI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YelpAPI-prefix.pch"; sourceTree = "<group>"; };
-		83053E67B130D546B7CCF379AA53A54A /* YLPClient+PhoneSearch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "YLPClient+PhoneSearch.m"; path = "Classes/Client/YLPClient+PhoneSearch.m"; sourceTree = "<group>"; };
-		838FC435F8DD5D3042246B129452FAC3 /* SpinWheelControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-umbrella.h"; sourceTree = "<group>"; };
-		83D02E96B27BE742F0100DB097D9F0D8 /* YLPClient+Business.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "YLPClient+Business.m"; path = "Classes/Client/YLPClient+Business.m"; sourceTree = "<group>"; };
+		7CB3FC0787D9ED7B8DA92569F3C73E53 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF6C44F687CFEB3C8A4060271655245 /* GraphQLSelectionSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSet.swift; path = Sources/Apollo/GraphQLSelectionSet.swift; sourceTree = "<group>"; };
+		7E430A71B6A3CBD459C494E9F77D2C45 /* GraphQLDependencyTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLDependencyTracker.swift; path = Sources/Apollo/GraphQLDependencyTracker.swift; sourceTree = "<group>"; };
 		84A7BFA6A5E664839A2C3F1676BC214F /* Pods-MealWheelUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheelUITests-umbrella.h"; sourceTree = "<group>"; };
-		89A0BC2F6B68AAEAD4744C6974894207 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A26DC3F11BE4EF6E0C132548CDA1512 /* GraphQLQueryWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLQueryWatcher.swift; path = Sources/Apollo/GraphQLQueryWatcher.swift; sourceTree = "<group>"; };
-		8A8548A47E7DA8CF8AF5E047A4222B0C /* GraphQLResponseGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponseGenerator.swift; path = Sources/Apollo/GraphQLResponseGenerator.swift; sourceTree = "<group>"; };
 		8AD2F4103D649F704F168E88A81928A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90114D09E30F372C73C93F0E1A64BFC5 /* YLPBusinessReviews.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPBusinessReviews.h; path = Classes/Response/YLPBusinessReviews.h; sourceTree = "<group>"; };
+		8D9D5DA0ABD80432060EBDA9BF3744A4 /* GraphQLQueryWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLQueryWatcher.swift; path = Sources/Apollo/GraphQLQueryWatcher.swift; sourceTree = "<group>"; };
+		8E547006D407B0F24A0D875BFDEE9BB8 /* ResultOrPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultOrPromise.swift; path = Sources/Apollo/ResultOrPromise.swift; sourceTree = "<group>"; };
+		907CBC4E4132435D2D676C6009C27520 /* SpinWheelControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SpinWheelControl-dummy.m"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		90DE00D3D1BE86C23AE8C5D639ECDF6E /* YLPUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPUser.m; path = Classes/Response/YLPUser.m; sourceTree = "<group>"; };
-		92162ADCA48348A4B3F54F1B851DB275 /* YLPCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPCoordinate.h; path = Classes/Common/YLPCoordinate.h; sourceTree = "<group>"; };
+		90C8736247792CFD1BB194CC05DC9A18 /* RecordSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordSet.swift; path = Sources/Apollo/RecordSet.swift; sourceTree = "<group>"; };
+		9186139A3B2A037AA6E556186A135BA5 /* Apollo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Apollo.xcconfig; sourceTree = "<group>"; };
+		921CE21353D333E500AB50CD61E50443 /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
+		92576103412FC46F72985B9A76905C15 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		948AE2306E2BCFF2E591AD08062F141F /* YLPCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPCategory.h; path = Classes/Response/YLPCategory.h; sourceTree = "<group>"; };
-		961AFF993D0CF5CD262BB7238AC00900 /* SpinWheelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControl.swift; path = SpinWheelControl/SpinWheelControl.swift; sourceTree = "<group>"; };
-		997C1540CAC32808C410F61241682C18 /* YLPSortType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPSortType.h; path = Classes/Request/YLPSortType.h; sourceTree = "<group>"; };
+		9494919A7BF27109DF68F128EA4AEB14 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/Apollo/Utilities.swift; sourceTree = "<group>"; };
+		94BF1B13E50D01DDB0140E1192527994 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		94F526A7C498BE55E15B4F7FEEE81011 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Apollo/Result.swift; sourceTree = "<group>"; };
+		9523A274FC5923F939821CEFF308C876 /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		97585EB877E52811AFB24F65701378A3 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
 		998D3FF80DC4A8AADA8DC5E02B3DF703 /* Pods-MealWheel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheel-resources.sh"; sourceTree = "<group>"; };
-		9C61ABF1B3DC7D4C4706ED217ABCD13C /* ResultOrPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultOrPromise.swift; path = Sources/Apollo/ResultOrPromise.swift; sourceTree = "<group>"; };
-		9D236208DB16C0AF03427AC9A8D16823 /* RecordSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordSet.swift; path = Sources/Apollo/RecordSet.swift; sourceTree = "<group>"; };
-		9F4617F3E3CAEC38C4FC0F5B26AE4B0C /* YLPQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPQuery.h; path = Classes/Request/YLPQuery.h; sourceTree = "<group>"; };
-		A16C0A940F56B87396DB9D737078D017 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Apollo/Promise.swift; sourceTree = "<group>"; };
+		99A523FC6523E5944EE0D091EAC6D209 /* ApolloClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloClient.swift; path = Sources/Apollo/ApolloClient.swift; sourceTree = "<group>"; };
+		9A787B938D97713D721E839BFFE89FC3 /* Pods_MealWheelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelTests.framework; path = "Pods-MealWheelTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B70A621DA546E309A29B6037BE810C0 /* SpinWheelWedgeShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeShape.swift; path = SpinWheelControl/SpinWheelWedgeShape.swift; sourceTree = "<group>"; };
+		9C95C5E554CBA05F02B6A0AB539760F3 /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = Sources/Apollo/Collections.swift; sourceTree = "<group>"; };
+		9D60C39DBE26B4950AC1E9FEEE3C9E1C /* GraphQLInputValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLInputValue.swift; path = Sources/Apollo/GraphQLInputValue.swift; sourceTree = "<group>"; };
+		9F909845C78E43B60E1EEB2894A4FDBD /* NetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkTransport.swift; path = Sources/Apollo/NetworkTransport.swift; sourceTree = "<group>"; };
+		A04F5F38E0BDB1F8E39BAA6B66E85AB9 /* GraphQLOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLOperation.swift; path = Sources/Apollo/GraphQLOperation.swift; sourceTree = "<group>"; };
+		A283FA19B67CFFA2B59D71C02B3E7C73 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
 		A5592653DAC172E610F0E1EAC719CE2A /* Pods-MealWheelUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelUITests-frameworks.sh"; sourceTree = "<group>"; };
-		AA074D165EDBA6D6007182A825A57915 /* YLPBusiness.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPBusiness.h; path = Classes/Response/YLPBusiness.h; sourceTree = "<group>"; };
-		AB0AA31362956BAFE2FEF75C5868BF42 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB2F4EA2236EC7731B5D48FA8201EE9B /* Pods_MealWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheel.framework; path = "Pods-MealWheel.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD20B8784F95D687E13EE4F718DD95AD /* YLPBusiness.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPBusiness.m; path = Classes/Response/YLPBusiness.m; sourceTree = "<group>"; };
-		B25149D1715D6591A6B9701AB2D006A6 /* ApolloClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloClient.swift; path = Sources/Apollo/ApolloClient.swift; sourceTree = "<group>"; };
+		A6E4FB67C137AD0CF52993F8CE10FBF4 /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Sources/Apollo/JSON.swift; sourceTree = "<group>"; };
+		AF854884EE8BFC165925833280DE820F /* Pods_MealWheelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelUITests.framework; path = "Pods-MealWheelUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4660BEF8911F0FF599A4E5561A81786 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
 		B49154804C1140B410D18402C5BA0951 /* Pods-MealWheelUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MealWheelUITests-resources.sh"; sourceTree = "<group>"; };
+		B4DA567AEE5454A9A6416CBD630C5773 /* SpinWheelWedge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedge.swift; path = SpinWheelControl/SpinWheelWedge.swift; sourceTree = "<group>"; };
 		B5888DCE6B446BE38CBACA8076F1F378 /* Pods-MealWheelUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheelUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B8C962C4534A71837C89B0E366252500 /* check-and-run-apollo-codegen.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-codegen.sh"; path = "scripts/check-and-run-apollo-codegen.sh"; sourceTree = "<group>"; };
-		B956F5DCD2A5E94CF837CF688160F324 /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Sources/Apollo/Record.swift; sourceTree = "<group>"; };
-		B9C9EA3D448CFD9A2A9006F4D50231BD /* YLPLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPLocation.h; path = Classes/Response/YLPLocation.h; sourceTree = "<group>"; };
+		B6226E55A9CAABC4F9864B3938801516 /* GraphQLResponseGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponseGenerator.swift; path = Sources/Apollo/GraphQLResponseGenerator.swift; sourceTree = "<group>"; };
+		B66422152DF4E9DC2744EC4652270470 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Apollo.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7267DDEF79D39EB94268DC4C00CBE72 /* GraphQLSelectionSetMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSetMapper.swift; path = Sources/Apollo/GraphQLSelectionSetMapper.swift; sourceTree = "<group>"; };
+		B7E77A9FC8E854D12C65C948147BE33D /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		B80A9F983027A438F8897ADD29E405F6 /* Apollo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-umbrella.h"; sourceTree = "<group>"; };
+		B8E9B22AE2A7CB6BACE8E37B43E77299 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
+		B8F7C086744606D1C3188C96230D9EC9 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsynchronousOperation.swift; path = Sources/Apollo/AsynchronousOperation.swift; sourceTree = "<group>"; };
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C1519D67CB9285C0946E23DC10EAD83E /* SpinWheelWedgeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelWedgeLabel.swift; path = SpinWheelControl/SpinWheelWedgeLabel.swift; sourceTree = "<group>"; };
 		C36AA1684E1AB824E0F9785B667EA9C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C600751E5994045C69F253D7D09DC47A /* YLPReview.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPReview.m; path = Classes/Response/YLPReview.m; sourceTree = "<group>"; };
 		C7833C1E24F04403351BAC6CE02A34F5 /* Pods-MealWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWheel-dummy.m"; sourceTree = "<group>"; };
-		C99A44E49A44968F80F9DA700686E923 /* check-and-run-apollo-cli.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-cli.sh"; path = "scripts/check-and-run-apollo-cli.sh"; sourceTree = "<group>"; };
-		CA03224A5271559510E9CC4393EDB8BC /* Locking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locking.swift; path = Sources/Apollo/Locking.swift; sourceTree = "<group>"; };
-		CBEB2BF113910EFF76D57E2A111DBD42 /* HTTPNetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPNetworkTransport.swift; path = Sources/Apollo/HTTPNetworkTransport.swift; sourceTree = "<group>"; };
-		CED15CA51947D23520F5D82CF2F2CF64 /* GraphQLExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLExecutor.swift; path = Sources/Apollo/GraphQLExecutor.swift; sourceTree = "<group>"; };
+		CB317C61630B1CF9DC2F7568B4CC0FE1 /* Pods_MealWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheel.framework; path = "Pods-MealWheel.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4FC48C8C7AB629078C609A3341F6D9 /* Apollo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Apollo-dummy.m"; sourceTree = "<group>"; };
+		CC66C7CAABFFDBF764986F2018E0B895 /* NormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NormalizedCache.swift; path = Sources/Apollo/NormalizedCache.swift; sourceTree = "<group>"; };
+		CF6E514847B1B81DFF2CDE42A73A1C42 /* SpinWheelControlDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDataSource.swift; path = SpinWheelControl/SpinWheelControlDataSource.swift; sourceTree = "<group>"; };
+		D01F540E0493C6CA89706E606EF92F2B /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Sources/Apollo/Record.swift; sourceTree = "<group>"; };
 		D08D2AC760EEACFA31CD5693CBA23495 /* Pods-MealWheelTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheelTests.modulemap"; sourceTree = "<group>"; };
 		D27284939AF0BB00C593F57EE44A9493 /* Pods-MealWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D3ACE8353741338C52BB76EED87495D2 /* GraphQLSelectionSetMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSetMapper.swift; path = Sources/Apollo/GraphQLSelectionSetMapper.swift; sourceTree = "<group>"; };
-		D4B05225E47C27246F293FFBD89DF5D3 /* YLPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPClient.m; path = Classes/Client/YLPClient.m; sourceTree = "<group>"; };
-		D6E0ADBAD0F5DCD5F9A2B96C9B2E36A6 /* GraphQLResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResult.swift; path = Sources/Apollo/GraphQLResult.swift; sourceTree = "<group>"; };
-		D907AE210EC73AE9394F21C1F5FA706D /* SpinWheelControlDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinWheelControlDelegate.swift; path = SpinWheelControl/SpinWheelControlDelegate.swift; sourceTree = "<group>"; };
+		D472F6E2FA292478B36B06E7980174B0 /* SpinWheelControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpinWheelControl.modulemap; sourceTree = "<group>"; };
 		DB2737DBA407C2F3708217BE5D68D358 /* Pods-MealWheelUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWheelUITests.modulemap"; sourceTree = "<group>"; };
 		DB3ABDD378900B31550AFCF5D90E11B9 /* Pods-MealWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWheel-umbrella.h"; sourceTree = "<group>"; };
+		DC09C16802730F8C5691E132BD78FF0F /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/Apollo/DataLoader.swift; sourceTree = "<group>"; };
 		DF31519AE58BBDFECA969BE6BB9BAD49 /* Pods-MealWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWheel-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF3BFA998D346364C329BC9B09241DEF /* SpinWheelControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpinWheelControl.modulemap; sourceTree = "<group>"; };
-		E0930ED8EE17A79486BC50E36FB24628 /* Apollo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Apollo-dummy.m"; sourceTree = "<group>"; };
-		E2D46D7F700B156C6F1D552998F571F0 /* Degrees+MathMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Degrees+MathMethods.swift"; path = "SpinWheelControl/Degrees+MathMethods.swift"; sourceTree = "<group>"; };
-		E3054D2FF2CF960BAEE60E68430AA7D7 /* YLPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPClient.h; path = Classes/Client/YLPClient.h; sourceTree = "<group>"; };
-		E3308D0FB24CB0D9FE70948A18EFEF8D /* ApolloStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloStore.swift; path = Sources/Apollo/ApolloStore.swift; sourceTree = "<group>"; };
-		E6C4336B56DF46D953AC0D12D11708CE /* Apollo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-umbrella.h"; sourceTree = "<group>"; };
-		E8885E9247E7EA25892B42DE24B1347B /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/Apollo/DataLoader.swift; sourceTree = "<group>"; };
-		E9D78E35DBC9AB5B2E3B380440AF334D /* AsynchronousOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsynchronousOperation.swift; path = Sources/Apollo/AsynchronousOperation.swift; sourceTree = "<group>"; };
-		E9E5B8F6EFFBC90E3264644E624B317E /* YelpAPI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YelpAPI-umbrella.h"; sourceTree = "<group>"; };
-		ED0D544D3B5E11E6EB37C1A4CB88FA9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFB4EE46D96DB774A6943903307F6168 /* YLPClientPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPClientPrivate.h; path = Classes/Client/YLPClientPrivate.h; sourceTree = "<group>"; };
+		E0401E58C2A672576F1DF8B14F22A856 /* SpinWheelControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpinWheelControl.framework; path = SpinWheelControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC508D24F19F48FE168AAC011F708BCF /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cosmos.modulemap; sourceTree = "<group>"; };
 		EFD24FBFB1E051D9833B79D02AD1CA25 /* Pods-MealWheelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWheelUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F051A6CB3A53991FE3E76674A15B43B1 /* YelpAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YelpAPI.framework; path = YelpAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3666DD40CA8E33E746EFDA0926714FC /* GraphQLInputValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLInputValue.swift; path = Sources/Apollo/GraphQLInputValue.swift; sourceTree = "<group>"; };
-		F3AD255D26FC95FAB1ECBE0435AF1C22 /* YLPQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPQuery.m; path = Classes/Request/YLPQuery.m; sourceTree = "<group>"; };
-		F641B2B0EA5F24884FB6FB7E0F3EDAAB /* YelpAPI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YelpAPI-dummy.m"; sourceTree = "<group>"; };
-		F7AB049296CD5E0D5D0950AE74EF5F26 /* YelpAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YelpAPI.modulemap; sourceTree = "<group>"; };
-		F861577B211173A449E374755BBAA829 /* GraphQLError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLError.swift; path = Sources/Apollo/GraphQLError.swift; sourceTree = "<group>"; };
-		FA9AC9CFD127EC660ADFC59BC2B64E5B /* YLPSearch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YLPSearch.m; path = Classes/Response/YLPSearch.m; sourceTree = "<group>"; };
-		FE040E576259E4A9704839621C0CEA4E /* Pods_MealWheelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWheelUITests.framework; path = "Pods-MealWheelUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFE1621D3A98F7E0268454B4CFF989A9 /* YLPReview.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YLPReview.h; path = Classes/Response/YLPReview.h; sourceTree = "<group>"; };
+		EFFE4CBF526A387FDD8B0C251B5F203D /* GraphQLError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLError.swift; path = Sources/Apollo/GraphQLError.swift; sourceTree = "<group>"; };
+		F6586FAF125E3CB3BAFF0236BD6E8C1F /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		F92AD7DA9A4273B7AC313E766B9DF0AC /* SpinWheelControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpinWheelControl-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +249,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		462FCC63806693130CD34104459EBE41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FEE17EA2A65083E5EC747785D98101 /* Foundation.framework in Frameworks */,
+				BA7DC569036729BBE7146746A2140663 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BB2520A646C71906E698E78713DE72F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,11 +266,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82140F4F5EE1014F3669FCEB79242965 /* Frameworks */ = {
+		4EF5B7A1EAEF7AAE1780E8EA9C5FC807 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3AA01C0581C726FB0FB25C1EF459AF /* Foundation.framework in Frameworks */,
+				3AB236AD57AFEF156C2683CFAAE4B11A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6869A2CED222A79BCEADC6D71703E373 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6222CE64391DFA14E8CDF450B3912E33 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,38 +290,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0DAD81B27909F5B4B83790E948D204B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				23ECA5E8654863D78C4DD64F6FCE797F /* Foundation.framework in Frameworks */,
-				29598142F2AFDF449BB6317ECF926B1F /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE00A1FCAF8F41F2BE276CA0B5C6112D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62AE59E5238F1A1FC11D2DE5D37FB348 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00ED1C194320A06400B8B9EB117C90FD /* Support Files */ = {
+		0355E30E85538F7ECE7BD88CFFC528A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				764B882A2442536F0871B85E03C8D738 /* Apollo.modulemap */,
-				42ECFC26930305696C796B545F22C7DE /* Apollo.xcconfig */,
-				E0930ED8EE17A79486BC50E36FB24628 /* Apollo-dummy.m */,
-				8190E3BD4E8ED6064B59291125AF8901 /* Apollo-prefix.pch */,
-				E6C4336B56DF46D953AC0D12D11708CE /* Apollo-umbrella.h */,
-				89A0BC2F6B68AAEAD4744C6974894207 /* Info.plist */,
+				1C165F2091448F279D2408D4C2BECAEB /* Apollo */,
+				53728678EDE6BCDF8F3C747249A5188B /* Cosmos */,
+				BA7A73CFDFB58563F7368EC601A83DFC /* SpinWheelControl */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Apollo";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		060E8E4E1766C14D034910F977432C01 /* Pods-MealWheelUITests */ = {
@@ -372,6 +330,39 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		1975D6F0C7C22E9B9B18659C39335F3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FF8188A037BD0773080FA658B164BFC /* check-and-run-apollo-cli.sh */,
+				6FB781F6CBE94F16D0FE90F60D06B2F9 /* check-and-run-apollo-codegen.sh */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1C165F2091448F279D2408D4C2BECAEB /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				5F9CFBE8029F3184228887C8687B16A7 /* Core */,
+				794498E1471D973C78FBD21456558954 /* Support Files */,
+			);
+			name = Apollo;
+			path = Apollo;
+			sourceTree = "<group>";
+		};
+		20E140DC30A4372557EBCBC377BDDB35 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC508D24F19F48FE168AAC011F708BCF /* Cosmos.modulemap */,
+				921CE21353D333E500AB50CD61E50443 /* Cosmos.xcconfig */,
+				9523A274FC5923F939821CEFF308C876 /* Cosmos-dummy.m */,
+				B8E9B22AE2A7CB6BACE8E37B43E77299 /* Cosmos-prefix.pch */,
+				46B902E3FF6CAC5588F734F05A3FB4C7 /* Cosmos-umbrella.h */,
+				2623166A81D1E1EAD12F9BB2DAA68B64 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cosmos";
+			sourceTree = "<group>";
+		};
 		2DF63F2EAF0E6DEB7BFF8F9CE30D375F /* Pods-MealWheel */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +389,70 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53728678EDE6BCDF8F3C747249A5188B /* Cosmos */ = {
+			isa = PBXGroup;
+			children = (
+				66D8FFCB896F753E141D67EC721FCAEC /* CosmosAccessibility.swift */,
+				3B05E30F58490C00E7DA78B24DBEE3C1 /* CosmosDefaultSettings.swift */,
+				7361CCBAF0B62AF7F0BBF7D0FB17C768 /* CosmosLayerHelper.swift */,
+				97585EB877E52811AFB24F65701378A3 /* CosmosLayers.swift */,
+				52821D7DD3AEE8988D3000FACD7880BB /* CosmosLocalizedRating.swift */,
+				26FF5812656DC7447C9420C91348E020 /* CosmosRating.swift */,
+				F6586FAF125E3CB3BAFF0236BD6E8C1F /* CosmosSettings.swift */,
+				2631ED9EA19A59ECF27FC19F6B970815 /* CosmosSize.swift */,
+				A283FA19B67CFFA2B59D71C02B3E7C73 /* CosmosText.swift */,
+				B7E77A9FC8E854D12C65C948147BE33D /* CosmosTouch.swift */,
+				94BF1B13E50D01DDB0140E1192527994 /* CosmosTouchTarget.swift */,
+				B4660BEF8911F0FF599A4E5561A81786 /* CosmosView.swift */,
+				3CCFCBED63886C7422EBEA2B10D6AC90 /* RightToLeft.swift */,
+				1068CC9052085A5D986B7B543B6957F8 /* StarFillMode.swift */,
+				3A96CDB31859046A662B9F895171C4B8 /* StarLayer.swift */,
+				20E140DC30A4372557EBCBC377BDDB35 /* Support Files */,
+			);
+			name = Cosmos;
+			path = Cosmos;
+			sourceTree = "<group>";
+		};
+		5F9CFBE8029F3184228887C8687B16A7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				99A523FC6523E5944EE0D091EAC6D209 /* ApolloClient.swift */,
+				15776ED9A9FFE8F115F3B7E684F23339 /* ApolloStore.swift */,
+				B8F7C086744606D1C3188C96230D9EC9 /* AsynchronousOperation.swift */,
+				9C95C5E554CBA05F02B6A0AB539760F3 /* Collections.swift */,
+				DC09C16802730F8C5691E132BD78FF0F /* DataLoader.swift */,
+				7E430A71B6A3CBD459C494E9F77D2C45 /* GraphQLDependencyTracker.swift */,
+				EFFE4CBF526A387FDD8B0C251B5F203D /* GraphQLError.swift */,
+				049BB56B9435EC24FD7AB5C78F66EB69 /* GraphQLExecutor.swift */,
+				9D60C39DBE26B4950AC1E9FEEE3C9E1C /* GraphQLInputValue.swift */,
+				A04F5F38E0BDB1F8E39BAA6B66E85AB9 /* GraphQLOperation.swift */,
+				8D9D5DA0ABD80432060EBDA9BF3744A4 /* GraphQLQueryWatcher.swift */,
+				299326CFF3FD969577E1BA5399BE5947 /* GraphQLResponse.swift */,
+				B6226E55A9CAABC4F9864B3938801516 /* GraphQLResponseGenerator.swift */,
+				0D3B034FE43EAFCE29067884BBFA4A86 /* GraphQLResult.swift */,
+				015C90156FDA675002F11EBFED77B492 /* GraphQLResultAccumulator.swift */,
+				30B149025C3428FF9DF8151BF3EC250D /* GraphQLResultNormalizer.swift */,
+				7DF6C44F687CFEB3C8A4060271655245 /* GraphQLSelectionSet.swift */,
+				B7267DDEF79D39EB94268DC4C00CBE72 /* GraphQLSelectionSetMapper.swift */,
+				1EA88E788EAA50CBFF96B27E181B61CF /* HTTPNetworkTransport.swift */,
+				019225A10C95119311C540AF7FE8A673 /* InMemoryNormalizedCache.swift */,
+				A6E4FB67C137AD0CF52993F8CE10FBF4 /* JSON.swift */,
+				0DE421D6710C3784B7E48FA8E2FA893A /* JSONSerializationFormat.swift */,
+				3630BDC4B251D6B23D36E37228550B9E /* JSONStandardTypeConversions.swift */,
+				3820F14904C220CA3FA732FD9F96853A /* Locking.swift */,
+				9F909845C78E43B60E1EEB2894A4FDBD /* NetworkTransport.swift */,
+				CC66C7CAABFFDBF764986F2018E0B895 /* NormalizedCache.swift */,
+				5ACB85BDFA3692E065901B9B24BB1D61 /* Promise.swift */,
+				D01F540E0493C6CA89706E606EF92F2B /* Record.swift */,
+				90C8736247792CFD1BB194CC05DC9A18 /* RecordSet.swift */,
+				94F526A7C498BE55E15B4F7FEEE81011 /* Result.swift */,
+				8E547006D407B0F24A0D875BFDEE9BB8 /* ResultOrPromise.swift */,
+				9494919A7BF27109DF68F128EA4AEB14 /* Utilities.swift */,
+				1975D6F0C7C22E9B9B18659C39335F3F /* Resources */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		6429A531D213E68036E78DA7A530E8A0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,17 +463,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6D9CE90FF1CF0FDE8CA6C9B42931A3AA /* Products */ = {
+		794498E1471D973C78FBD21456558954 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				013F6C36A162DD17D69FA55AE2B94D6B /* Apollo.framework */,
-				AB2F4EA2236EC7731B5D48FA8201EE9B /* Pods_MealWheel.framework */,
-				08F1A4416F7269205CE4D24B6CE1C753 /* Pods_MealWheelTests.framework */,
-				FE040E576259E4A9704839621C0CEA4E /* Pods_MealWheelUITests.framework */,
-				11891F2965AE5E379CDD3B4D96C5F31B /* SpinWheelControl.framework */,
-				F051A6CB3A53991FE3E76674A15B43B1 /* YelpAPI.framework */,
+				402F2CCC35620B31381D779C11FAE5C4 /* Apollo.modulemap */,
+				9186139A3B2A037AA6E556186A135BA5 /* Apollo.xcconfig */,
+				CB4FC48C8C7AB629078C609A3341F6D9 /* Apollo-dummy.m */,
+				142E819C9D2F18A8289C6B9D93611C47 /* Apollo-prefix.pch */,
+				B80A9F983027A438F8897ADD29E405F6 /* Apollo-umbrella.h */,
+				0FDA27E827617A1F574D6106BD1A1FB8 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/Apollo";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -426,100 +482,54 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				7E87EF185BB5ABC6F57E0EBAEDA76157 /* Pods */,
-				6D9CE90FF1CF0FDE8CA6C9B42931A3AA /* Products */,
+				0355E30E85538F7ECE7BD88CFFC528A8 /* Pods */,
+				9B7E00F0317EBAB5C504E4342A25EDA0 /* Products */,
 				6429A531D213E68036E78DA7A530E8A0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E87EF185BB5ABC6F57E0EBAEDA76157 /* Pods */ = {
+		9B7E00F0317EBAB5C504E4342A25EDA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FECC48AEBE260C28B0C3656C4EFADE23 /* Apollo */,
-				F0A1E810DF542E0553889D70D88B53F2 /* SpinWheelControl */,
-				BEDE536CE018054CDA8A73C82140BA66 /* YelpAPI */,
+				B66422152DF4E9DC2744EC4652270470 /* Apollo.framework */,
+				7CB3FC0787D9ED7B8DA92569F3C73E53 /* Cosmos.framework */,
+				CB317C61630B1CF9DC2F7568B4CC0FE1 /* Pods_MealWheel.framework */,
+				9A787B938D97713D721E839BFFE89FC3 /* Pods_MealWheelTests.framework */,
+				AF854884EE8BFC165925833280DE820F /* Pods_MealWheelUITests.framework */,
+				E0401E58C2A672576F1DF8B14F22A856 /* SpinWheelControl.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		A94875E5870A4E70457EB64E0F2A5E56 /* Support Files */ = {
+		AD04E7DE5E35DC95681F9457879FE50A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AA31362956BAFE2FEF75C5868BF42 /* Info.plist */,
-				DF3BFA998D346364C329BC9B09241DEF /* SpinWheelControl.modulemap */,
-				0FCD56BDF1B1235ED8C3E00ABB9CE905 /* SpinWheelControl.xcconfig */,
-				52D3AD9F365762E02F41BF897E1A532E /* SpinWheelControl-dummy.m */,
-				41F0C9A3A159A34D147AC22F9DE41F8E /* SpinWheelControl-prefix.pch */,
-				838FC435F8DD5D3042246B129452FAC3 /* SpinWheelControl-umbrella.h */,
+				92576103412FC46F72985B9A76905C15 /* Info.plist */,
+				D472F6E2FA292478B36B06E7980174B0 /* SpinWheelControl.modulemap */,
+				3DF667D563B582F33CCDCABA339A2171 /* SpinWheelControl.xcconfig */,
+				907CBC4E4132435D2D676C6009C27520 /* SpinWheelControl-dummy.m */,
+				F92AD7DA9A4273B7AC313E766B9DF0AC /* SpinWheelControl-prefix.pch */,
+				02873DFFF025F3845E1DA3996CA74747 /* SpinWheelControl-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SpinWheelControl";
 			sourceTree = "<group>";
 		};
-		AE287D87EA19E26DBA68B1E32166DD10 /* Resources */ = {
+		BA7A73CFDFB58563F7368EC601A83DFC /* SpinWheelControl */ = {
 			isa = PBXGroup;
 			children = (
-				C99A44E49A44968F80F9DA700686E923 /* check-and-run-apollo-cli.sh */,
-				B8C962C4534A71837C89B0E366252500 /* check-and-run-apollo-codegen.sh */,
+				05661B7D5B9E895F4D8F1AAECC44FDFC /* Degrees+MathMethods.swift */,
+				2B2E1CCDB8D79C72FB6417A23E7CD73F /* SpinWheelControl.h */,
+				22ACB34D337EF45ECB564F325037074B /* SpinWheelControl.swift */,
+				CF6E514847B1B81DFF2CDE42A73A1C42 /* SpinWheelControlDataSource.swift */,
+				0F2CB2D02B4E496373BB3A41C7EC9AC1 /* SpinWheelControlDelegate.swift */,
+				B4DA567AEE5454A9A6416CBD630C5773 /* SpinWheelWedge.swift */,
+				C1519D67CB9285C0946E23DC10EAD83E /* SpinWheelWedgeLabel.swift */,
+				9B70A621DA546E309A29B6037BE810C0 /* SpinWheelWedgeShape.swift */,
+				AD04E7DE5E35DC95681F9457879FE50A /* Support Files */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		BEDE536CE018054CDA8A73C82140BA66 /* YelpAPI */ = {
-			isa = PBXGroup;
-			children = (
-				39ADBFA548FE810C497C89D30DF8B651 /* NSDictionary+YLPUtils.m */,
-				82553E24E1D4EDECA3C155300015653A /* YelpAPI.h */,
-				AA074D165EDBA6D6007182A825A57915 /* YLPBusiness.h */,
-				AD20B8784F95D687E13EE4F718DD95AD /* YLPBusiness.m */,
-				90114D09E30F372C73C93F0E1A64BFC5 /* YLPBusinessReviews.h */,
-				65946988F22C38759430E37C7E3F7BDA /* YLPBusinessReviews.m */,
-				948AE2306E2BCFF2E591AD08062F141F /* YLPCategory.h */,
-				0443457A00DCC7BCA9807FC5E40B6196 /* YLPCategory.m */,
-				E3054D2FF2CF960BAEE60E68430AA7D7 /* YLPClient.h */,
-				D4B05225E47C27246F293FFBD89DF5D3 /* YLPClient.m */,
-				51FBAD77EB0F06FF5C4B2467856DED9D /* YLPClient+Business.h */,
-				83D02E96B27BE742F0100DB097D9F0D8 /* YLPClient+Business.m */,
-				6DF4E19C83466F9306B6B552780C665C /* YLPClient+PhoneSearch.h */,
-				83053E67B130D546B7CCF379AA53A54A /* YLPClient+PhoneSearch.m */,
-				1221CC763E6D0774348C9AE2ECD812D5 /* YLPClient+Reviews.h */,
-				36E2E382C33B3ED70DB933CF92E93624 /* YLPClient+Reviews.m */,
-				794907075DA830E7FF12BD341A4B3AE3 /* YLPClient+Search.h */,
-				61066DD170196D323317D1C9CC0B4A3C /* YLPClient+Search.m */,
-				EFB4EE46D96DB774A6943903307F6168 /* YLPClientPrivate.h */,
-				92162ADCA48348A4B3F54F1B851DB275 /* YLPCoordinate.h */,
-				197A5518B84F86FC20F44BE481D83AF0 /* YLPCoordinate.m */,
-				B9C9EA3D448CFD9A2A9006F4D50231BD /* YLPLocation.h */,
-				73CA1A04276D0F78D4EB329A0E56446D /* YLPLocation.m */,
-				9F4617F3E3CAEC38C4FC0F5B26AE4B0C /* YLPQuery.h */,
-				F3AD255D26FC95FAB1ECBE0435AF1C22 /* YLPQuery.m */,
-				0C188A99999A919628550D45711C5041 /* YLPQueryPrivate.h */,
-				0A650E65D2C27659DA9A27797D40042B /* YLPResponsePrivate.h */,
-				FFE1621D3A98F7E0268454B4CFF989A9 /* YLPReview.h */,
-				C600751E5994045C69F253D7D09DC47A /* YLPReview.m */,
-				7D04161322106E70C5EE4E41026570D4 /* YLPSearch.h */,
-				FA9AC9CFD127EC660ADFC59BC2B64E5B /* YLPSearch.m */,
-				997C1540CAC32808C410F61241682C18 /* YLPSortType.h */,
-				32AC86B7DF81248EA406E5F255A3BFE1 /* YLPUser.h */,
-				90DE00D3D1BE86C23AE8C5D639ECDF6E /* YLPUser.m */,
-				C38244343DD156236DD5CB770C5674B5 /* Support Files */,
-			);
-			name = YelpAPI;
-			path = YelpAPI;
-			sourceTree = "<group>";
-		};
-		C38244343DD156236DD5CB770C5674B5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				ED0D544D3B5E11E6EB37C1A4CB88FA9E /* Info.plist */,
-				F7AB049296CD5E0D5D0950AE74EF5F26 /* YelpAPI.modulemap */,
-				8105FBBACD8FC3B9163C446E73D2BF6B /* YelpAPI.xcconfig */,
-				F641B2B0EA5F24884FB6FB7E0F3EDAAB /* YelpAPI-dummy.m */,
-				8269F4BBDF5C0CF8B99A65027164238D /* YelpAPI-prefix.pch */,
-				E9E5B8F6EFFBC90E3264644E624B317E /* YelpAPI-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/YelpAPI";
+			name = SpinWheelControl;
+			path = SpinWheelControl;
 			sourceTree = "<group>";
 		};
 		CB739CC06DB32FD7101B21B6F6CD9AFC /* Pods-MealWheelTests */ = {
@@ -538,73 +548,6 @@
 			);
 			name = "Pods-MealWheelTests";
 			path = "Target Support Files/Pods-MealWheelTests";
-			sourceTree = "<group>";
-		};
-		DACE7D6E2E0A1132F3386F6A5D143AAC /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				B25149D1715D6591A6B9701AB2D006A6 /* ApolloClient.swift */,
-				E3308D0FB24CB0D9FE70948A18EFEF8D /* ApolloStore.swift */,
-				E9D78E35DBC9AB5B2E3B380440AF334D /* AsynchronousOperation.swift */,
-				2CA5D1AE0B4C9C3C9844744E61CBEFE0 /* Collections.swift */,
-				E8885E9247E7EA25892B42DE24B1347B /* DataLoader.swift */,
-				27CFF752DFFA89DFE81FBD6AE4A7E710 /* GraphQLDependencyTracker.swift */,
-				F861577B211173A449E374755BBAA829 /* GraphQLError.swift */,
-				CED15CA51947D23520F5D82CF2F2CF64 /* GraphQLExecutor.swift */,
-				F3666DD40CA8E33E746EFDA0926714FC /* GraphQLInputValue.swift */,
-				5978515204D59341331DC8F49512A12A /* GraphQLOperation.swift */,
-				8A26DC3F11BE4EF6E0C132548CDA1512 /* GraphQLQueryWatcher.swift */,
-				3B8F8C531AAAEDFB43ECF23BCE558DC7 /* GraphQLResponse.swift */,
-				8A8548A47E7DA8CF8AF5E047A4222B0C /* GraphQLResponseGenerator.swift */,
-				D6E0ADBAD0F5DCD5F9A2B96C9B2E36A6 /* GraphQLResult.swift */,
-				1AB4B2C4DA7D3821443D7598D1E89410 /* GraphQLResultAccumulator.swift */,
-				72C196BC4F813914A89A5FE1FE1424E9 /* GraphQLResultNormalizer.swift */,
-				0D32EBC0422C873D3862AF2327ECB276 /* GraphQLSelectionSet.swift */,
-				D3ACE8353741338C52BB76EED87495D2 /* GraphQLSelectionSetMapper.swift */,
-				CBEB2BF113910EFF76D57E2A111DBD42 /* HTTPNetworkTransport.swift */,
-				619D659BE5BD2730890A29CF1AA39FEB /* InMemoryNormalizedCache.swift */,
-				4BE0A49A96F5E2A087E67291EDBFD207 /* JSON.swift */,
-				1CE78A8F44E537BCD1E71DC0632AF75E /* JSONSerializationFormat.swift */,
-				6E1A8B4AA66959E251D319ADDC2426E6 /* JSONStandardTypeConversions.swift */,
-				CA03224A5271559510E9CC4393EDB8BC /* Locking.swift */,
-				33CC8571D8A4FB1F1AFC2B161C41C6E5 /* NetworkTransport.swift */,
-				305D9BB536DE3FC5AB788B9512BD1CEA /* NormalizedCache.swift */,
-				A16C0A940F56B87396DB9D737078D017 /* Promise.swift */,
-				B956F5DCD2A5E94CF837CF688160F324 /* Record.swift */,
-				9D236208DB16C0AF03427AC9A8D16823 /* RecordSet.swift */,
-				063EEA21B9CAA9042213EAEE5360401B /* Result.swift */,
-				9C61ABF1B3DC7D4C4706ED217ABCD13C /* ResultOrPromise.swift */,
-				6742833C959B22051A62853559778222 /* Utilities.swift */,
-				AE287D87EA19E26DBA68B1E32166DD10 /* Resources */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		F0A1E810DF542E0553889D70D88B53F2 /* SpinWheelControl */ = {
-			isa = PBXGroup;
-			children = (
-				E2D46D7F700B156C6F1D552998F571F0 /* Degrees+MathMethods.swift */,
-				81614E41DC7115A3AD21A2B3A6D4F302 /* SpinWheelControl.h */,
-				961AFF993D0CF5CD262BB7238AC00900 /* SpinWheelControl.swift */,
-				1D7E35E7092692F11825CF2E47F98EB4 /* SpinWheelControlDataSource.swift */,
-				D907AE210EC73AE9394F21C1F5FA706D /* SpinWheelControlDelegate.swift */,
-				01E6666A759734F40BD397EC49B91A28 /* SpinWheelWedge.swift */,
-				12ACC325E50B803D3F3CC57BB8522569 /* SpinWheelWedgeLabel.swift */,
-				72D96E60C499A9306C6FCA04D85B99A5 /* SpinWheelWedgeShape.swift */,
-				A94875E5870A4E70457EB64E0F2A5E56 /* Support Files */,
-			);
-			name = SpinWheelControl;
-			path = SpinWheelControl;
-			sourceTree = "<group>";
-		};
-		FECC48AEBE260C28B0C3656C4EFADE23 /* Apollo */ = {
-			isa = PBXGroup;
-			children = (
-				DACE7D6E2E0A1132F3386F6A5D143AAC /* Core */,
-				00ED1C194320A06400B8B9EB117C90FD /* Support Files */,
-			);
-			name = Apollo;
-			path = Apollo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,12 +569,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CABC4296E8538F807605AC9650AF9091 /* Headers */ = {
+		92B6B3E77B43641E47510C8F57963B9B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1BB7E6C8823785106477863EAB40CB /* SpinWheelControl-umbrella.h in Headers */,
-				9C941C3F4327C825201CF5B0F55981D9 /* SpinWheelControl.h in Headers */,
+				4CE94770E88B40DD3F06797F9B35B81A /* Cosmos-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C312D9F9E717F551B903B72612BF1AC9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C45FA8CB44F4618C1ABB7F76942289CC /* Pods-MealWheel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4662B3CFBCC5BA54DE96E864B6FF1A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0371A41E85344C8DAA7DF4B5B663CF7 /* SpinWheelControl-umbrella.h in Headers */,
+				E15606419A5C4A73632A6C2F651773CC /* SpinWheelControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,44 +602,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E51FC18BAB4098C7E9E6A5A0AC54942E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8AACB1EE534D70176190170B0CF7725 /* Pods-MealWheel-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E841A618785F5699D29FDD1ADF1CEF47 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				490EF62EF860DE7D233D027DDCD3A978 /* YelpAPI-umbrella.h in Headers */,
-				A8A880424EE3C6956471C361E43090A9 /* YelpAPI.h in Headers */,
-				602A26256E524A2435F52906A0D9DBA9 /* YLPBusiness.h in Headers */,
-				281F60FBF9965711AE4ADE1EDADB9479 /* YLPBusinessReviews.h in Headers */,
-				C5656D55017A739B2ECD5422AB929E5C /* YLPCategory.h in Headers */,
-				0D9FD2DF20F0603F3CAF7C8117D63850 /* YLPClient+Business.h in Headers */,
-				5889CF7631652DE7468EBEC2E36E5C2B /* YLPClient+PhoneSearch.h in Headers */,
-				B25E75942C67E4341E7B0DA16149F726 /* YLPClient+Reviews.h in Headers */,
-				9E0862D792B9A348100D4BEFB02DEF41 /* YLPClient+Search.h in Headers */,
-				A465B1293D37420034178C40004FA0A7 /* YLPClient.h in Headers */,
-				C423093E10E1C7478D03753CF78A27F0 /* YLPClientPrivate.h in Headers */,
-				0F8355A2932AA048A6AAF913EA21C15A /* YLPCoordinate.h in Headers */,
-				8F66226AC023375AA94B2AB55D711536 /* YLPLocation.h in Headers */,
-				57A8B327FDFDCB3BF3B763CE103AB5C2 /* YLPQuery.h in Headers */,
-				CB4AA335D076B3D1D6ECC6689AFDF45A /* YLPQueryPrivate.h in Headers */,
-				A76868EF28ED296F2434351EF062A594 /* YLPResponsePrivate.h in Headers */,
-				D0FE36279D445AF9DD88E57EBB7719F7 /* YLPReview.h in Headers */,
-				4A146F4489662CFA494D8C509E94FA06 /* YLPSearch.h in Headers */,
-				CF374393D4F950C4AA23DCCAB6D82F01 /* YLPSortType.h in Headers */,
-				1B075750C204F575FA2E3EACA8CBDAD6 /* YLPUser.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1B4DD7AA85BAAABC7E1A9C6500ACC0B4 /* Pods-MealWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E6DA2383C55F9AF65BA931B69991183 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */;
+			buildPhases = (
+				C312D9F9E717F551B903B72612BF1AC9 /* Headers */,
+				FC1CE4B519A555581D074ABC235BE51B /* Sources */,
+				6869A2CED222A79BCEADC6D71703E373 /* Frameworks */,
+				95467FC0EBF47D5BF14FB35A2EFA33A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08B51D9F4F1D594C0D37061F2B1AFD89 /* PBXTargetDependency */,
+				A172FFA1BC7C144946B8959AA42091B0 /* PBXTargetDependency */,
+				0A184D0933464C5E8B28C71C7A163065 /* PBXTargetDependency */,
+			);
+			name = "Pods-MealWheel";
+			productName = "Pods-MealWheel";
+			productReference = CB317C61630B1CF9DC2F7568B4CC0FE1 /* Pods_MealWheel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		224580824D4276BBCB37A928CF5E9482 /* Cosmos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D6C475B9EA32C4BBF9FABE9BD31D7DC /* Build configuration list for PBXNativeTarget "Cosmos" */;
+			buildPhases = (
+				92B6B3E77B43641E47510C8F57963B9B /* Headers */,
+				8B62D29A24F15BA427D82E19A8E16A38 /* Sources */,
+				4EF5B7A1EAEF7AAE1780E8EA9C5FC807 /* Frameworks */,
+				D6FD094E21EDFCFCFE1B6D13E36D1F3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cosmos;
+			productName = Cosmos;
+			productReference = 7CB3FC0787D9ED7B8DA92569F3C73E53 /* Cosmos.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		403E11E8F876C9C322E70E43BC7DE64E /* Pods-MealWheelUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 751C338BB4B2AF8DD8BD6765648C0242 /* Build configuration list for PBXNativeTarget "Pods-MealWheelUITests" */;
@@ -697,25 +660,7 @@
 			);
 			name = "Pods-MealWheelUITests";
 			productName = "Pods-MealWheelUITests";
-			productReference = FE040E576259E4A9704839621C0CEA4E /* Pods_MealWheelUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		422D08A8948E32B86F5D2D126E915567 /* SpinWheelControl */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EFFD2BE01F047D6CA4C3E6C3B0AF2A59 /* Build configuration list for PBXNativeTarget "SpinWheelControl" */;
-			buildPhases = (
-				CABC4296E8538F807605AC9650AF9091 /* Headers */,
-				5F3B584757F9BCE8B3C911E7897F0C7C /* Sources */,
-				C0DAD81B27909F5B4B83790E948D204B /* Frameworks */,
-				D9EBF501AE6DAE1999AB1CB7907FF635 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SpinWheelControl;
-			productName = SpinWheelControl;
-			productReference = 11891F2965AE5E379CDD3B4D96C5F31B /* SpinWheelControl.framework */;
+			productReference = AF854884EE8BFC165925833280DE820F /* Pods_MealWheelUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		75DFC7B7A0E0F5FCEF1D11EAB25E2323 /* Apollo */ = {
@@ -733,46 +678,25 @@
 			);
 			name = Apollo;
 			productName = Apollo;
-			productReference = 013F6C36A162DD17D69FA55AE2B94D6B /* Apollo.framework */;
+			productReference = B66422152DF4E9DC2744EC4652270470 /* Apollo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ACB0F936BAC8AEE5EEEB3A6FF934A609 /* YelpAPI */ = {
+		91B0C32F630B2C042D921BDA52E62487 /* SpinWheelControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1990C00DACFB0BF0654AB4D8B8DD743 /* Build configuration list for PBXNativeTarget "YelpAPI" */;
+			buildConfigurationList = DE7D3D7A2E81172200A0DC2A11C76289 /* Build configuration list for PBXNativeTarget "SpinWheelControl" */;
 			buildPhases = (
-				E841A618785F5699D29FDD1ADF1CEF47 /* Headers */,
-				2BD184B0ADCB802B5F128ADAFE746CF5 /* Sources */,
-				82140F4F5EE1014F3669FCEB79242965 /* Frameworks */,
-				A3046FE868247833768D47CED23912BA /* Resources */,
+				C4662B3CFBCC5BA54DE96E864B6FF1A4 /* Headers */,
+				61575FCDA5104985E27ED2C89F29915B /* Sources */,
+				462FCC63806693130CD34104459EBE41 /* Frameworks */,
+				82B40C48B5A3BC1F9DFCB19BB4249630 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = YelpAPI;
-			productName = YelpAPI;
-			productReference = F051A6CB3A53991FE3E76674A15B43B1 /* YelpAPI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D45F6CAD448C0D99AF38B3F332BFF01E /* Pods-MealWheel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8F59A8ED6CF494D36AFBF3E4AA3882E0 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */;
-			buildPhases = (
-				E51FC18BAB4098C7E9E6A5A0AC54942E /* Headers */,
-				62C7D98338FEC2FAF1FE5FF5721BB6F6 /* Sources */,
-				FE00A1FCAF8F41F2BE276CA0B5C6112D /* Frameworks */,
-				F4AD56A44ACAAF97273446650792D82F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D324607B7EF578CE90692D300761BEA5 /* PBXTargetDependency */,
-				61B00BB3539A968BF77D8A903CB6E822 /* PBXTargetDependency */,
-				FF9E69C5739E5BFE41D741D1CA99B56E /* PBXTargetDependency */,
-			);
-			name = "Pods-MealWheel";
-			productName = "Pods-MealWheel";
-			productReference = AB2F4EA2236EC7731B5D48FA8201EE9B /* Pods_MealWheel.framework */;
+			name = SpinWheelControl;
+			productName = SpinWheelControl;
+			productReference = E0401E58C2A672576F1DF8B14F22A856 /* SpinWheelControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D94D50D50F0404079C738886E082A725 /* Pods-MealWheelTests */ = {
@@ -791,7 +715,7 @@
 			);
 			name = "Pods-MealWheelTests";
 			productName = "Pods-MealWheelTests";
-			productReference = 08F1A4416F7269205CE4D24B6CE1C753 /* Pods_MealWheelTests.framework */;
+			productReference = 9A787B938D97713D721E839BFFE89FC3 /* Pods_MealWheelTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -811,16 +735,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 6D9CE90FF1CF0FDE8CA6C9B42931A3AA /* Products */;
+			productRefGroup = 9B7E00F0317EBAB5C504E4342A25EDA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				75DFC7B7A0E0F5FCEF1D11EAB25E2323 /* Apollo */,
-				D45F6CAD448C0D99AF38B3F332BFF01E /* Pods-MealWheel */,
+				224580824D4276BBCB37A928CF5E9482 /* Cosmos */,
+				1B4DD7AA85BAAABC7E1A9C6500ACC0B4 /* Pods-MealWheel */,
 				D94D50D50F0404079C738886E082A725 /* Pods-MealWheelTests */,
 				403E11E8F876C9C322E70E43BC7DE64E /* Pods-MealWheelUITests */,
-				422D08A8948E32B86F5D2D126E915567 /* SpinWheelControl */,
-				ACB0F936BAC8AEE5EEEB3A6FF934A609 /* YelpAPI */,
+				91B0C32F630B2C042D921BDA52E62487 /* SpinWheelControl */,
 			);
 		};
 /* End PBXProject section */
@@ -833,14 +757,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C4D29930489798707C661FE651F7383 /* Resources */ = {
+		82B40C48B5A3BC1F9DFCB19BB4249630 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3046FE868247833768D47CED23912BA /* Resources */ = {
+		95467FC0EBF47D5BF14FB35A2EFA33A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C4D29930489798707C661FE651F7383 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -856,14 +787,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9EBF501AE6DAE1999AB1CB7907FF635 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4AD56A44ACAAF97273446650792D82F /* Resources */ = {
+		D6FD094E21EDFCFCFE1B6D13E36D1F3A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -873,49 +797,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2BD184B0ADCB802B5F128ADAFE746CF5 /* Sources */ = {
+		61575FCDA5104985E27ED2C89F29915B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2367B212AC3C019D8AD9B037679544D7 /* NSDictionary+YLPUtils.m in Sources */,
-				9DFADD6E6A6F095E166C2C1B007215ED /* YelpAPI-dummy.m in Sources */,
-				A82E4E43855DA861F19664B892D730CD /* YLPBusiness.m in Sources */,
-				7F45C7E0E734A8EFECF503A984165800 /* YLPBusinessReviews.m in Sources */,
-				998F2C9D1767736CE2C03021DE982BDB /* YLPCategory.m in Sources */,
-				E69A1013D87D1805CC344CFB037FB561 /* YLPClient+Business.m in Sources */,
-				E13760C7696E733EF5A7F83A231CDD74 /* YLPClient+PhoneSearch.m in Sources */,
-				F149895183290FA2B196AB9830737269 /* YLPClient+Reviews.m in Sources */,
-				EAE1336DF66D5F1FE393592DC2913D7A /* YLPClient+Search.m in Sources */,
-				3E9D28CD5812DF049B8A5D2366F6D367 /* YLPClient.m in Sources */,
-				3AA6CF283A74D69156F0858BA5E8412D /* YLPCoordinate.m in Sources */,
-				76D8BA5EA32BCA7813F5AA78D17B31AA /* YLPLocation.m in Sources */,
-				738DF62595001E071241A12B12FC6AD3 /* YLPQuery.m in Sources */,
-				1E074A868361E94D2ECFD0F04A9EB88E /* YLPReview.m in Sources */,
-				511D0AC9225DE5D887726E9604EB8442 /* YLPSearch.m in Sources */,
-				56038C246B83375D49C3C10621DDF866 /* YLPUser.m in Sources */,
+				8C2240C22986B7FC9DF709BAE84992A4 /* Degrees+MathMethods.swift in Sources */,
+				16D57147D348BC07A56A24AD39CC6CB7 /* SpinWheelControl-dummy.m in Sources */,
+				1526A18178605EA3D74C85FF15C38C8B /* SpinWheelControl.swift in Sources */,
+				426B106CFF2ECB155D3B3D761809771E /* SpinWheelControlDataSource.swift in Sources */,
+				0518AA0A31FC2D18CFE7BC7EAA61EACB /* SpinWheelControlDelegate.swift in Sources */,
+				7AA178E3AD0E96C61E790206C44DBB23 /* SpinWheelWedge.swift in Sources */,
+				5D998C85604F5977322F2D27F492E264 /* SpinWheelWedgeLabel.swift in Sources */,
+				9CBC6F42B7AC89B965BD15BBD6F75BC7 /* SpinWheelWedgeShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F3B584757F9BCE8B3C911E7897F0C7C /* Sources */ = {
+		8B62D29A24F15BA427D82E19A8E16A38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9389447C47F4EA23DC5FFC6C8ACF103 /* Degrees+MathMethods.swift in Sources */,
-				EF462FBF620906511C831419C2B84362 /* SpinWheelControl-dummy.m in Sources */,
-				28FF7A464D3E1CC2AFF72EA79964645E /* SpinWheelControl.swift in Sources */,
-				926F9A65885C8830F857A9107EBE9507 /* SpinWheelControlDataSource.swift in Sources */,
-				3D98342AAF6386AABA36492E3221311C /* SpinWheelControlDelegate.swift in Sources */,
-				EEB5AB482994FAA469524B2C5E0571C4 /* SpinWheelWedge.swift in Sources */,
-				D5EDB5DFC1613253FB37E254E9F6EFA0 /* SpinWheelWedgeLabel.swift in Sources */,
-				41838F40A7A023C9EDB401EF66511F14 /* SpinWheelWedgeShape.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		62C7D98338FEC2FAF1FE5FF5721BB6F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27B1B53FDC2588E4D1D6F7CEDBF6CE96 /* Pods-MealWheel-dummy.m in Sources */,
+				5D3718CCFBD5AA94C8BCA2DE00867B14 /* Cosmos-dummy.m in Sources */,
+				B49BA8D5A3F686E5B5BB38FE7940B474 /* CosmosAccessibility.swift in Sources */,
+				496AB2DC00CE6ECB251B780DB0B46378 /* CosmosDefaultSettings.swift in Sources */,
+				10C72CA340D056D1A7BE9DA242D6F08C /* CosmosLayerHelper.swift in Sources */,
+				363D5829F9E47F9020700ACE35418F5A /* CosmosLayers.swift in Sources */,
+				C217704F02251CFCAA0625F3232DFD67 /* CosmosLocalizedRating.swift in Sources */,
+				118C076D9E6E5FD64FCA60C5F3078EA0 /* CosmosRating.swift in Sources */,
+				8A6B7AE8E4CFA6A4B1545D7A3CC15E23 /* CosmosSettings.swift in Sources */,
+				8FFD6B7CB3018E250891ADC206EE4025 /* CosmosSize.swift in Sources */,
+				F448526CB611E263DD42BE54E5444F6A /* CosmosText.swift in Sources */,
+				79FCAEB6D480B693844C178AB64F3B86 /* CosmosTouch.swift in Sources */,
+				87BE14A38733F873845312E95B7B752D /* CosmosTouchTarget.swift in Sources */,
+				541706202C03B3EAE135235945337763 /* CosmosView.swift in Sources */,
+				8E41DFDA668DB5FDF7D9F86BBDB72CA1 /* RightToLeft.swift in Sources */,
+				891B8D6785AB17B44C213D6518955588 /* StarFillMode.swift in Sources */,
+				9273D94FB02ED96D761EFC2320E2245E /* StarLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +883,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC1CE4B519A555581D074ABC235BE51B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5ECEDAE40D5D120B69F05A869123DB3 /* Pods-MealWheel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDEC72C69865C80EC9B5669752A62855 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -978,35 +902,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		08B51D9F4F1D594C0D37061F2B1AFD89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Apollo;
+			target = 75DFC7B7A0E0F5FCEF1D11EAB25E2323 /* Apollo */;
+			targetProxy = F4D33604892EEE7826DA3799EE5252DC /* PBXContainerItemProxy */;
+		};
+		0A184D0933464C5E8B28C71C7A163065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpinWheelControl;
+			target = 91B0C32F630B2C042D921BDA52E62487 /* SpinWheelControl */;
+			targetProxy = 4869B2D3D8A948642711EA350ED7B6EB /* PBXContainerItemProxy */;
+		};
 		1D17A6C9FCAF0612FC91B60EB2D52419 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MealWheel";
-			target = D45F6CAD448C0D99AF38B3F332BFF01E /* Pods-MealWheel */;
+			target = 1B4DD7AA85BAAABC7E1A9C6500ACC0B4 /* Pods-MealWheel */;
 			targetProxy = 93E8AB2D07866D3892D80ACAD30C73C0 /* PBXContainerItemProxy */;
 		};
-		61B00BB3539A968BF77D8A903CB6E822 /* PBXTargetDependency */ = {
+		A172FFA1BC7C144946B8959AA42091B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SpinWheelControl;
-			target = 422D08A8948E32B86F5D2D126E915567 /* SpinWheelControl */;
-			targetProxy = 0CF8FE6B2D3D9AEF7B07136BF9A2E93C /* PBXContainerItemProxy */;
+			name = Cosmos;
+			target = 224580824D4276BBCB37A928CF5E9482 /* Cosmos */;
+			targetProxy = 558C4DFEBAEAD3E27AD7F91D5DA75525 /* PBXContainerItemProxy */;
 		};
 		B7A5DE0507C5E59417651A110F36D891 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MealWheel";
-			target = D45F6CAD448C0D99AF38B3F332BFF01E /* Pods-MealWheel */;
+			target = 1B4DD7AA85BAAABC7E1A9C6500ACC0B4 /* Pods-MealWheel */;
 			targetProxy = 204B5DFD044B2E0032F88414E9C4887C /* PBXContainerItemProxy */;
-		};
-		D324607B7EF578CE90692D300761BEA5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Apollo;
-			target = 75DFC7B7A0E0F5FCEF1D11EAB25E2323 /* Apollo */;
-			targetProxy = 191D07A916B675A8DBC41DD36F2E8961 /* PBXContainerItemProxy */;
-		};
-		FF9E69C5739E5BFE41D741D1CA99B56E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = YelpAPI;
-			target = ACB0F936BAC8AEE5EEEB3A6FF934A609 /* YelpAPI */;
-			targetProxy = 88A5C00AADD968C30249438252E67A38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1051,7 +975,7 @@
 		};
 		1F573FD29FCCEF2EF09BAD0F8C45CC6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42ECFC26930305696C796B545F22C7DE /* Apollo.xcconfig */;
+			baseConfigurationReference = 9186139A3B2A037AA6E556186A135BA5 /* Apollo.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1087,11 +1011,10 @@
 			};
 			name = Release;
 		};
-		1FB0B636BCB10954AF7037D47194C741 /* Debug */ = {
+		39533E81F391205725ADF272EDFDAE06 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FCD56BDF1B1235ED8C3E00ABB9CE905 /* SpinWheelControl.xcconfig */;
+			baseConfigurationReference = 921CE21353D333E500AB50CD61E50443 /* Cosmos.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1101,68 +1024,30 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
-				PRODUCT_MODULE_NAME = SpinWheelControl;
-				PRODUCT_NAME = SpinWheelControl;
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		262F90393B9246B22E4DBA2F78C88224 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
+			name = Release;
 		};
 		449D6987E4E10C73C67C55736E04DF0C /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1205,7 +1090,7 @@
 		};
 		55E1F41EC6141EA62E0890FF3A236C6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42ECFC26930305696C796B545F22C7DE /* Apollo.xcconfig */;
+			baseConfigurationReference = 9186139A3B2A037AA6E556186A135BA5 /* Apollo.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1239,10 +1124,11 @@
 			};
 			name = Debug;
 		};
-		6ADAE934357A55BCB73184ED187D1637 /* Debug */ = {
+		6EA57DBC3FA1C2F763FE311E89EFC5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8105FBBACD8FC3B9163C446E73D2BF6B /* YelpAPI.xcconfig */;
+			baseConfigurationReference = 3DF667D563B582F33CCDCABA339A2171 /* SpinWheelControl.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1252,27 +1138,30 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/YelpAPI/YelpAPI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YelpAPI/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/YelpAPI/YelpAPI.modulemap";
-				PRODUCT_MODULE_NAME = YelpAPI;
-				PRODUCT_NAME = YelpAPI;
+				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
+				PRODUCT_MODULE_NAME = SpinWheelControl;
+				PRODUCT_NAME = SpinWheelControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		75346081C382550A767991A888DF2439 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1312,6 +1201,42 @@
 			};
 			name = Debug;
 		};
+		9375C70C9BF75E4CD685F2480132E959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 921CE21353D333E500AB50CD61E50443 /* Cosmos.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		A1E99F0017BE27545DBF3BD80184D9B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFD24FBFB1E051D9833B79D02AD1CA25 /* Pods-MealWheelUITests.release.xcconfig */;
@@ -1344,6 +1269,47 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A595D34F32749E0699CD88EC364899BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1415,47 +1381,10 @@
 			};
 			name = Debug;
 		};
-		DF8A22469002BDC7C314FD52FCCD4A0F /* Release */ = {
+		CC91B70A32739AA116EBF975CDD72F94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8105FBBACD8FC3B9163C446E73D2BF6B /* YelpAPI.xcconfig */;
+			baseConfigurationReference = 3DF667D563B582F33CCDCABA339A2171 /* SpinWheelControl.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/YelpAPI/YelpAPI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YelpAPI/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/YelpAPI/YelpAPI.modulemap";
-				PRODUCT_MODULE_NAME = YelpAPI;
-				PRODUCT_NAME = YelpAPI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E3F5FA77016AB0A2DD370863EA770938 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E5A1EB6955537D8766C1EB210D013AB /* Pods-MealWheel.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1466,7 +1395,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1474,23 +1404,19 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
+				PRODUCT_MODULE_NAME = SpinWheelControl;
+				PRODUCT_NAME = SpinWheelControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		EA8C7AF90938697605468604B2A17B9F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1551,10 +1477,11 @@
 			};
 			name = Release;
 		};
-		ED7BE285A93416D31F3F55EC335DA14E /* Release */ = {
+		ED9004E89D54A04DCE1CFA7C351C7994 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FCD56BDF1B1235ED8C3E00ABB9CE905 /* SpinWheelControl.xcconfig */;
+			baseConfigurationReference = 02A83CEA55B82C9B022FBA4CF40AA79B /* Pods-MealWheel.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1565,8 +1492,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SpinWheelControl/SpinWheelControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SpinWheelControl/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWheel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1574,21 +1500,22 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/SpinWheelControl/SpinWheelControl.modulemap";
-				PRODUCT_MODULE_NAME = SpinWheelControl;
-				PRODUCT_NAME = SpinWheelControl;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWheel/Pods-MealWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.1;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1602,6 +1529,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5E6DA2383C55F9AF65BA931B69991183 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9004E89D54A04DCE1CFA7C351C7994 /* Debug */,
+				A595D34F32749E0699CD88EC364899BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		751C338BB4B2AF8DD8BD6765648C0242 /* Build configuration list for PBXNativeTarget "Pods-MealWheelUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1611,11 +1547,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8F59A8ED6CF494D36AFBF3E4AA3882E0 /* Build configuration list for PBXNativeTarget "Pods-MealWheel" */ = {
+		7D6C475B9EA32C4BBF9FABE9BD31D7DC /* Build configuration list for PBXNativeTarget "Cosmos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				262F90393B9246B22E4DBA2F78C88224 /* Debug */,
-				E3F5FA77016AB0A2DD370863EA770938 /* Release */,
+				9375C70C9BF75E4CD685F2480132E959 /* Debug */,
+				39533E81F391205725ADF272EDFDAE06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1629,11 +1565,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1990C00DACFB0BF0654AB4D8B8DD743 /* Build configuration list for PBXNativeTarget "YelpAPI" */ = {
+		DE7D3D7A2E81172200A0DC2A11C76289 /* Build configuration list for PBXNativeTarget "SpinWheelControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ADAE934357A55BCB73184ED187D1637 /* Debug */,
-				DF8A22469002BDC7C314FD52FCCD4A0F /* Release */,
+				CC91B70A32739AA116EBF975CDD72F94 /* Debug */,
+				6EA57DBC3FA1C2F763FE311E89EFC5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1643,15 +1579,6 @@
 			buildConfigurations = (
 				75346081C382550A767991A888DF2439 /* Debug */,
 				449D6987E4E10C73C67C55736E04DF0C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EFFD2BE01F047D6CA4C3E6C3B0AF2A59 /* Build configuration list for PBXNativeTarget "SpinWheelControl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FB0B636BCB10954AF7037D47194C741 /* Debug */,
-				ED7BE285A93416D31F3F55EC335DA14E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

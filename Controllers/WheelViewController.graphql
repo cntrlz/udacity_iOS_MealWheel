@@ -1,0 +1,48 @@
+fragment BusinessDetails on Business {
+	id
+	name
+	rating
+	url
+	categories {
+		title
+		alias
+		parent_categories {
+			title
+			alias
+		}
+	}
+	display_phone
+	review_count
+	price
+	coordinates {
+		latitude
+		longitude
+	}
+	distance
+}
+
+
+query Restaurants($term: String, $limit: Int, $long: Float, $lat: Float, $cat: String, $radius: Float) {
+	search(term: $term, limit: $limit, latitude: $lat, longitude: $long, categories: $cat, radius: $radius) {
+		business {
+			...BusinessDetails
+		}
+		total
+	}
+}
+
+#query Restaurants {
+#	business(id: "garaje-san-francisco") {
+#		name
+#		id
+#		is_claimed
+#		is_closed
+#		url
+#		phone
+#		display_phone
+#		review_count
+#		rating
+#		photos
+#	}
+#}
+

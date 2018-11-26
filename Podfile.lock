@@ -1,26 +1,26 @@
 PODS:
-  - Apollo (0.9.3):
-    - Apollo/Core (= 0.9.3)
-  - Apollo/Core (0.9.3)
+  - Apollo (0.9.4):
+    - Apollo/Core (= 0.9.4)
+  - Apollo/Core (0.9.4)
+  - Cosmos (17.0.0)
   - SpinWheelControl (0.2.0)
-  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
   - Apollo
+  - Cosmos (~> 17.0)
   - SpinWheelControl
-  - YelpAPI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Apollo
+    - Cosmos
     - SpinWheelControl
-    - YelpAPI
 
 SPEC CHECKSUMS:
-  Apollo: 38270f8bdc031ac07d4de3ec068a2289d7d287e0
+  Apollo: 450856adbdebcdf28c3c671f81732ac3f9944065
+  Cosmos: 309e489f21ffc91a1eeecfebef7f817cd2fcfba6
   SpinWheelControl: f6e828dfe1a53e982cc3e2e1824c668c99286a9b
-  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 7b0f8f6b4192e9e0e343af356b9740d8ca6ae26f
+PODFILE CHECKSUM: 0245296d6c63ef3082c887da4df6fb3a603b8dfd
 
 COCOAPODS: 1.5.3

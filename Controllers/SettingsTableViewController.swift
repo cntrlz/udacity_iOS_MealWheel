@@ -15,7 +15,8 @@ class SettingsTableViewController: UITableViewController {
 		["swipeToggleExpansion": ["defaultValue": false, "text": "Quick Swipe", "description": "Scrolling quickly expands and collapses lists, like on the Wheel page"]],
 		["showTips": ["defaultValue": true, "text": "Show Tips", "description": "Show tapable disclosure indicators around the app to show more info"]],
 		["landingPage": ["defaultValue": true, "text": "Landing Page on Startup", "description": "Shows a landing page by default when opening the app instead of the Wheel tab"]],
-		["distrustfulMode": ["defaultValue": false, "text": "Distrustful Mode", "description": "Do not add a restaurant to 'My Places' until I have actually gone there (GPS required)"]]
+		["distrustfulMode": ["defaultValue": false, "text": "Distrustful Mode", "description": "Do not add a restaurant to 'My Places' until I have actually gone there (GPS required)"]],
+		["autoSave": ["defaultValue": true, "text": "Auto Save", "description": "Automatically save confirmed spin results to My Places"]]
 	]
 
 	override func viewDidLoad() {

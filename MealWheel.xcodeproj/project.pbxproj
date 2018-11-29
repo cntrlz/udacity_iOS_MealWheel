@@ -16,6 +16,8 @@
 		5E36A2D82165AEA70088357D /* CuisineTypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36A2D72165AEA70088357D /* CuisineTypesTableViewController.swift */; };
 		5E41BF72219B6F00005221C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41BF71219B6F00005221C9 /* API.swift */; };
 		5E4D8BD621966F3500E66C63 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E4D8BD521966F3500E66C63 /* schema.json */; };
+		5E69068921ACCA6500A9643C /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E69068821ACCA6500A9643C /* OptionsViewController.swift */; };
+		5E69068B21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */; };
 		5E6E103321A358D500D2098F /* UserRestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E103221A358D500D2098F /* UserRestaurantDetailsViewController.swift */; };
 		5E6E103521A364B700D2098F /* AddCustomRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E103421A364B700D2098F /* AddCustomRestaurantViewController.swift */; };
 		5E6E103921A36F5100D2098F /* YelpRestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E103821A36F5100D2098F /* YelpRestaurantDetailsViewController.swift */; };
@@ -34,6 +36,10 @@
 		5EA15689219E0CF200A97640 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA15688219E0CF200A97640 /* DataController.swift */; };
 		5EA15692219F601D00A97640 /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA15691219F601D00A97640 /* MyPlacesViewController.swift */; };
 		5EA15694219F65D000A97640 /* MyPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA15693219F65CF00A97640 /* MyPlacesTableViewCell.swift */; };
+		5EF66B0721AC96AD00F6B04B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF66B0621AC96AD00F6B04B /* Utilities.swift */; };
+		5EF66B0921ACC58C00F6B04B /* QuickAddRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF66B0821ACC58C00F6B04B /* QuickAddRestaurantView.xib */; };
+		5EF66B0B21ACC74200F6B04B /* QuickAddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF66B0A21ACC74200F6B04B /* QuickAddRestaurantView.swift */; };
+		5EFA0D0B21ADD14300639778 /* QuickRestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA0D0A21ADD14300639778 /* QuickRestaurantListViewController.swift */; };
 		5EFFE4DE21A8DBF50002F3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFFE4DD21A8DBF50002F3CF /* Assets.xcassets */; };
 		606DEAA1627E96C240348A69 /* Pods_MealWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97C0112F7195EEC73A5C0DA /* Pods_MealWheel.framework */; };
 		AFDC08B2002719D7E8F73ADB /* Pods_MealWheelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E272E10767883EEDFFCBC9 /* Pods_MealWheelTests.framework */; };
@@ -69,6 +75,8 @@
 		5E36A2D72165AEA70088357D /* CuisineTypesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineTypesTableViewController.swift; sourceTree = "<group>"; };
 		5E41BF71219B6F00005221C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5E4D8BD521966F3500E66C63 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = SOURCE_ROOT; };
+		5E69068821ACCA6500A9643C /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddRestaurantViewController.swift; sourceTree = "<group>"; };
 		5E6E103221A358D500D2098F /* UserRestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		5E6E103421A364B700D2098F /* AddCustomRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomRestaurantViewController.swift; sourceTree = "<group>"; };
 		5E6E103821A36F5100D2098F /* YelpRestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpRestaurantDetailsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +101,11 @@
 		5EA15688219E0CF200A97640 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5EA15691219F601D00A97640 /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
 		5EA15693219F65CF00A97640 /* MyPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesTableViewCell.swift; sourceTree = "<group>"; };
+		5EF66B0421AC8CCD00F6B04B /* Stubbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubbies.swift; sourceTree = "<group>"; };
+		5EF66B0621AC96AD00F6B04B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5EF66B0821ACC58C00F6B04B /* QuickAddRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickAddRestaurantView.xib; sourceTree = "<group>"; };
+		5EF66B0A21ACC74200F6B04B /* QuickAddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddRestaurantView.swift; sourceTree = "<group>"; };
+		5EFA0D0A21ADD14300639778 /* QuickRestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickRestaurantListViewController.swift; sourceTree = "<group>"; };
 		5EFFE4DD21A8DBF50002F3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6105D20262E68A4C2001E773 /* Pods-MealWheelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWheelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealWheelTests/Pods-MealWheelTests.release.xcconfig"; sourceTree = "<group>"; };
 		95E272E10767883EEDFFCBC9 /* Pods_MealWheelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWheelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +150,8 @@
 				5E793EC7213898DC00AB6D1D /* AppDelegate.swift */,
 				5E41BF71219B6F00005221C9 /* API.swift */,
 				5E793ED5213898DE00AB6D1D /* Info.plist */,
+				5EF66B0421AC8CCD00F6B04B /* Stubbies.swift */,
+				5EF66B0621AC96AD00F6B04B /* Utilities.swift */,
 				5E36A2D4216590530088357D /* DefaultPreferences.plist */,
 				5EFFE4DD21A8DBF50002F3CF /* Assets.xcassets */,
 				5E793EFD2138A08200AB6D1D /* Model */,
@@ -164,6 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				5E957B17219F7E380081FEB7 /* LandingViewController.swift */,
+				5E69068821ACCA6500A9643C /* OptionsViewController.swift */,
+				5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */,
+				5EFA0D0A21ADD14300639778 /* QuickRestaurantListViewController.swift */,
 				5E793EC9213898DC00AB6D1D /* WheelViewController.swift */,
 				5E92D7A6219A41130006BA38 /* WheelViewController.graphql */,
 				5E6E103821A36F5100D2098F /* YelpRestaurantDetailsViewController.swift */,
@@ -205,6 +223,8 @@
 				5E14423A21A4FB33000E3E7B /* SettingsTableViewCell.swift */,
 				5EA15693219F65CF00A97640 /* MyPlacesTableViewCell.swift */,
 				5E793ED2213898DE00AB6D1D /* LaunchScreen.storyboard */,
+				5EF66B0821ACC58C00F6B04B /* QuickAddRestaurantView.xib */,
+				5EF66B0A21ACC74200F6B04B /* QuickAddRestaurantView.swift */,
 				5E0F998A21A8E08100FBFD0A /* UIImageViewWithPreserveVectorDataFix.swift */,
 			);
 			path = View;
@@ -354,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF66B0921ACC58C00F6B04B /* QuickAddRestaurantView.xib in Resources */,
 				5E92D7A7219A41130006BA38 /* WheelViewController.graphql in Resources */,
 				5E793ED4213898DE00AB6D1D /* LaunchScreen.storyboard in Resources */,
 				5E4D8BD621966F3500E66C63 /* schema.json in Resources */,
@@ -517,6 +538,7 @@
 			files = (
 				5E36A2D82165AEA70088357D /* CuisineTypesTableViewController.swift in Sources */,
 				5E0F998B21A8E08100FBFD0A /* UIImageViewWithPreserveVectorDataFix.swift in Sources */,
+				5E69068921ACCA6500A9643C /* OptionsViewController.swift in Sources */,
 				5E14423921A4F7BA000E3E7B /* SettingsTableViewController.swift in Sources */,
 				5E793ECC213898DC00AB6D1D /* FilterViewController.swift in Sources */,
 				5E957B18219F7E380081FEB7 /* LandingViewController.swift in Sources */,
@@ -524,15 +546,19 @@
 				5E793EC8213898DC00AB6D1D /* AppDelegate.swift in Sources */,
 				5E957B1A219F83650081FEB7 /* YelpAPI.swift in Sources */,
 				5E6E103521A364B700D2098F /* AddCustomRestaurantViewController.swift in Sources */,
+				5EF66B0721AC96AD00F6B04B /* Utilities.swift in Sources */,
 				5E793EFC2138A07900AB6D1D /* MealWheel.xcdatamodeld in Sources */,
 				5E793EF821389F3900AB6D1D /* SettingsViewController.swift in Sources */,
+				5EFA0D0B21ADD14300639778 /* QuickRestaurantListViewController.swift in Sources */,
 				5EA15689219E0CF200A97640 /* DataController.swift in Sources */,
 				5E278F8121A8948400E93347 /* CategoriesTableViewController.swift in Sources */,
+				5E69068B21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift in Sources */,
 				5E14423B21A4FB33000E3E7B /* SettingsTableViewCell.swift in Sources */,
 				5E6E103321A358D500D2098F /* UserRestaurantDetailsViewController.swift in Sources */,
 				5E6E103921A36F5100D2098F /* YelpRestaurantDetailsViewController.swift in Sources */,
 				5E793ECA213898DC00AB6D1D /* WheelViewController.swift in Sources */,
 				5E278F7F21A6389D00E93347 /* ListTableViewController.swift in Sources */,
+				5EF66B0B21ACC74200F6B04B /* QuickAddRestaurantView.swift in Sources */,
 				5E41BF72219B6F00005221C9 /* API.swift in Sources */,
 				5EA15694219F65D000A97640 /* MyPlacesTableViewCell.swift in Sources */,
 			);

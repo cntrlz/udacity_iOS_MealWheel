@@ -36,7 +36,11 @@
 	<true/>
 	<key>customTypesEnabled</key>
 	<true/>
+	<key>quickAddListPreferMyPlaces</key>
+	<false/>
 	<key>filterFrequency</key>
 	<real>0.5</real>
+	<key>autoSave</key>
+	<true/>
 </dict>
 </plist>

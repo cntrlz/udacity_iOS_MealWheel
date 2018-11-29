@@ -6,6 +6,15 @@
 //  Copyright © 2018 Viktor Lantos. All rights reserved.
 //
 
+// TODO: Perhaps implement this: https://www.thorntech.com/2015/08/how-to-animate-a-bar-button-item-swift/
+// TODO: Check out dropdowns:
+/*
+ https://github.com/hyperoslo/Dropdowns
+ https://github.com/Cokile/CCDropDownMenu
+ https://www.cocoacontrols.com/controls/lmdropdownview
+ https://www.cocoacontrols.com/controls/btnavigationdropdownmenu
+ */
+
 import CoreData
 import CoreLocation
 import SpinWheelControl
@@ -17,107 +26,67 @@ class WheelViewController: UIViewController {
 	@IBOutlet var detailsViewExpandedConstraint: NSLayoutConstraint!
 	@IBOutlet var detailsViewCollapsedConstraint: NSLayoutConstraint!
 	@IBOutlet var spinWheelControl: SpinWheelControl! // See https://github.com/joshdhenry/SpinWheelControl
-	@IBOutlet var activityView: UIView!
-	
-	@IBOutlet weak var refreshButton: UIBarButtonItem!
-//		{
-//		didSet {
-//			let refreshImage = UIImage.imageFromSystemBarButton(.refresh, renderingMode: .automatic)
-//			let myButton = UIButton()
-//			myButton.setImage(refreshImage, for: .normal)
-//			myButton.addTarget(self, action: #selector(refresh), for: .touchUpInside)
-//			refreshButton.customView = myButton
-//		}
-//	}
+	@IBOutlet var refreshButton: UIBarButtonItem!
+	@IBOutlet var errorView: UIView!
 	
 	var dataController: DataController!
 	var fetchedResultsController: NSFetchedResultsController<YelpRestaurant>!
-	var results: [RestaurantsQuery.Data.Search.Business?] = []
-//	{
-//		didSet {
-//			tableView.reloadData()
-//			spinWheelControl.reloadData()
-//		}
-//	}
-	
+	var searchResults: [RestaurantsQuery.Data.Search.Business?] = []
+	var myResults: [UserRestaurant]? = nil
 	var tableViewExpanded: Bool = false
 	var refreshControl: UIRefreshControl!
-	
 	let locationManager = CLLocationManager()
 	var lastLocation: CLLocation = CLLocation()
-	
-//	var lastOffset: CGPoint?
-//	var lastOffsetCapture : TimeInterval?
-//	var isScrollingFast : Bool?
 	var previousScrollMoment: Date = Date()
 	var previousScrollX: CGFloat = 0
-	
 	var overlay: UIVisualEffectView = UIVisualEffectView()
+	var spinAtLoad: Bool = false
 	
-	fileprivate func yelpSearchWithTerm(_ term: String! = "") {
-//		(UIApplication.shared.delegate as! AppDelegate).apiClient.performDefaultFetch()
-		(UIApplication.shared.delegate as! AppDelegate).apiClient.returnDefaultFetch(completion: { results, error in
-			if error != nil {
-				let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-				self.present(alert, animated: true)
-				self.activityView.isHidden = true
-				if self.overlay.isDescendant(of: self.view) {
-					self.toggleBlur()
-				}
-			}
-			if let results = results {
-				if results.count == 0 {
-					let alert = UIAlertController(title: "Farts", message: "You stink", preferredStyle: UIAlertControllerStyle.alert)
-					alert.addAction(UIAlertAction(title: "oh no", style: UIAlertActionStyle.default, handler: nil))
-					self.present(alert, animated: true)
-					self.activityView.isHidden = true
-					if self.overlay.isDescendant(of: self.view) {
-						self.toggleBlur()
-					}
-				} else {
-					self.results = results
-					self.tableView.reloadData()
-					self.spinWheelControl.reloadData()
-					self.refreshControl.endRefreshing()
-					self.activityView.isHidden = true
-					
-					if self.overlay.isDescendant(of: self.view) {
-						self.toggleBlur()
-					}
-//					DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-//						self.refreshControl.endRefreshing()
-//					})
-//					DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//						self.refreshControl.attributedTitle = NSAttributedString(string: "Refresh")
-//					})
-				}
-			}
-		})
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
-//		let apollo = (UIApplication.shared.delegate as! AppDelegate).apollo
-//
-//		print("Calling query with term: ", term, "long and lat: ", lastLocation.coordinate.longitude, lastLocation.coordinate.latitude)
-//
-//		apollo.fetch(query: RestaurantsQuery(limit: 25, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: 200), cachePolicy: .returnCacheDataElseFetch) { result, error in
-//			print("Query complete")
-//			if let error = error {
-//				print("Error with RestaurantsQuery: \(error.localizedDescription)")
-//				return
-//			}
-//
-//			self.results = result?.data?.search?.business ?? []
-//			self.cacheResults()
-//		}
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		dataController = appDelegate.dataController
+		
+		setUpSpinWheelControl()
+		//		setUpRefreshControl()
+		setUpFetchedResultsController()
+		
+		tableView.delegate = self
+		tableView.dataSource = self
+		
+		if myResults == nil {
+			if !(searchResults.count > 0) {
+				yelpSearchWithTerm()
+			} else {
+				tableView.reloadData()
+				spinWheelControl.reloadData()
+			}
+		}
+		
+		if spinAtLoad {
+			spinWheelControl.randomSpin()
+			spinAtLoad = false
+		}
+		
+		// Maybe move this to AppDelegate? Or do we perhaps want this only once
+		// they've viewed this VC...
+		UserDefaults.standard.set(true, forKey: "firstRun")
 	}
 	
-	func filterResults(results: [RestaurantsQuery.Data.Search.Business?]) {
-		// Does the id match one stored in our personal DB? If so, we have data on it
-		// Apply frequency filters
-		// Apply black/whitelist
-		
-		// Does the category or parents category of this match a category filter we have?
-		// Apply category filters
+	fileprivate func setUpSpinWheelControl() {
+		spinWheelControl.dataSource = self
+		spinWheelControl.delegate = self
+		spinWheelControl.reloadData()
+		spinWheelControl.addTarget(self, action: #selector(spinWheelDidChangeValue), for: UIControlEvents.valueChanged)
+	}
+	
+	fileprivate func setUpRefreshControl() {
+		refreshControl = UIRefreshControl()
+		refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+		refreshControl.tintColor = UIColor.purple
+		refreshControl.addTarget(self, action: #selector(refreshControlRefreshed), for: .valueChanged)
+		tableView.addSubview(refreshControl)
 	}
 	
 	fileprivate func setUpFetchedResultsController() {
@@ -125,9 +94,6 @@ class WheelViewController: UIViewController {
 		let sortDescriptor = NSSortDescriptor(key: "dateFetched", ascending: false)
 		fetchRequest.sortDescriptors = [sortDescriptor]
 		
-		// TODO: Figure out "couldn't read cache file to update store info timestamps" error
-		// for cache name "pins". For now, made cachename nil
-		// Might be related to http://www.openradar.me/28361550
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
 		fetchedResultsController.delegate = self
 		
@@ -143,75 +109,67 @@ class WheelViewController: UIViewController {
 		}
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		let appDelegate = UIApplication.shared.delegate as! AppDelegate
-		dataController = appDelegate.dataController
-		
-		// Set up spin wheel control
-		spinWheelControl.dataSource = self
-		spinWheelControl.delegate = self
-		spinWheelControl.reloadData()
-		spinWheelControl.addTarget(self, action: #selector(spinWheelDidChangeValue), for: UIControlEvents.valueChanged)
-		
-		// Set up table view
-		tableView.delegate = self
-		tableView.dataSource = self
-		
-//		setUpLocationManager()
-		setUpFetchedResultsController()
-		
-		UserDefaults.standard.set(true, forKey: "firstRun")
-		
-		refreshControl = UIRefreshControl()
-		tableView.addSubview(refreshControl)
-		refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
-		refreshControl.tintColor = UIColor.purple
-		refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-		
-		if !(results.count > 0) {
-//			activityView.isHidden = false
-			yelpSearchWithTerm()
-		} else {
-			activityView.isHidden = true
-			print("We already have results, SO GOOD")
-			tableView.reloadData()
-			spinWheelControl.reloadData()
-		}
+	@IBAction func wheelControlTouched(_ sender: Any) {
+		spinWheelControl.randomSpin()
 	}
 	
-//	override func viewWillAppear(_ animated: Bool) {
-//		activityView.isHidden = false
-//	}
+	fileprivate func yelpSearchWithTerm(_ term: String! = "") {
+		errorView.isHidden = true
+		(UIApplication.shared.delegate as! AppDelegate).apiClient.returnDefaultFetch(completion: { results, error in
+			if error != nil {
+				let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+				self.present(alert, animated: true)
+				self.errorView.isHidden = false
+				if self.overlay.isDescendant(of: self.view) {
+					self.toggleBlur()
+				}
+			}
+			if let results = results {
+				if results.count == 0 {
+					let alert = UIAlertController(title: "No Results", message: "There are no nearby restaurants matching the filters you have set", preferredStyle: UIAlertControllerStyle.alert)
+					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+					self.present(alert, animated: true)
+					if self.overlay.isDescendant(of: self.view) {
+						self.toggleBlur()
+					}
+				} else {
+					self.searchResults = results
+					self.tableView.reloadData()
+					self.spinWheelControl.reloadData()
+					self.refreshControl?.endRefreshing()
+					
+					if self.overlay.isDescendant(of: self.view) {
+						self.toggleBlur()
+					}
+				}
+			}
+		})
+	}
 	
-	@objc func refreshData() {
+	func filterResults(results: [RestaurantsQuery.Data.Search.Business?]) {
+		// Does the id match one stored in our personal DB? If so, we have data on it
+		// Apply frequency filters
+		// Apply black/whitelist
+		
+		// Does the category or parents category of this match a category filter we have?
+		// Apply category filters
+	}
+	
+	@objc @IBAction func refresh(_ sender: Any) {
 		toggleBlur()
-		yelpSearchWithTerm()
+		myResults = nil
+		yelpSearchWithTerm("")
 	}
 	
-	// MARK: - Location
-	
-//	func setUpLocationManager() {
-//		locationManager.delegate = self
-//		locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//		locationManager.requestWhenInUseAuthorization()
-//		locationManager.startUpdatingLocation()
-//	}
-//
-//	func updateLocation(_ location: CLLocation) {
-//		//		print("updated location")
-//		lastLocation = location
-//	}
-//
-	override func viewDidAppear(_ animated: Bool) {
-		//		spinWheelControl.spin(velocityMultiplier: 0.5)
-		//		spinWheelControl.randomSpin()
+	@objc func refreshControlRefreshed() {
+		toggleBlur()
+		myResults = nil
+		yelpSearchWithTerm()
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 	
 	@IBAction func toggleExpandTableView(_ sender: Any) {
@@ -231,15 +189,25 @@ class WheelViewController: UIViewController {
 	}
 	
 	@objc func spinWheelDidChangeValue(sender: AnyObject) {
-		let business = results[spinWheelControl.selectedIndex]!
-//		let business = fetchedResultsController.object(at: IndexPath(row: spinWheelControl.selectedIndex, section: 0))
-//		let alert = UIAlertController(title: "We have a winner!", message: "You're eating at: \(business.name!)", preferredStyle: .alert)
-		let alert = UIAlertController(title: "We have a winner!", message: "You're eating at: \(business.fragments.businessDetails.name!)", preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "YOSH!", style: UIAlertActionStyle.default, handler: { _ in
+		// sloppy flipflop
+		var searchBusiness: RestaurantsQuery.Data.Search.Business? = nil
+		var myPlace: UserRestaurant? = nil
+		if let mr = myResults {
+			myPlace = mr[spinWheelControl.selectedIndex]
+		} else {
+			searchBusiness = searchResults[spinWheelControl.selectedIndex]!
+		}
+		
+
+		let alert = UIAlertController(title: "WINNER!", message: "You're eating at: \(searchBusiness?.fragments.businessDetails.name! ?? myPlace?.name ?? "" )", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive, handler: nil))
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
 			// If we've eaten here before, increment visits and update lastVisited
 			// Otherwise make a new object
-			if let id = business.fragments.businessDetails.id {
-				(UIApplication.shared.delegate as! AppDelegate).apiClient.cacheResults(results: [business])
+			let autoSave = UserDefaults.standard.bool(forKey: "autoSave")
+			
+			if autoSave, let id = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId {
+				(UIApplication.shared.delegate as! AppDelegate).apiClient.cacheResults(results: [searchBusiness])
 				let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
 				fetch.predicate = NSPredicate(format: "yelpId == %@", id)
 				fetch.fetchLimit = 1
@@ -255,15 +223,15 @@ class WheelViewController: UIViewController {
 						print("Adding to userRestaurants")
 						r = UserRestaurant(context: self.dataController.viewContext)
 						let now = Date()
-						r.yelpId = business.fragments.businessDetails.id
+						r.yelpId = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId
 						r.dateCreated = now
-						r.category = business.fragments.businessDetails.categories?.first!?.alias
+						r.category = searchBusiness?.fragments.businessDetails.categories?.first!?.alias ?? myPlace?.category
 						r.clusivity = 0
-						r.name = business.fragments.businessDetails.name
+						r.name = searchBusiness?.fragments.businessDetails.name ?? myPlace?.name
 						r.visits = 1
 						r.lastVisited = now
-						r.latitude = business.fragments.businessDetails.coordinates?.latitude ?? 0.0
-						r.longitude = business.fragments.businessDetails.coordinates?.longitude ?? 0.0
+						r.latitude = searchBusiness?.fragments.businessDetails.coordinates?.latitude ?? myPlace?.latitude ?? 0.0
+						r.longitude = searchBusiness?.fragments.businessDetails.coordinates?.longitude ?? myPlace?.longitude ?? 0.0
 					}
 				} catch {
 					fatalError("WheelViewController - The fetch for existing ID in \(#function) could not be performed: \(error.localizedDescription)")
@@ -272,7 +240,6 @@ class WheelViewController: UIViewController {
 				try? self.dataController.viewContext.save()
 			}
 		}))
-		alert.addAction(UIAlertAction(title: "nah", style: UIAlertActionStyle.cancel, handler: nil))
 		present(alert, animated: true, completion: nil)
 	}
 	
@@ -288,29 +255,11 @@ class WheelViewController: UIViewController {
 			}
 		}
 	}
-	
-	@objc @IBAction func refresh(_ sender: Any) {
-		toggleBlur()
-		animateRefreshButton()
-		yelpSearchWithTerm("mexican")
-	}
-	
-	func animateRefreshButton() {
-		UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveLinear, animations: {
-			if let b = self.navigationItem.rightBarButtonItem {
-				print("buttan!")
-				if let view = b.customView {
-					print("vbiuu!")
-					self.navigationItem.rightBarButtonItem?.customView?.transform = .identity
-				}
-			}
-		}, completion: nil)
-	}
 }
 
 extension WheelViewController: SpinWheelControlDataSource {
 	func numberOfWedgesInSpinWheel(spinWheel: SpinWheelControl) -> UInt {
-		return UInt(results.count)
+		return UInt(myResults != nil ? myResults!.count : searchResults.count)
 //		let count = fetchedResultsController?.fetchedObjects?.count
 //		return UInt(count ?? 0)
 	}
@@ -319,11 +268,13 @@ extension WheelViewController: SpinWheelControlDataSource {
 		let wedge = SpinWheelWedge()
 		let label = SpinWheelWedgeLabel()
 		label.textColor = UIColor.white
-		label.shadowColor = UIColor.orange
+//		label.shadowColor = UIColor.orange
 		wedge.label = label
-		wedge.shape.fillColor = UIColor.red.cgColor
-		if let business = results[Int(index)] {
-			wedge.label.text = business.fragments.businessDetails.name
+		wedge.shape.fillColor = UIColor.randomColor().cgColor
+		if let mr = myResults {
+			wedge.label.text = mr[Int(index)].name ?? "Unknown"
+		} else if let business = searchResults[Int(index)] {
+			wedge.label.text = business.fragments.businessDetails.name?.truncate(length: 15)
 		} else {
 			wedge.label.text = "Unknown"
 		}
@@ -356,20 +307,26 @@ extension WheelViewController: SpinWheelControlDelegate {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let yrd = segue.destination as? YelpRestaurantDetailsViewController {
-			let business = results[tableView.indexPathForSelectedRow!.row]!
-			yrd.b = business
+			if let mr = myResults {
+				let alert = UIAlertController(title: "Shit", message: "You Done Goofed. YelpRestaurantDetails needs a funny business type. Make a fucking enum already.", preferredStyle: UIAlertControllerStyle.alert)
+				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
+				self.present(alert, animated: true)
+			} else {
+				let business = searchResults[tableView.indexPathForSelectedRow!.row]!
+				yrd.b = business
+			}
 		}
-		if let lv = segue.destination as? LandingViewController {
+		if segue.destination is LandingViewController {
 			// Clear results when "quitting"
-			results = []
+			searchResults = []
+			myResults = nil
 		}
 	}
 }
 
 extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return results.count
-//		return fetchedResultsController.fetchedObjects?.count ?? 0
+		return myResults != nil ? myResults!.count : searchResults.count
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -387,14 +344,17 @@ extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
 		cell.accessoryType = .disclosureIndicator
-		if let business = results[indexPath.row] {
-			cell.textLabel!.text = business.fragments.businessDetails.name
+		
+		if myResults != nil {
+			cell.textLabel?.text = myResults![indexPath.row].name ?? "Unknown"
 		} else {
-			cell.textLabel!.text = "Unknown"
+			if let business = searchResults[indexPath.row] {
+				cell.textLabel!.text = business.fragments.businessDetails.name
+			} else {
+				cell.textLabel!.text = "Unknown"
+			}
 		}
 		
-//		let r = fetchedResultsController.object(at: indexPath)
-//		cell.textLabel!.text = r.name
 		return cell
 	}
 	
@@ -437,33 +397,5 @@ extension WheelViewController: UIScrollViewDelegate {
 				}
 			}
 		}
-	}
-}
-
-// https://stackoverflow.com/questions/21187885/use-uibarbuttonitem-icon-in-uibutton
-extension UIImage{
-	
-	class func imageFromSystemBarButton(_ systemItem: UIBarButtonSystemItem, renderingMode:UIImageRenderingMode = .automatic)-> UIImage {
-		
-		let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)
-		
-		// add to toolbar and render it
-		let bar = UIToolbar()
-		bar.setItems([tempItem], animated: false)
-		bar.snapshotView(afterScreenUpdates: true)
-		
-		// got image from real uibutton
-		let itemView = tempItem.value(forKey: "view") as! UIView
-		
-		for view in itemView.subviews {
-			if view is UIButton {
-				let button = view as! UIButton
-				let image = button.imageView!.image!
-				image.withRenderingMode(renderingMode)
-				return image
-			}
-		}
-		
-		return UIImage()
 	}
 }

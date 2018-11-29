@@ -158,7 +158,7 @@ public final class RestaurantsQuery: GraphQLQuery {
 
 public struct BusinessDetails: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment BusinessDetails on Business {\n  __typename\n  id\n  name\n  rating\n  url\n  categories {\n    __typename\n    title\n    alias\n    parent_categories {\n      __typename\n      title\n      alias\n    }\n  }\n  display_phone\n  review_count\n  price\n  coordinates {\n    __typename\n    latitude\n    longitude\n  }\n  distance\n}"
+    "fragment BusinessDetails on Business {\n  __typename\n  id\n  name\n  rating\n  url\n  categories {\n    __typename\n    title\n    alias\n    parent_categories {\n      __typename\n      title\n      alias\n    }\n  }\n  display_phone\n  review_count\n  price\n  coordinates {\n    __typename\n    latitude\n    longitude\n  }\n  distance\n  location {\n    __typename\n    address1\n    formatted_address\n  }\n}"
 
   public static let possibleTypes = ["Business"]
 
@@ -174,6 +174,7 @@ public struct BusinessDetails: GraphQLFragment {
     GraphQLField("price", type: .scalar(String.self)),
     GraphQLField("coordinates", type: .object(Coordinate.selections)),
     GraphQLField("distance", type: .scalar(Double.self)),
+    GraphQLField("location", type: .object(Location.selections)),
   ]
 
   public private(set) var resultMap: ResultMap
@@ -182,8 +183,8 @@ public struct BusinessDetails: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: String? = nil, name: String? = nil, rating: Double? = nil, url: String? = nil, categories: [Category?]? = nil, displayPhone: String? = nil, reviewCount: Int? = nil, price: String? = nil, coordinates: Coordinate? = nil, distance: Double? = nil) {
-    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "rating": rating, "url": url, "categories": categories.flatMap { (value: [Category?]) -> [ResultMap?] in value.map { (value: Category?) -> ResultMap? in value.flatMap { (value: Category) -> ResultMap in value.resultMap } } }, "display_phone": displayPhone, "review_count": reviewCount, "price": price, "coordinates": coordinates.flatMap { (value: Coordinate) -> ResultMap in value.resultMap }, "distance": distance])
+  public init(id: String? = nil, name: String? = nil, rating: Double? = nil, url: String? = nil, categories: [Category?]? = nil, displayPhone: String? = nil, reviewCount: Int? = nil, price: String? = nil, coordinates: Coordinate? = nil, distance: Double? = nil, location: Location? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "rating": rating, "url": url, "categories": categories.flatMap { (value: [Category?]) -> [ResultMap?] in value.map { (value: Category?) -> ResultMap? in value.flatMap { (value: Category) -> ResultMap in value.resultMap } } }, "display_phone": displayPhone, "review_count": reviewCount, "price": price, "coordinates": coordinates.flatMap { (value: Coordinate) -> ResultMap in value.resultMap }, "distance": distance, "location": location.flatMap { (value: Location) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -292,6 +293,16 @@ public struct BusinessDetails: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "distance")
+    }
+  }
+
+  /// The location of this business, including address, city, state, zip code and country.
+  public var location: Location? {
+    get {
+      return (resultMap["location"] as? ResultMap).flatMap { Location(unsafeResultMap: $0) }
+    }
+    set {
+      resultMap.updateValue(newValue?.resultMap, forKey: "location")
     }
   }
 
@@ -449,6 +460,55 @@ public struct BusinessDetails: GraphQLFragment {
       }
       set {
         resultMap.updateValue(newValue, forKey: "longitude")
+      }
+    }
+  }
+
+  public struct Location: GraphQLSelectionSet {
+    public static let possibleTypes = ["Location"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("address1", type: .scalar(String.self)),
+      GraphQLField("formatted_address", type: .scalar(String.self)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(address1: String? = nil, formattedAddress: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Location", "address1": address1, "formatted_address": formattedAddress])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    /// Street address of this business.
+    public var address1: String? {
+      get {
+        return resultMap["address1"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "address1")
+      }
+    }
+
+    /// Array of strings that if organized vertically give an address that is in the standard address format for the business's country.
+    public var formattedAddress: String? {
+      get {
+        return resultMap["formatted_address"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "formatted_address")
       }
     }
   }

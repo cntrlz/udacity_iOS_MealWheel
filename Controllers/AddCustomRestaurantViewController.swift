@@ -38,7 +38,8 @@ class AddCustomRestaurantViewController: UIViewController {
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 		view.addGestureRecognizer(tap)
 		
-		// Clever Girl
+		// Clever Girl. Intercepts Back button action by placing a clear
+		// button on top of the Back item
 		// from https://stackoverflow.com/a/43932624/8346298
 		let imageView = UIImageView()
 		imageView.backgroundColor = UIColor.clear
@@ -79,7 +80,7 @@ class AddCustomRestaurantViewController: UIViewController {
 	}
 	
 	@IBAction func frequencySliderValueChanged(_ sender: Any) {
-		print("biobio")
+		print("addCustomRestaurant: frequencySliderValueChanged")
 	}
 	
 	@IBAction func showPriceInfo(_ sender: Any) {
@@ -167,7 +168,7 @@ class AddCustomRestaurantViewController: UIViewController {
 			let placemark = placemarks?.first
 			let lat = placemark?.location?.coordinate.latitude
 			let lon = placemark?.location?.coordinate.longitude
-			print("Lat: \(lat), Lon: \(lon)")
+			print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
 			location = placemark?.location ?? nil
 		}
 		

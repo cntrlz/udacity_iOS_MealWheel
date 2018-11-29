@@ -32,7 +32,7 @@ class YelpAPI {
 		let metersInMiles = 1609.344
 		let meters = Double(distanceFilter) * metersInMiles
 		print("YelpAPI: Calling fetch with \(#function), parameters: ", term, "restaurants", "lat: \(lastLocation.coordinate.latitude)", "long: \(lastLocation.coordinate.longitude)", "radius: \(meters)")
-		apollo.fetch(query: RestaurantsQuery(term: term, limit: 25, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: meters), cachePolicy: .returnCacheDataElseFetch) { result, error in
+		apollo.fetch(query: RestaurantsQuery(term: term, limit: 10, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: meters), cachePolicy: .returnCacheDataElseFetch) { result, error in
 			if let error = error {
 				print("Error with RestaurantsQuery: \(error.localizedDescription)")				
 				completion(nil, error)
@@ -50,7 +50,7 @@ class YelpAPI {
 		let metersInMiles = 1609.344
 		let meters = Double(distanceFilter) * metersInMiles
 		print("calling fetch with \(meters) meters (\(distanceFilter) miles)")
-		apollo.fetch(query: RestaurantsQuery(limit: 25, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: meters), cachePolicy: .returnCacheDataElseFetch) { result, error in
+		apollo.fetch(query: RestaurantsQuery(limit: 10, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: meters), cachePolicy: .returnCacheDataElseFetch) { result, error in
 			if let error = error {
 				print("Error with RestaurantsQuery: \(error.localizedDescription)")
 				completion(nil, error)
@@ -68,7 +68,7 @@ class YelpAPI {
 		// .returnCacheDataElseFetch
 		// .fetchIgnoringCacheData
 		// .returnCacheDataDontFetch
-		apollo.fetch(query: RestaurantsQuery(limit: 25, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: 200), cachePolicy: .returnCacheDataElseFetch) { result, error in
+		apollo.fetch(query: RestaurantsQuery(limit: 10, long: lastLocation.coordinate.longitude, lat: lastLocation.coordinate.latitude, cat: "restaurants", radius: 200), cachePolicy: .returnCacheDataElseFetch) { result, error in
 			print("Query complete")
 			if let error = error {
 				print("Error with RestaurantsQuery: \(error.localizedDescription)")
@@ -92,7 +92,7 @@ class YelpAPI {
 				do {
 					let result : [YelpRestaurant] = try dataController.viewContext.fetch(fetch)
 					if result.count > 0 {
-						print("\(#function) We already have a stored YelpRestaurant with ID: ", result.first?.id, " updating if needed.")
+						print("\(#function) We already have a stored YelpRestaurant with ID: ", result.first?.id as Any, " updating if needed.")
 						r = dataController.viewContext.object(with: result.first!.objectID) as! YelpRestaurant
 					} else {
 						print("\(#function) Adding new YelpRestaurant")

@@ -16,7 +16,7 @@ class UserRestaurantDetailsViewController: UIViewController {
 	@IBOutlet var frequencySlider: UISlider!
 	@IBOutlet var priceRating: CosmosView!
 	@IBOutlet var rating: CosmosView!
-	@IBOutlet var clusivityControl: UISegmentedControl!
+	@IBOutlet weak var clusivityControl: UISegmentedControl!
 	@IBOutlet var lastVisitedLabel: UILabel!
 	@IBOutlet var locationLabel: UILabel!
 	@IBOutlet var yelpButton: UIButton!

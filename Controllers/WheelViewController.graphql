@@ -19,6 +19,10 @@ fragment BusinessDetails on Business {
 		longitude
 	}
 	distance
+	location {
+		address1
+		formatted_address
+	}
 }
 
 

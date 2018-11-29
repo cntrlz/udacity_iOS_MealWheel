@@ -6,6 +6,11 @@
 //  Copyright © 2018 Viktor Lantos. All rights reserved.
 //
 
+
+// TODO: Rebase old commit messages with multiple "initial commit"
+// TODO: Create README
+// TODO: Fix distance calculation being screwy. Is YelpAPI getting proper lat/long? Or is local calculation shit?
+
 import UIKit
 import CoreLocation
 
@@ -123,5 +128,21 @@ extension AppDelegate: CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		updateLocation(locations.last! as CLLocation)
+	}
+}
+
+extension AppDelegate {
+	func locationEnabled() -> Bool {
+		if CLLocationManager.locationServicesEnabled() {
+			switch CLLocationManager.authorizationStatus() {
+			case .notDetermined, .restricted, .denied:
+				return false
+			case .authorizedAlways, .authorizedWhenInUse:
+				return true
+			}
+		} else {
+			print("Location services are not enabled")
+			return false
+		}
 	}
 }

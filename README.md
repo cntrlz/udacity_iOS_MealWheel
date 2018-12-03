@@ -45,9 +45,8 @@ This project gratefully implements the following third party libraries and servi
 
 The author would also like to thank
 * The [StackOverflow](https://stackoverflow.com/) community, which has saved countless hours of frustration
-* [Udacity](https://www.udacity.com/)
+* [Udacity](https://www.udacity.com/) courses, for their intuitive and direct learning environment
 
 ## License
-* Merp
-* 
-
+* MealWheel is distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
+* Third-party libraries and dependencies retain their respective licenses. See LICENSE file for details.

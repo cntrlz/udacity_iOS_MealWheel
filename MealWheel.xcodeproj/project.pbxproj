@@ -16,6 +16,8 @@
 		5E36A2D82165AEA70088357D /* CuisineTypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36A2D72165AEA70088357D /* CuisineTypesTableViewController.swift */; };
 		5E41BF72219B6F00005221C9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41BF71219B6F00005221C9 /* API.swift */; };
 		5E4D8BD621966F3500E66C63 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E4D8BD521966F3500E66C63 /* schema.json */; };
+		5E5941E521B0A71E005BFFBC /* QuickAddRestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5941E421B0A71E005BFFBC /* QuickAddRestaurantDetailsViewController.swift */; };
+		5E5E1D8121B20E0A006E4986 /* RestaurantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E1D8021B20E0A006E4986 /* RestaurantResult.swift */; };
 		5E69068921ACCA6500A9643C /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E69068821ACCA6500A9643C /* OptionsViewController.swift */; };
 		5E69068B21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */; };
 		5E6E103321A358D500D2098F /* UserRestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E103221A358D500D2098F /* UserRestaurantDetailsViewController.swift */; };
@@ -75,6 +77,9 @@
 		5E36A2D72165AEA70088357D /* CuisineTypesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineTypesTableViewController.swift; sourceTree = "<group>"; };
 		5E41BF71219B6F00005221C9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5E4D8BD521966F3500E66C63 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = SOURCE_ROOT; };
+		5E5941E421B0A71E005BFFBC /* QuickAddRestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddRestaurantDetailsViewController.swift; sourceTree = "<group>"; };
+		5E5E1D7F21B0E36B006E4986 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E5E1D8021B20E0A006E4986 /* RestaurantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantResult.swift; sourceTree = "<group>"; };
 		5E69068821ACCA6500A9643C /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddRestaurantViewController.swift; sourceTree = "<group>"; };
 		5E6E103221A358D500D2098F /* UserRestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRestaurantDetailsViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				5E793EC7213898DC00AB6D1D /* AppDelegate.swift */,
+				5E5E1D7F21B0E36B006E4986 /* README.md */,
 				5E41BF71219B6F00005221C9 /* API.swift */,
 				5E793ED5213898DE00AB6D1D /* Info.plist */,
 				5EF66B0421AC8CCD00F6B04B /* Stubbies.swift */,
@@ -181,6 +187,7 @@
 				5E957B17219F7E380081FEB7 /* LandingViewController.swift */,
 				5E69068821ACCA6500A9643C /* OptionsViewController.swift */,
 				5E69068A21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift */,
+				5E5941E421B0A71E005BFFBC /* QuickAddRestaurantDetailsViewController.swift */,
 				5EFA0D0A21ADD14300639778 /* QuickRestaurantListViewController.swift */,
 				5E793EC9213898DC00AB6D1D /* WheelViewController.swift */,
 				5E92D7A6219A41130006BA38 /* WheelViewController.graphql */,
@@ -236,6 +243,7 @@
 				5E793EFA2138A07900AB6D1D /* MealWheel.xcdatamodeld */,
 				5EA15688219E0CF200A97640 /* DataController.swift */,
 				5E957B19219F83650081FEB7 /* YelpAPI.swift */,
+				5E5E1D8021B20E0A006E4986 /* RestaurantResult.swift */,
 				5E4D8BD521966F3500E66C63 /* schema.json */,
 			);
 			path = Model;
@@ -542,6 +550,7 @@
 				5E14423921A4F7BA000E3E7B /* SettingsTableViewController.swift in Sources */,
 				5E793ECC213898DC00AB6D1D /* FilterViewController.swift in Sources */,
 				5E957B18219F7E380081FEB7 /* LandingViewController.swift in Sources */,
+				5E5941E521B0A71E005BFFBC /* QuickAddRestaurantDetailsViewController.swift in Sources */,
 				5EA15692219F601D00A97640 /* MyPlacesViewController.swift in Sources */,
 				5E793EC8213898DC00AB6D1D /* AppDelegate.swift in Sources */,
 				5E957B1A219F83650081FEB7 /* YelpAPI.swift in Sources */,
@@ -552,6 +561,7 @@
 				5EFA0D0B21ADD14300639778 /* QuickRestaurantListViewController.swift in Sources */,
 				5EA15689219E0CF200A97640 /* DataController.swift in Sources */,
 				5E278F8121A8948400E93347 /* CategoriesTableViewController.swift in Sources */,
+				5E5E1D8121B20E0A006E4986 /* RestaurantResult.swift in Sources */,
 				5E69068B21ACCA8B00A9643C /* QuickAddRestaurantViewController.swift in Sources */,
 				5E14423B21A4FB33000E3E7B /* SettingsTableViewCell.swift in Sources */,
 				5E6E103321A358D500D2098F /* UserRestaurantDetailsViewController.swift in Sources */,

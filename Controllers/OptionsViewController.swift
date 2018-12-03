@@ -73,6 +73,9 @@ class OptionsViewController: UIViewController {
 				if results.count == 0 {
 					let alert = UIAlertController(title: "No Results", message: "There are no nearby restaurants matching the filters you have set", preferredStyle: UIAlertControllerStyle.alert)
 					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+					alert.addAction(UIAlertAction(title: "Continue Anyway", style: UIAlertActionStyle.default, handler: {_ in
+						self.performSegue(withIdentifier: "optionsToList", sender: self)
+					}))
 					self.present(alert, animated: true)
 				} else {
 					self.results = results

@@ -32,14 +32,14 @@
 	<true/>
 	<key>whitelistEnabled</key>
 	<true/>
-	<key>cuisineEnabled</key>
+	<key>categoriesEnabled</key>
 	<true/>
 	<key>customTypesEnabled</key>
 	<true/>
 	<key>quickAddListPreferMyPlaces</key>
 	<false/>
 	<key>filterFrequency</key>
-	<real>0.5</real>
+	<real>0.99</real>
 	<key>autoSave</key>
 	<true/>
 </dict>

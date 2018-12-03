@@ -15,6 +15,7 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="visits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="yelpId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yelpUrl" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="YelpCategory" representedClassName="YelpCategory" syncable="YES" codeGenerationType="class">
         <attribute name="alias" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,10 +41,10 @@
         <attribute name="yelpRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserRestaurant" positionX="107.203125" positionY="8.30078125" width="128" height="210"/>
-        <element name="YelpRestaurant" positionX="-54" positionY="-9" width="128" height="210"/>
         <element name="UserCategory" positionX="27" positionY="81" width="128" height="60"/>
+        <element name="UserRestaurant" positionX="107.203125" positionY="8.30078125" width="128" height="30"/>
         <element name="YelpCategory" positionX="36" positionY="90" width="128" height="90"/>
         <element name="YelpParentCategory" positionX="45" positionY="99" width="128" height="90"/>
+        <element name="YelpRestaurant" positionX="-54" positionY="-9" width="128" height="210"/>
     </elements>
 </model>

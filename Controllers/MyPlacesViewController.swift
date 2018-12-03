@@ -31,8 +31,11 @@ class MyPlacesViewController: UIViewController {
 		navigationItem.rightBarButtonItem = addButton
 	}
 	
-	// MARK: - Core Data
+	override func viewWillAppear(_ animated: Bool) {
+		tableView.reloadData()
+	}
 	
+	// MARK: - Core Data
 	fileprivate func setupFetchedResultsController() {
 		let fetchRequest: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -43,7 +46,6 @@ class MyPlacesViewController: UIViewController {
 		
 		do {
 			try fetchedResultsController.performFetch()
-//			userRestaurants = fetchedResultsController.fetchedObjects
 		} catch {
 			fatalError("MyPlacesViewController - The fetch could not be performed: \(error.localizedDescription)")
 		}

@@ -35,7 +35,7 @@
                                 <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="abg-jp-L9S"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantIconVector" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-HL-nKb" userLabel="imageView" customClass="UIImageViewWithPreserveVectorDataFix" customModule="MealWheel" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addIconVector" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-HL-nKb" userLabel="imageView" customClass="UIImageViewWithPreserveVectorDataFix" customModule="MealWheel" customModuleProvider="target">
                             <rect key="frame" x="19" y="8" width="87" height="87"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -70,6 +70,6 @@
         </view>
     </objects>
     <resources>
-        <image name="restaurantIconVector" width="18" height="18"/>
+        <image name="addIconVector" width="18" height="18"/>
     </resources>
 </document>

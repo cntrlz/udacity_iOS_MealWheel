@@ -9,13 +9,12 @@
 import UIKit
 import CoreLocation
 
-// TODO: Check wireless connectivity
-// TODO: Ask for all relevant permissions
 class LandingViewController: UIViewController {
 	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet var exploreButton: UIButton!
 	@IBOutlet var customizeButton: UIButton!
 	@IBOutlet weak var cancelButton: UIButton!
+	@IBOutlet weak var infoButton: UIButton!
 	var results: [RestaurantsQuery.Data.Search.Business?] = []
 	
 	
@@ -24,6 +23,9 @@ class LandingViewController: UIViewController {
 		// Remove the separator line on the nav bar to get a smoother appearance
 		navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
 		navigationController?.navigationBar.shadowImage = UIImage()
+		
+		infoButton.isHidden = !UserDefaults.standard.bool(forKey: "showTips")
+		infoButton.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
 	}
 	
 	@objc func skip(){
@@ -40,7 +42,7 @@ class LandingViewController: UIViewController {
 			return
 		}
 		searchBegan()
-		(UIApplication.shared.delegate as! AppDelegate).apiClient.returnFetchWithTerm(term: "", completion: { results, error in
+		(UIApplication.shared.delegate as! AppDelegate).apiClient.returnDefaultFetch(completion: { results, error in
 			if error != nil {
 				let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
 				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -60,16 +62,22 @@ class LandingViewController: UIViewController {
 		})
 	}
 	
-	@IBAction func customSearch(_ sender: Any) {
-		// Guides user through setup of custom restaurants
-	}
+//	@IBAction func customSearch(_ sender: Any) {
+//		// Guides user through setup of custom restaurants
+//	}
 	
-	@IBAction func skipLanding(_ sender: Any) {
-		performSegue(withIdentifier: "landingToTabBar", sender: nil)
-	}
+//	@IBAction func skipLanding(_ sender: Any) {
+//		performSegue(withIdentifier: "landingToTabBar", sender: nil)
+//	}
 	
 	@IBAction func cancel(_ sender: Any) {
 		// Cancels the search. Appears when loading is taking longer than 5s or so
+	}
+	
+	@objc func showInfo() {
+		let alert = UIAlertController(title: "Info", message: "Explore mode chooses a random nearby restaurant from Yelp, using your distance filters. Customize mode lets you build your own meal wheel", preferredStyle: UIAlertControllerStyle.alert)
+		alert.addAction(UIAlertAction(title: "Cool.", style: UIAlertActionStyle.default, handler: nil))
+		self.present(alert, animated: true)
 	}
 	
 	func searchBegan() {

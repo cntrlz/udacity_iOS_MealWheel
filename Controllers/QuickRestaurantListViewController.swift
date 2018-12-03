@@ -51,6 +51,11 @@ class QuickRestaurantListViewController: UIViewController {
 		} else {
 			segmentedControl.selectedSegmentIndex = 1
 		}
+		
+		if newResults.count < 1 {
+			segmentedControl.setEnabled(false, forSegmentAt: 1)
+			segmentedControl.selectedSegmentIndex = 0
+		}
 	}
 	
 	fileprivate func setupFetchedResultsController(_ clusivity: Int? = nil) {
@@ -58,8 +63,10 @@ class QuickRestaurantListViewController: UIViewController {
 		
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		fetchRequest.sortDescriptors = [sortDescriptor]
+		if UserDefaults.standard.bool(forKey: "blacklistEnabled") {
+			fetchRequest.predicate = NSPredicate(format: "clusivity != %d", -1)
+		}
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-//		fetchedResultsController.delegate = self
 		
 		do {
 			try fetchedResultsController.performFetch()
@@ -92,8 +99,19 @@ class QuickRestaurantListViewController: UIViewController {
 					if let nc = tbc.customizableViewControllers?.first as? UINavigationController {
 						if let wvc = nc.viewControllers.first as? WheelViewController {
 							if segmentedControl.selectedSegmentIndex == 0 {
-								wvc.myResults = fetchedResultsController.fetchedObjects ?? []
-								wvc.spinAtLoad = true
+								if let paths = tableView.indexPathsForSelectedRows {
+									let allResults = fetchedResultsController.fetchedObjects ?? []
+									let selectedResults = allResults.filter { (userRestaurant) -> Bool in
+										if let ip = fetchedResultsController.indexPath(forObject: userRestaurant) {
+											return paths.contains(ip)
+										}
+										return false
+									}
+									wvc.spinAtLoad = true
+									wvc.myResults = selectedResults
+								} else {
+									print("whacko")
+								}
 							} else {
 								let paths = tableView.indexPathsForSelectedRows!
 								wvc.searchResults = paths.map { newResults[$0.row] }
@@ -106,6 +124,7 @@ class QuickRestaurantListViewController: UIViewController {
 		}
 	}
 	
+	// TODO: Typo
 	@IBAction func segementedControlValueChanged(_ sender: Any) {
 		if segmentedControl.selectedSegmentIndex == 0 {
 			UserDefaults.standard.set(true, forKey: "quickAddListPreferMyPlaces")

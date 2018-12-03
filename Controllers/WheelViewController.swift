@@ -28,11 +28,19 @@ class WheelViewController: UIViewController {
 	@IBOutlet var spinWheelControl: SpinWheelControl! // See https://github.com/joshdhenry/SpinWheelControl
 	@IBOutlet var refreshButton: UIBarButtonItem!
 	@IBOutlet var errorView: UIView!
+	@IBOutlet var pinImageView: UIImageViewWithPreserveVectorDataFix!
 	
 	var dataController: DataController!
 	var fetchedResultsController: NSFetchedResultsController<YelpRestaurant>!
 	var searchResults: [RestaurantsQuery.Data.Search.Business?] = []
-	var myResults: [UserRestaurant]? = nil
+	var myResults: [UserRestaurant]?
+	var temporaryResults: [String]?
+	var filteredResults: [RestaurantResult]? {
+		didSet {
+			tableView.reloadData()
+			spinWheelControl.reloadData()
+		}
+	}
 	var tableViewExpanded: Bool = false
 	var refreshControl: UIRefreshControl!
 	let locationManager = CLLocationManager()
@@ -41,6 +49,7 @@ class WheelViewController: UIViewController {
 	var previousScrollX: CGFloat = 0
 	var overlay: UIVisualEffectView = UIVisualEffectView()
 	var spinAtLoad: Bool = false
+	var needsUpdate: Bool = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -55,23 +64,52 @@ class WheelViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		if myResults == nil {
+		if temporaryResults != nil {
+			filterResults(normalizeResults(temporaryResults as Any))
+		} else if myResults != nil {
+			filterResults(normalizeResults(myResults as Any))
+		} else {
 			if !(searchResults.count > 0) {
+				needsUpdate = true
 				yelpSearchWithTerm()
 			} else {
+				filterResults(normalizeResults(searchResults as Any))
 				tableView.reloadData()
 				spinWheelControl.reloadData()
 			}
 		}
 		
 		if spinAtLoad {
-			spinWheelControl.randomSpin()
+			if filteredResults?.count ?? 0 > 1 {
+				spinWheelControl.randomSpin()
+			}
+			
 			spinAtLoad = false
 		}
 		
 		// Maybe move this to AppDelegate? Or do we perhaps want this only once
 		// they've viewed this VC...
 		UserDefaults.standard.set(true, forKey: "firstRun")
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		// Re-apply filters
+		// Check for proper number, as you CAN blacklist things away until
+		// you have 1 or no options left
+		if temporaryResults != nil && (temporaryResults?.count ?? 0 > 1) {
+			filterResults(normalizeResults(temporaryResults as Any))
+		} else if myResults != nil && (myResults?.count ?? 0 > 1 ) {
+			filterResults(normalizeResults(myResults as Any))
+		} else if searchResults.count > 1 {
+			filterResults(normalizeResults(searchResults as Any))
+		}
+		
+		checkValidNumberOfResults()
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		// stop alerts from showing on other controllers.
+		// Stop wheel motion, or pause...?
 	}
 	
 	fileprivate func setUpSpinWheelControl() {
@@ -115,6 +153,7 @@ class WheelViewController: UIViewController {
 	
 	fileprivate func yelpSearchWithTerm(_ term: String! = "") {
 		errorView.isHidden = true
+		pinImageView.isHidden = false
 		(UIApplication.shared.delegate as! AppDelegate).apiClient.returnDefaultFetch(completion: { results, error in
 			if error != nil {
 				let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -130,47 +169,249 @@ class WheelViewController: UIViewController {
 					let alert = UIAlertController(title: "No Results", message: "There are no nearby restaurants matching the filters you have set", preferredStyle: UIAlertControllerStyle.alert)
 					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 					self.present(alert, animated: true)
+					self.pinImageView.isHidden = true
+					self.errorView.isHidden = false
 					if self.overlay.isDescendant(of: self.view) {
 						self.toggleBlur()
 					}
 				} else {
 					self.searchResults = results
+					self.filterResults(self.normalizeResults(self.searchResults))
+					
 					self.tableView.reloadData()
 					self.spinWheelControl.reloadData()
 					self.refreshControl?.endRefreshing()
-					
+					self.checkValidNumberOfResults()
 					if self.overlay.isDescendant(of: self.view) {
 						self.toggleBlur()
 					}
 				}
 			}
+			
+			self.needsUpdate = false
 		})
 	}
 	
-	func filterResults(results: [RestaurantsQuery.Data.Search.Business?]) {
+	func checkValidNumberOfResults() {
+		if !needsUpdate && filteredResults?.count ?? 0 <= 1 {
+			let alert = UIAlertController(title: "Not Enough Places", message: "Please loosen your filters! You must always have at least two places to choose between. Check your filters and reload to make sure you have at least two options.", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+			alert.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.default, handler: { _ in
+				self.refresh([])
+			}))
+			self.present(alert, animated: true)
+			errorView.isHidden = false
+			filteredResults = []
+		}
+	}
+	
+	func normalizeResults(_ results: Any) -> [RestaurantResult] {
+		var newResults: [RestaurantResult] = []
+		if results is [RestaurantsQuery.Data.Search.Business?] {
+			print("result type is yelp results")
+			for result in results as! [RestaurantsQuery.Data.Search.Business?] {
+				if let r = result?.fragments.businessDetails {
+					let nr = RestaurantResult()
+					nr.type = .Yelp
+					nr.yelpId = r.id
+					nr.name = r.name
+					nr.yelpRating = r.rating
+					nr.latitude = r.coordinates?.latitude
+					nr.longitude = r.coordinates?.longitude
+					nr.priceRating = r.price?.count
+					nr.yelpUrl = r.url
+					nr.category = r.categories?.first??.alias
+					nr.address = r.location?.address1
+					
+					// We can check to see if we already have data on this!
+					// sketchy
+					if let id = nr.yelpId {
+						let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
+						fetch.predicate = NSPredicate(format: "yelpId == %@", id)
+						do {
+							let match = try dataController.viewContext.fetch(fetch)
+							if let ur = match.first {
+								nr.id = ur.objectID
+								nr.clusivity = Int(ur.clusivity)
+								nr.visits = Int(ur.visits)
+								nr.lastVisited = ur.lastVisited
+							}
+						} catch {
+							fatalError("WheelViewController - The fetch to match a Yelp to local restaurant in \(#function) could not be performed: \(error.localizedDescription)")
+						}
+					}
+					
+					newResults.append(nr)
+				}
+			}
+		} else if results is [UserRestaurant] {
+			print("result type is fetched coredata objects")
+			for r in results as! [UserRestaurant] {
+				let nr = RestaurantResult()
+				nr.type = .CoreData
+				nr.id = r.objectID
+				nr.yelpId = r.yelpId
+				nr.name = r.name
+				nr.userRating = r.rating
+				nr.latitude = r.latitude
+				nr.longitude = r.longitude
+				nr.priceRating = Int(r.price)
+				nr.yelpUrl = r.yelpUrl
+				nr.category = r.category
+				nr.visits = Int(r.visits)
+				nr.lastVisited = r.lastVisited
+				nr.dateCreated = r.dateCreated
+//				nr.address = r.address
+				newResults.append(nr)
+			}
+		} else if results is [String] {
+			print("result type is temporary places")
+			for r in results as! [String] {
+				let nr = RestaurantResult()
+				nr.type = .Custom
+				nr.name = r
+				newResults.append(nr)
+			}
+		}
+		
+		print("normalized: ", newResults)
+		return newResults
+	}
+	
+	func filterResults(_ results: [RestaurantResult]) {
+		let bl = UserDefaults.standard.bool(forKey: "blacklistEnabled")
+		let wl = UserDefaults.standard.bool(forKey: "whitelistEnabled")
+		
+		var filtered: [RestaurantResult] = results
+		errorView.isHidden = true
+		
+		if bl {
+			let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
+			fetch.predicate = NSPredicate(format: "clusivity == -1")
+			do {
+				let blacklisted = try dataController.viewContext.fetch(fetch)
+				if blacklisted.count > 0 {
+					let yelpIds: [String] = blacklisted.reduce([String]()) { result, item in
+						var results = result
+						if let id = item.yelpId {
+							results.append(id)
+						}
+						return results
+					}
+					let objectIds: [NSManagedObjectID] = blacklisted.reduce([NSManagedObjectID]()) { result, item in
+						var results = result
+						results.append(item.objectID)
+						return results
+					}
+					let srBlRemoved = results.filter { (r) -> Bool in
+						if let id = r.yelpId {
+							if yelpIds.contains(id) { return false }
+						}
+						if let objectId = r.id {
+							if objectIds.contains(objectId) { return false }
+						}
+						return true
+					}
+					filtered = srBlRemoved
+				} else {
+					print("Nothing blacklisted")
+				}
+			} catch {
+				fatalError("WheelViewController - The fetch for blacklisted places in \(#function) could not be performed: \(error.localizedDescription)")
+			}
+		}
+		
+		let frequencySetting = UserDefaults.standard.float(forKey: "filterFrequency")
+		let maxFrequency = UserDefaults.standard.float(forKey: "maxFrequency")
+		let filterCutoff = Int(round(frequencySetting * maxFrequency))
+		
+		if filterCutoff <= 9 {
+			let frequencyFiltered = filtered.filter({ (rr) -> Bool in
+				if rr.id == nil && rr.yelpId == nil { return true } // Don't filer quick adds
+				return rr.visits ?? 0 >= filterCutoff
+			})
+			
+			filtered = frequencyFiltered
+		}
+		
+		if wl {
+			let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
+			fetch.predicate = NSPredicate(format: "clusivity == 1")
+			do {
+				let whitelisted = try dataController.viewContext.fetch(fetch)
+				if whitelisted.count > 0 {
+					let add = normalizeResults(whitelisted)
+					let existingIds: [String] = filtered.reduce([String]()) { result, item in
+						var results = result
+						if let id = item.yelpId {
+							results.append(id)
+						}
+						return results
+					}
+					
+					for r in add {
+						// If the place has a yelp id,
+						// make sure not to insert it twice
+						if let id = r.yelpId {
+							if !existingIds.contains(id){
+								filtered.append(r)
+							}
+						// If it doesn't have a yelp id,
+						// it is a custom restaurant and we
+						// always include it
+						} else {
+							filtered.append(r)
+						}
+					}
+					
+				} else {
+					print("Nothing whitelisted")
+				}
+			} catch {
+				fatalError("WheelViewController - The fetch for whitelisted places in \(#function) could not be performed: \(error.localizedDescription)")
+			}
+		}
+		
+		filteredResults = filtered
+		
 		// Does the id match one stored in our personal DB? If so, we have data on it
 		// Apply frequency filters
-		// Apply black/whitelist
 		
 		// Does the category or parents category of this match a category filter we have?
 		// Apply category filters
 	}
 	
 	@objc @IBAction func refresh(_ sender: Any) {
-		toggleBlur()
-		myResults = nil
-		yelpSearchWithTerm("")
+		if temporaryResults != nil {
+			let alert = UIAlertController(title: "Temporary Places", message: "Refreshing will run a search using your currently set filters, and you will lose any temporary places you have added that were not otherwise saved.", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+			alert.addAction(UIAlertAction(title: "Refresh", style: UIAlertActionStyle.destructive, handler: { _ in
+				self.temporaryResults = nil
+				self.refresh([])
+			}))
+			present(alert, animated: true)
+		} else {
+			toggleBlur()
+			temporaryResults = nil
+			myResults = nil
+			filteredResults = nil
+			yelpSearchWithTerm("")
+		}
 	}
 	
 	@objc func refreshControlRefreshed() {
 		toggleBlur()
+		temporaryResults = nil
 		myResults = nil
 		yelpSearchWithTerm()
+		filteredResults = nil
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
+	
+	// 89248 starbucks restroom code
 	
 	@IBAction func toggleExpandTableView(_ sender: Any) {
 		tableViewExpanded = !tableViewExpanded
@@ -183,64 +424,105 @@ class WheelViewController: UIViewController {
 		
 		if tableViewExpanded {
 			toggleExpandButton.setTitle("Collapse", for: .normal)
+			pinImageView.isHidden = true
 		} else {
 			toggleExpandButton.setTitle("Expand", for: .normal)
+			pinImageView.isHidden = false
 		}
 	}
 	
 	@objc func spinWheelDidChangeValue(sender: AnyObject) {
 		// sloppy flipflop
-		var searchBusiness: RestaurantsQuery.Data.Search.Business? = nil
-		var myPlace: UserRestaurant? = nil
-		if let mr = myResults {
-			myPlace = mr[spinWheelControl.selectedIndex]
-		} else {
-			searchBusiness = searchResults[spinWheelControl.selectedIndex]!
-		}
+//		var searchBusiness: RestaurantsQuery.Data.Search.Business?
+//		var myPlace: UserRestaurant?
+//		var temporaryPlace: String?
+//
+//		if let tr = temporaryResults {
+//			temporaryPlace = tr[spinWheelControl.selectedIndex]
+//		} else if let mr = myResults {
+//			myPlace = mr[spinWheelControl.selectedIndex]
+//		} else {
+//			searchBusiness = searchResults[spinWheelControl.selectedIndex]!
+//		}
 		
-
-		let alert = UIAlertController(title: "WINNER!", message: "You're eating at: \(searchBusiness?.fragments.businessDetails.name! ?? myPlace?.name ?? "" )", preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive, handler: nil))
-		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
+		let place = filteredResults?[spinWheelControl.selectedIndex]
+		
+		//		let alert = UIAlertController(title: "WINNER", message: "MealWheel hath spoken, and the word is: \(temporaryPlace != nil ? temporaryPlace! : searchBusiness?.fragments.businessDetails.name! ?? myPlace?.name ?? "")", preferredStyle: .alert)
+		let alert = UIAlertController(title: "WINNER", message: "MealWheel hath spoken, and the word is: \(place?.name ?? "")", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Somewhere Else", style: UIAlertActionStyle.destructive, handler: nil))
+		alert.addAction(UIAlertAction(title: "I'm Eating Here!", style: UIAlertActionStyle.default, handler: { _ in
 			// If we've eaten here before, increment visits and update lastVisited
 			// Otherwise make a new object
 			let autoSave = UserDefaults.standard.bool(forKey: "autoSave")
 			
-			if autoSave, let id = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId {
-				(UIApplication.shared.delegate as! AppDelegate).apiClient.cacheResults(results: [searchBusiness])
-				let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
-				fetch.predicate = NSPredicate(format: "yelpId == %@", id)
-				fetch.fetchLimit = 1
-//				fetch.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
-				let r: UserRestaurant
-				do {
-					let result = try self.dataController.viewContext.fetch(fetch)
-					if result.count > 0 {
-						r = self.dataController.viewContext.object(with: result.first!.objectID) as! UserRestaurant
-						r.visits += 1
-						r.lastVisited = Date()
-					} else {
-						print("Adding to userRestaurants")
-						r = UserRestaurant(context: self.dataController.viewContext)
-						let now = Date()
-						r.yelpId = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId
-						r.dateCreated = now
-						r.category = searchBusiness?.fragments.businessDetails.categories?.first!?.alias ?? myPlace?.category
-						r.clusivity = 0
-						r.name = searchBusiness?.fragments.businessDetails.name ?? myPlace?.name
-						r.visits = 1
-						r.lastVisited = now
-						r.latitude = searchBusiness?.fragments.businessDetails.coordinates?.latitude ?? myPlace?.latitude ?? 0.0
-						r.longitude = searchBusiness?.fragments.businessDetails.coordinates?.longitude ?? myPlace?.longitude ?? 0.0
+			// if autoSave, let id = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId, temporaryPlace == nil {
+			// CoreData things are already saved. Custom/Yelp things are the only ones we can actually save
+			if autoSave && place?.type != .CoreData {
+				// Do we really need to cache anything?
+//				(UIApplication.shared.delegate as! AppDelegate).apiClient.cacheResults(results: [searchBusiness])
+				
+				if place?.type == .Yelp {
+					let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
+					//				fetch.predicate = NSPredicate(format: "yelpId == %@", id)
+					fetch.predicate = NSPredicate(format: "yelpId == %@", place!.yelpId!) // TODO: Probrems?
+					fetch.fetchLimit = 1
+					//				fetch.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
+					let r: UserRestaurant
+					do {
+						let result = try self.dataController.viewContext.fetch(fetch)
+						if result.count > 0 {
+							r = self.dataController.viewContext.object(with: result.first!.objectID) as! UserRestaurant
+							r.visits += 1
+							r.lastVisited = Date()
+						} else {
+							print("Adding to userRestaurants")
+							r = UserRestaurant(context: self.dataController.viewContext)
+							let now = Date()
+							r.dateCreated = now
+							r.clusivity = 0
+							r.visits = 1
+							r.lastVisited = now
+							
+							r.yelpId = place?.yelpId
+							r.category = place?.category
+							r.name = place?.name
+							r.latitude = place?.latitude ?? 0
+							r.longitude = place?.longitude ?? 0
+							//						r.yelpId = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId
+							//						r.category = searchBusiness?.fragments.businessDetails.categories?.first!?.alias ?? myPlace?.category
+							//						r.name = searchBusiness?.fragments.businessDetails.name ?? myPlace?.name
+							//						r.latitude = searchBusiness?.fragments.businessDetails.coordinates?.latitude ?? myPlace?.latitude ?? 0.0
+							//						r.longitude = searchBusiness?.fragments.businessDetails.coordinates?.longitude ?? myPlace?.longitude ?? 0.0
+						}
+					} catch {
+						fatalError("WheelViewController - The fetch for existing ID in \(#function) could not be performed: \(error.localizedDescription)")
 					}
-				} catch {
-					fatalError("WheelViewController - The fetch for existing ID in \(#function) could not be performed: \(error.localizedDescription)")
+					
+					try? self.dataController.viewContext.save()
+				} else {
+					let r = UserRestaurant(context: self.dataController.viewContext)
+					let now = Date()
+					r.dateCreated = now
+					r.clusivity = 0
+					r.visits = 1
+					r.lastVisited = now
+					r.name = place?.name
+					
+					try? self.dataController.viewContext.save()
 				}
 				
-				try? self.dataController.viewContext.save()
+				if let p = place {
+					self.showConfirmDialog(p)
+				}
 			}
 		}))
 		present(alert, animated: true, completion: nil)
+	}
+	
+	func showConfirmDialog(_ place: RestaurantResult) {
+		let details = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "yelpDetails") as! YelpRestaurantDetailsViewController
+		details.nb = place
+		navigationController?.pushViewController(details, animated: true)
 	}
 	
 	func toggleBlur() {
@@ -259,25 +541,32 @@ class WheelViewController: UIViewController {
 
 extension WheelViewController: SpinWheelControlDataSource {
 	func numberOfWedgesInSpinWheel(spinWheel: SpinWheelControl) -> UInt {
-		return UInt(myResults != nil ? myResults!.count : searchResults.count)
-//		let count = fetchedResultsController?.fetchedObjects?.count
-//		return UInt(count ?? 0)
+//		return UInt(temporaryResults != nil ? temporaryResults!.count : myResults != nil ? myResults!.count : searchResults.count)
+		return UInt(filteredResults?.count ?? 0)
 	}
 	
 	func wedgeForSliceAtIndex(index: UInt) -> SpinWheelWedge {
 		let wedge = SpinWheelWedge()
 		let label = SpinWheelWedgeLabel()
 		label.textColor = UIColor.white
-//		label.shadowColor = UIColor.orange
 		wedge.label = label
 		wedge.shape.fillColor = UIColor.randomColor().cgColor
-		if let mr = myResults {
-			wedge.label.text = mr[Int(index)].name ?? "Unknown"
-		} else if let business = searchResults[Int(index)] {
-			wedge.label.text = business.fragments.businessDetails.name?.truncate(length: 15)
+		
+		if let fr = filteredResults {
+			wedge.label.text = fr[Int(index)].name
 		} else {
 			wedge.label.text = "Unknown"
 		}
+		
+//		if let tr = temporaryResults {
+//			wedge.label.text = tr[Int(index)]
+//		} else if let mr = myResults {
+//			wedge.label.text = mr[Int(index)].name ?? "Unknown"
+//		} else if let business = searchResults[Int(index)] {
+//			wedge.label.text = business.fragments.businessDetails.name?.truncate(length: 15)
+//		} else {
+//			wedge.label.text = "Unknown"
+//		}
 		
 //		wedge.label.text = fetchedResultsController.object(at: IndexPath(row: Int(index), section: 0)).name
 		return wedge
@@ -307,26 +596,33 @@ extension WheelViewController: SpinWheelControlDelegate {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let yrd = segue.destination as? YelpRestaurantDetailsViewController {
-			if let mr = myResults {
-				let alert = UIAlertController(title: "Shit", message: "You Done Goofed. YelpRestaurantDetails needs a funny business type. Make a fucking enum already.", preferredStyle: UIAlertControllerStyle.alert)
-				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
-				self.present(alert, animated: true)
-			} else {
-				let business = searchResults[tableView.indexPathForSelectedRow!.row]!
-				yrd.b = business
-			}
+//			if let tr = temporaryResults {
+//				let alert = UIAlertController(title: "Wat", message: "Can we even show details for this shit?", preferredStyle: UIAlertControllerStyle.alert)
+//				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
+//				present(alert, animated: true)
+//			} else if let mr = myResults {
+//				let alert = UIAlertController(title: "Shit", message: "You Done Goofed. YelpRestaurantDetails needs a funny business type. Make a fucking enum already.", preferredStyle: UIAlertControllerStyle.alert)
+//				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
+//				present(alert, animated: true)
+//			} else {
+//				let business = searchResults[tableView.indexPathForSelectedRow!.row]!
+//				yrd.b = business
+//			}
+			yrd.nb = filteredResults![tableView.indexPathForSelectedRow!.row]
 		}
 		if segue.destination is LandingViewController {
 			// Clear results when "quitting"
 			searchResults = []
 			myResults = nil
+			temporaryResults = nil
 		}
 	}
 }
 
 extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return myResults != nil ? myResults!.count : searchResults.count
+//		return temporaryResults != nil ? temporaryResults!.count : myResults != nil ? myResults!.count : searchResults.count
+		return filteredResults?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -345,16 +641,19 @@ extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 		let cell = UITableViewCell()
 		cell.accessoryType = .disclosureIndicator
 		
-		if myResults != nil {
-			cell.textLabel?.text = myResults![indexPath.row].name ?? "Unknown"
-		} else {
-			if let business = searchResults[indexPath.row] {
-				cell.textLabel!.text = business.fragments.businessDetails.name
-			} else {
-				cell.textLabel!.text = "Unknown"
-			}
-		}
+//		if temporaryResults != nil {
+//			cell.textLabel?.text = temporaryResults![indexPath.row]
+//		} else if myResults != nil {
+//			cell.textLabel?.text = myResults![indexPath.row].name ?? "Unknown"
+//		} else {
+//			if let business = searchResults[indexPath.row] {
+//				cell.textLabel!.text = business.fragments.businessDetails.name
+//			} else {
+//				cell.textLabel!.text = "Unknown"
+//			}
+//		}
 		
+		cell.textLabel!.text = filteredResults![indexPath.row].name ?? "Unknown"
 		return cell
 	}
 	
@@ -363,6 +662,7 @@ extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 }
 
+// Is this even needed?
 extension WheelViewController: NSFetchedResultsControllerDelegate {
 	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 		switch type {

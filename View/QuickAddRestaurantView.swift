@@ -40,7 +40,7 @@ import UIKit
 	
 	func toggleAdded(){
 		if (added){
-			imageView.image = UIImage(named: "restaurantIconVector")
+			imageView.image = UIImage(named: "addIconVector")
 			backgroundView.backgroundColor = UIColor(red: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1)
 			button.setTitle("ADD", for: .normal)
 			setNeedsLayout()

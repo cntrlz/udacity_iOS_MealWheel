@@ -9,6 +9,7 @@
 import CoreData
 import Cosmos
 import UIKit
+import MapKit
 
 class YelpRestaurantDetailsViewController: UIViewController {
 	@IBOutlet var priceCosmosView: CosmosView!
@@ -24,19 +25,34 @@ class YelpRestaurantDetailsViewController: UIViewController {
 	@IBOutlet var clusivityControl: UISegmentedControl!
 	
 	var b: RestaurantsQuery.Data.Search.Business!
+	var nb: RestaurantResult!
 	var cachedRestaurant: UserRestaurant!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		navigationItem.title = b.fragments.businessDetails.name ?? "No Name"
-		ratingCosmosView.rating = b.fragments.businessDetails.rating ?? 0.0
-		priceCosmosView.rating = Double((b.fragments.businessDetails.price ?? "").count)
+//		navigationItem.title = b.fragments.businessDetails.name ?? "No Name"
+//		ratingCosmosView.rating = b.fragments.businessDetails.rating ?? 0.0
+//		priceCosmosView.rating = Double((b.fragments.businessDetails.price ?? "").count)
+		navigationItem.title = nb.name ?? "No Name"
+		ratingCosmosView.rating = nb.yelpRating ?? 0.0
+		priceCosmosView.rating = Double(nb.priceRating ?? 0)
 		
 		let metersInMiles = 1609.344 // move to constants
-		addressLabel.text = b.fragments.businessDetails.location?.address1
-		distanceLabel.text = "\(String(format: "%.2f", b.fragments.businessDetails.distance ?? 0 / metersInMiles)) mi"
-		if b.fragments.businessDetails.url != nil {
+//		addressLabel.text = b.fragments.businessDetails.location?.address1
+		addressLabel.text = nb.address ?? ""
+		let location = (UIApplication.shared.delegate as! AppDelegate).lastLocation
+//		if b.fragments.businessDetails.coordinates?.latitude != nil && b.fragments.businessDetails.coordinates?.longitude != nil {
+		if nb.latitude != nil && nb.longitude != nil {
+//			let distance = location.distance(from: CLLocation(latitude: b.fragments.businessDetails.coordinates!.latitude!, longitude: b.fragments.businessDetails.coordinates!.longitude!))
+			let distance = location.distance(from: CLLocation(latitude: nb.latitude!, longitude: nb.longitude!))
+			distanceLabel.text = "\(String(format: "%.2f", distance / metersInMiles)) mi"
+		} else {
+			distanceLabel.text = ""
+		}
+		
+//		if b.fragments.businessDetails.url != nil {
+		if nb.yelpUrl != nil {
 			yelpButton.isHidden = false
 			yelpButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
 		}
@@ -59,14 +75,32 @@ class YelpRestaurantDetailsViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func goToPlace(_ sender: Any) {
+		if nb.address != nil {
+			let url = "http://maps.apple.com/maps?daddr=\(nb.address!.replacingOccurrences(of: " ", with: "+"))"
+			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
+				print("Success I guess")
+			}
+		} else if nb?.longitude != 0, nb?.latitude != 0 {
+			let url = "http://maps.apple.com/maps?daddr=\(nb!.latitude!),\(nb!.longitude!)"
+			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
+				print("Success I guess")
+			}
+		} else {
+			print("Invalid Coordinates")
+		}
+	}
+	
 	@objc func openLink() {
-		if let url = URL(string: b.fragments.businessDetails.url!) {
+//		if let url = URL(string: b.fragments.businessDetails.url!) {
+		if let url = URL(string: nb.yelpUrl!) {
 			UIApplication.shared.open(url)
 		}
 	}
 	
 	func isCached() -> Bool {
-		if let id = b.fragments.businessDetails.id {
+//		if let id = b.fragments.businessDetails.id {
+		if let id = nb.yelpId {
 			let appDelegate = UIApplication.shared.delegate as! AppDelegate
 			let dataController = appDelegate.dataController
 			

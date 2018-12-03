@@ -9,6 +9,7 @@
 import CoreLocation
 import Cosmos
 import UIKit
+import MapKit
 
 class AddCustomRestaurantViewController: UIViewController {
 	@IBOutlet var nameField: UITextField!
@@ -34,6 +35,8 @@ class AddCustomRestaurantViewController: UIViewController {
 		
 		nameField.delegate = self
 		locationField.delegate = self
+		
+		updateFrequencyLabelText()
 		
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 		view.addGestureRecognizer(tap)
@@ -79,8 +82,24 @@ class AddCustomRestaurantViewController: UIViewController {
 		return true
 	}
 	
+	func updateFrequencyLabelText() {
+		let max = UserDefaults.standard.float(forKey: "maxFrequency")
+		let frequency = frequencySlider.value * max
+		let text: String!
+		if frequencySlider.value < 0.05 {
+			text = "Never been here"
+		} else if frequencySlider.value > 0.95 {
+			text = "\(Int(round(max)))+ visits"
+		} else if Int(round(frequency)) == 1 {
+			text = "Visited once"
+		} else {
+			text = "Visited \(Int(round(frequency))) times"
+		}
+		frequencyLabel.text = text
+	}
+	
 	@IBAction func frequencySliderValueChanged(_ sender: Any) {
-		print("addCustomRestaurant: frequencySliderValueChanged")
+		updateFrequencyLabelText()
 	}
 	
 	@IBAction func showPriceInfo(_ sender: Any) {
@@ -124,6 +143,28 @@ class AddCustomRestaurantViewController: UIViewController {
 		navigationController?.popViewController(animated: true)
 	}
 	
+	@IBAction func findLocation(_ sender: Any) {
+		let prefix = "http://maps.apple.com/maps?"
+		let formattedAddress: String
+		
+		if locationField.text != nil && locationField.text != "" {
+			formattedAddress = "daddr=\(locationField.text!.replacingOccurrences(of: " ", with: "+"))"
+			UIApplication.shared.open(URL(string: prefix+formattedAddress)!, options: [:]) { (success) in
+				print("Success I guess")
+			}
+		} else if nameField.text != nil && nameField.text != "" {
+			let formattedString = nameField.text!.replacingOccurrences(of: " ", with: "+")
+			let url = "http://maps.apple.com/maps?q=\(formattedString)"
+			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
+				print("Success I guess")
+			}
+		} else {
+			let alert = UIAlertController(title: "Invalid Location", message: "Please enter a location or add a restaurant name to search", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+			self.present(alert, animated: true)
+		}
+	}
+	
 	func save() {
 		let r = UserRestaurant(context: dataController.viewContext)
 		r.dateCreated = Date()
@@ -138,7 +179,7 @@ class AddCustomRestaurantViewController: UIViewController {
 		let geocoder = CLGeocoder()
 		geocoder.geocodeAddressString(locationField.text!) { placemarks, error in
 			if error != nil {
-				let alert = UIAlertController(title: "Error", message: "There was an issue with the geocoding request: \(error!.localizedDescription.contains("error 2") ? "The internet connection appears to be offline" : error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+				let alert = UIAlertController(title: "Error", message: "We couldn't geocode the location you entered: \(error!.localizedDescription.contains("error 2") ? "The internet connection appears to be offline" : error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
 				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 				self.present(alert, animated: true)
 			} else {

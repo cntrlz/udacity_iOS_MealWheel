@@ -13,7 +13,7 @@ class FilterViewController: UIViewController {
 	@IBOutlet var distanceLabel: UILabel!
 	@IBOutlet var distanceSlider: UISlider!
 	@IBOutlet var frequencySlider: UISlider!
-	
+	@IBOutlet weak var resultTypeControl: UISegmentedControl!
 	@IBOutlet var distanceDisclosure: UIButton!
 	@IBOutlet var frequencyDisclosure: UIButton!
 	@IBOutlet var cuisineTypesDisclosure: UIButton!
@@ -73,7 +73,8 @@ class FilterViewController: UIViewController {
 		if frequencySlider.value < 0.05 {
 			text = "New places only"
 		} else if frequencySlider.value > 0.95 {
-			text = "\(Int(round(max)))+ visits"
+//			text = "\(Int(round(max)))+ visits"
+			text = "Any number of visits"
 		} else if Int(round(frequency)) == 1 {
 			text = "Visited at least once"
 		} else {

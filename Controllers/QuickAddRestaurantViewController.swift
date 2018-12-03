@@ -9,7 +9,7 @@
 import UIKit
 
 class QuickAddRestaurantViewController: UIViewController {
-	// We don't want to clutter the UI, so we'll limit the manual inputs to six
+	// We don't want to clutter the UI, so we've limited the manual inputs to six
 	@IBOutlet var add1: QuickAddRestaurantView!
 	@IBOutlet var add2: QuickAddRestaurantView!
 	@IBOutlet var add3: QuickAddRestaurantView!
@@ -43,10 +43,6 @@ class QuickAddRestaurantViewController: UIViewController {
 		} else {
 			performSegue(withIdentifier: "quickAddToWheel", sender: self)
 		}
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-//		navigationController?.isNavigationBarHidden = true
 	}
 	
 	@objc func skip() {

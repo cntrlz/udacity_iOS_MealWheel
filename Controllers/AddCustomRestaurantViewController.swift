@@ -73,13 +73,9 @@ class AddCustomRestaurantViewController: UIViewController {
 		clusivityDisclosure.isHidden = !shouldShowTips
 	}
 	
-	@objc func dismissKeyboard() {
-		view.endEditing(true)
-	}
-	
-	func fieldsAreOkay() -> Bool {
-		if nameField.text == "" || locationField.text == "" { return false }
-		return true
+	// MARK: UI Events
+	@IBAction func frequencySliderValueChanged(_ sender: Any) {
+		updateFrequencyLabelText()
 	}
 	
 	func updateFrequencyLabelText() {
@@ -98,10 +94,11 @@ class AddCustomRestaurantViewController: UIViewController {
 		frequencyLabel.text = text
 	}
 	
-	@IBAction func frequencySliderValueChanged(_ sender: Any) {
-		updateFrequencyLabelText()
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
 	}
 	
+	// MARK: Disclosures
 	@IBAction func showPriceInfo(_ sender: Any) {
 		let alert = UIAlertController(title: "Price Range", message: "Guidelines: 1 dollar sign: $10 and under, 2: $11-30, 3: $31-60, 4: $61+. Per person for a meal including drink, tax, and tip.", preferredStyle: UIAlertControllerStyle.alert)
 		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -118,6 +115,13 @@ class AddCustomRestaurantViewController: UIViewController {
 		let alert = UIAlertController(title: "Inclusion Lists", message: "A blacklisted place will never appear as an option on the Wheel, regardless of other filters. A whitelisted place will always be an option.", preferredStyle: UIAlertControllerStyle.alert)
 		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 		present(alert, animated: true)
+	}
+	
+	
+	// MARK: Navigation & Saving
+	func fieldsAreOkay() -> Bool {
+		if nameField.text == "" || locationField.text == "" { return false }
+		return true
 	}
 	
 	@objc func back(sender: AnyObject) {
@@ -139,30 +143,10 @@ class AddCustomRestaurantViewController: UIViewController {
 		}
 	}
 	
+	// Current implementation does not give user the option to cancel.
+	// Consider working this in later.
 	@IBAction func cancel(_ sender: Any) {
 		navigationController?.popViewController(animated: true)
-	}
-	
-	@IBAction func findLocation(_ sender: Any) {
-		let prefix = "http://maps.apple.com/maps?"
-		let formattedAddress: String
-		
-		if locationField.text != nil && locationField.text != "" {
-			formattedAddress = "daddr=\(locationField.text!.replacingOccurrences(of: " ", with: "+"))"
-			UIApplication.shared.open(URL(string: prefix+formattedAddress)!, options: [:]) { (success) in
-				print("Success I guess")
-			}
-		} else if nameField.text != nil && nameField.text != "" {
-			let formattedString = nameField.text!.replacingOccurrences(of: " ", with: "+")
-			let url = "http://maps.apple.com/maps?q=\(formattedString)"
-			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
-				print("Success I guess")
-			}
-		} else {
-			let alert = UIAlertController(title: "Invalid Location", message: "Please enter a location or add a restaurant name to search", preferredStyle: UIAlertControllerStyle.alert)
-			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-			self.present(alert, animated: true)
-		}
 	}
 	
 	func save() {
@@ -191,14 +175,41 @@ class AddCustomRestaurantViewController: UIViewController {
 			}
 		}
 		
-		// Implement cats!
-		r.category = "ohshit"
+		// TODO: Implement categories
+		r.category = ""
 		
-		// What do with these?
+		// TODO: Figure out what to do with these. See also UserRestaurantDetails VC
 		//			r.lastVisited = Date()
 		//			r.yelpId = // don't have one, yeeee
 		
 		try? dataController.viewContext.save()
+	}
+	
+	// MARK: Location and Geocoding
+	@IBAction func findLocation(_ sender: Any) {
+		let prefix = "http://maps.apple.com/maps?"
+		let formattedAddress: String
+		
+		if locationField.text != nil && locationField.text != "" {
+			formattedAddress = "daddr=\(locationField.text!.replacingOccurrences(of: " ", with: "+"))"
+			UIApplication.shared.open(URL(string: prefix+formattedAddress)!, options: [:]) { (success) in
+				if (success) { print("AddCustomRestaurant - Successfully opened link") } else {
+					print("AddCustomRestaurant - error opening link")
+				}
+			}
+		} else if nameField.text != nil && nameField.text != "" {
+			let formattedString = nameField.text!.replacingOccurrences(of: " ", with: "+")
+			let url = "http://maps.apple.com/maps?q=\(formattedString)"
+			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
+				if (success) { print("AddCustomRestaurant - Successfully opened link") } else {
+					print("AddCustomRestaurant - error opening link")
+				}
+			}
+		} else {
+			let alert = UIAlertController(title: "Invalid Location", message: "Please enter a location or add a restaurant name to search", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+			self.present(alert, animated: true)
+		}
 	}
 	
 	func geocodeAddress(_ address: String) -> CLLocation? {

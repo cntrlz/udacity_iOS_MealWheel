@@ -124,8 +124,7 @@ class QuickRestaurantListViewController: UIViewController {
 		}
 	}
 	
-	// TODO: Typo
-	@IBAction func segementedControlValueChanged(_ sender: Any) {
+	@IBAction func segmentedControlValueChanged(_ sender: Any) {
 		if segmentedControl.selectedSegmentIndex == 0 {
 			UserDefaults.standard.set(true, forKey: "quickAddListPreferMyPlaces")
 			setupFetchedResultsController()
@@ -167,25 +166,3 @@ extension QuickRestaurantListViewController: UITableViewDelegate, UITableViewDat
 		return cell
 	}
 }
-
-// extension QuickRestaurantListViewController: NSFetchedResultsControllerDelegate {
-//	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//		if (segmentedControl.selectedSegmentIndex == 0){
-//			return
-//		}
-////		switch type {
-////		case .insert:
-////			tableView.insertRows(at: [newIndexPath!], with: .automatic)
-////			break
-////		case .delete:
-////			tableView.reloadData()
-////			break
-////		case .update:
-////			tableView.reloadRows(at: [indexPath!], with: UITableViewRowAnimation.automatic)
-////			break
-////		case .move:
-////			tableView.moveRow(at: indexPath!, to: newIndexPath!)
-////			break
-////		}
-//	}
-// }

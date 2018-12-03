@@ -30,7 +30,6 @@
 		5E793ED4213898DE00AB6D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E793ED2213898DE00AB6D1D /* LaunchScreen.storyboard */; };
 		5E793EDF213898DE00AB6D1D /* MealWheelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E793EDE213898DE00AB6D1D /* MealWheelTests.swift */; };
 		5E793EEA213898DE00AB6D1D /* MealWheelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E793EE9213898DE00AB6D1D /* MealWheelUITests.swift */; };
-		5E793EF821389F3900AB6D1D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E793EF721389F3900AB6D1D /* SettingsViewController.swift */; };
 		5E793EFC2138A07900AB6D1D /* MealWheel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E793EFA2138A07900AB6D1D /* MealWheel.xcdatamodeld */; };
 		5E92D7A7219A41130006BA38 /* WheelViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5E92D7A6219A41130006BA38 /* WheelViewController.graphql */; };
 		5E957B18219F7E380081FEB7 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E957B17219F7E380081FEB7 /* LandingViewController.swift */; };
@@ -98,7 +97,6 @@
 		5E793EE5213898DE00AB6D1D /* MealWheelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealWheelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E793EE9213898DE00AB6D1D /* MealWheelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealWheelUITests.swift; sourceTree = "<group>"; };
 		5E793EEB213898DE00AB6D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E793EF721389F3900AB6D1D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E793EFB2138A07900AB6D1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		5E92D7A6219A41130006BA38 /* WheelViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WheelViewController.graphql; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.graphql; };
 		5E957B17219F7E380081FEB7 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				5EA15691219F601D00A97640 /* MyPlacesViewController.swift */,
 				5E6E103221A358D500D2098F /* UserRestaurantDetailsViewController.swift */,
 				5E6E103421A364B700D2098F /* AddCustomRestaurantViewController.swift */,
-				5E793EF721389F3900AB6D1D /* SettingsViewController.swift */,
 				5E278F7E21A6389D00E93347 /* ListTableViewController.swift */,
 				5E278F8021A8948400E93347 /* CategoriesTableViewController.swift */,
 			);
@@ -557,7 +554,6 @@
 				5E6E103521A364B700D2098F /* AddCustomRestaurantViewController.swift in Sources */,
 				5EF66B0721AC96AD00F6B04B /* Utilities.swift in Sources */,
 				5E793EFC2138A07900AB6D1D /* MealWheel.xcdatamodeld in Sources */,
-				5E793EF821389F3900AB6D1D /* SettingsViewController.swift in Sources */,
 				5EFA0D0B21ADD14300639778 /* QuickRestaurantListViewController.swift in Sources */,
 				5EA15689219E0CF200A97640 /* DataController.swift in Sources */,
 				5E278F8121A8948400E93347 /* CategoriesTableViewController.swift in Sources */,

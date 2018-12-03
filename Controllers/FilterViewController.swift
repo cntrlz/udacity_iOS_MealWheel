@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: The frequency slider should be more intuitive. Making it maxed out to
+// filter "any frequency" is counterintuitive.
 class FilterViewController: UIViewController {
 	@IBOutlet var frequencyLabel: UILabel!
 	@IBOutlet var distanceLabel: UILabel!
@@ -35,11 +37,6 @@ class FilterViewController: UIViewController {
 		distanceDisclosure.isHidden = !shouldShowTips
 		frequencyDisclosure.isHidden = !shouldShowTips
 		cuisineTypesDisclosure.isHidden = !shouldShowTips
-	}
-	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 	
 	@IBAction func distanceChanged(_ sender: UISlider) {
@@ -73,7 +70,6 @@ class FilterViewController: UIViewController {
 		if frequencySlider.value < 0.05 {
 			text = "New places only"
 		} else if frequencySlider.value > 0.95 {
-//			text = "\(Int(round(max)))+ visits"
 			text = "Any number of visits"
 		} else if Int(round(frequency)) == 1 {
 			text = "Visited at least once"

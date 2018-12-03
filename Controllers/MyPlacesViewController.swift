@@ -74,15 +74,6 @@ class MyPlacesViewController: UIViewController {
 			
 		}
 		try? self.dataController.viewContext.save()
-		
-//		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserRestaurant")
-//		let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//		do {
-//			try dataController.viewContext.execute(deleteRequest)
-//			try? dataController.viewContext.save()
-//		} catch let error as NSError {
-//			print("MyPlacesView - There was an error with the batch delete: \(error)")
-//		}
 	}
 	
 	@objc func deletePlaces() {
@@ -123,12 +114,10 @@ class MyPlacesViewController: UIViewController {
 extension MyPlacesViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return fetchedResultsController.fetchedObjects?.count ?? 0
-//		return userRestaurants.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "myPlacesTableViewCell") as! MyPlacesTableViewCell
-//		let r = userRestaurants[indexPath.row]!
 		let r = fetchedResultsController.object(at: indexPath)
 		cell.label.text = r.name
 		return cell

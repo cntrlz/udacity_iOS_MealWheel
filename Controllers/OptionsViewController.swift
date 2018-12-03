@@ -21,17 +21,6 @@ class OptionsViewController: UIViewController {
 
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "skip", style: .plain, target: self, action: #selector(skip))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 	
 	func searchStarted() {
 		activityIndicator.startAnimating()
@@ -44,7 +33,6 @@ class OptionsViewController: UIViewController {
 		addButton.isEnabled = true
 		listButton.isEnabled = true
 	}
-	
 	
 	@IBAction func listOptionSelected(_ sender: Any) {
 		if !((UIApplication.shared.delegate as? AppDelegate)?.locationEnabled() ?? false) {
@@ -84,6 +72,8 @@ class OptionsViewController: UIViewController {
 			}
 		})
 	}
+	
+	// MARK: Segues
 	
 	@objc func skip(){
 		present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarController"), animated: true, completion: nil)

@@ -12,7 +12,8 @@ import Cosmos
 import UIKit
 import MapKit
 
-// Just look at all this code replication with AddCustomRestaurantDetailsViewController! Jingus! Fix this.
+// TODO: Code replication in AddCustomRestaurantDetailsViewController! Fix this.
+// TODO: Geocoding is clunky and not working as smoothly as I'd like
 class UserRestaurantDetailsViewController: UIViewController {
 	@IBOutlet var frequencyLabel: UILabel!
 	@IBOutlet var frequencySlider: UISlider!
@@ -111,6 +112,27 @@ class UserRestaurantDetailsViewController: UIViewController {
 		locationField.isHidden = true
 	}
 	
+	// MARK: UI Events
+	@IBAction func frequencySliderValueChanged(_ sender: Any) {
+		updateFrequencyLabelText()
+	}
+	
+	func updateFrequencyLabelText() {
+		let max = UserDefaults.standard.float(forKey: "maxFrequency")
+		let frequency = frequencySlider.value * max
+		let text: String!
+		if frequencySlider.value < 0.05 {
+			text = "Never been here"
+		} else if frequencySlider.value > 0.95 {
+			text = "\(Int(round(max)))+ visits"
+		} else if Int(round(frequency)) == 1 {
+			text = "Visited once"
+		} else {
+			text = "Visited \(Int(round(frequency))) times"
+		}
+		frequencyLabel.text = text
+	}
+	
 	fileprivate func updateLocationLabelName() {
 		if let r = r {
 			if r.longitude != 0 && r.latitude != 0 {
@@ -125,23 +147,6 @@ class UserRestaurantDetailsViewController: UIViewController {
 		}
 	}
 	
-	@objc func openLink() {
-		if yelpURL != nil {
-			UIApplication.shared.open(yelpURL!)
-		}
-	}
-	
-	@IBAction func goToPlace(_ sender: Any) {
-		if r?.longitude != 0, r?.latitude != 0 {
-			let url = "http://maps.apple.com/maps?daddr=\(r!.latitude),\(r!.longitude)"
-			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
-				print("Success I guess")
-			}
-		} else {
-			print("Invalid Coordinates")
-		}
-	}
-	
 	@objc func dismissKeyboard() {
 		view.endEditing(true)
 	}
@@ -152,6 +157,65 @@ class UserRestaurantDetailsViewController: UIViewController {
 		present(alert, animated: true)
 	}
 	
+	// MARK: Navigation
+	@objc func back(_ sender: Any) {
+		if hasChanges() {
+			if !fieldsAreOkay() {
+				let alert = UIAlertController(title: "Empty Fields", message: "Some fields are empty. Leave without saving changes?", preferredStyle: UIAlertControllerStyle.alert)
+				alert.addAction(UIAlertAction(title: "Keep Editing", style: UIAlertActionStyle.default, handler: nil))
+				alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { _ in
+					self.navigationController?.popViewController(animated: true)
+				}))
+				present(alert, animated: true)
+				return
+			} else {
+				save()
+				navigationController?.popViewController(animated: true)
+			}
+		} else {
+			cancel([])
+		}
+	}
+	
+	@IBAction func cancel(_ sender: Any) {
+		navigationController?.popViewController(animated: true)
+	}
+	
+	// MARK: Geocoding
+	fileprivate func geocodeLocation(_ r: UserRestaurant) {
+		let geocoder = CLGeocoder()
+		geocoder.geocodeAddressString(locationField.text!) { placemarks, error in
+			if error != nil {
+				let alert = UIAlertController(title: "Error", message: "We couldn't geocode that location: \(error!.localizedDescription.contains("error 2") ? "The internet connection appears to be offline" : error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+				self.present(alert, animated: true)
+			} else {
+				let placemark = placemarks?.first
+				r.latitude = placemark?.location?.coordinate.latitude ?? 0
+				r.longitude = placemark?.location?.coordinate.longitude ?? 0
+				print("GEOCODER - Lat: \(r.latitude), Lon: \(r.longitude)")
+				try? self.dataController.viewContext.save()
+			}
+		}
+	}
+	
+	// This is an unused implementation
+	//	func geocodeAddress(_ address: String) -> CLLocation? {
+	//		let geocoder = CLGeocoder()
+	//		var location: CLLocation?
+	//
+	//		geocoder.geocodeAddressString(locationField.text!) { placemarks, _ in
+	//			let placemark = placemarks?.first
+	//			let lat = placemark?.location?.coordinate.latitude
+	//			let lon = placemark?.location?.coordinate.longitude
+	//			print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
+	//			location = placemark?.location ?? nil
+	//		}
+	//
+	//		return location
+	//	}
+	
+	// MARK: Editing and Saving
 	@IBAction func toggleEditPlace(_ sender: Any) {
 		if editPlace {
 			editButton.title = "Edit"
@@ -192,28 +256,10 @@ class UserRestaurantDetailsViewController: UIViewController {
 		}
 	}
 	
-	func updateFrequencyLabelText() {
-		let max = UserDefaults.standard.float(forKey: "maxFrequency")
-		let frequency = frequencySlider.value * max
-		let text: String!
-		if frequencySlider.value < 0.05 {
-			text = "Never been here"
-		} else if frequencySlider.value > 0.95 {
-			text = "\(Int(round(max)))+ visits"
-		} else if Int(round(frequency)) == 1 {
-			text = "Visited once"
-		} else {
-			text = "Visited \(Int(round(frequency))) times"
-		}
-		frequencyLabel.text = text
-	}
-	
-	@IBAction func frequencySliderValueChanged(_ sender: Any) {
-		updateFrequencyLabelText()
-	}
-	
+	// TODO: Figure out some proper validation that's logical but doesn't bog
+	// the user down with alerts
 	func fieldsAreOkay() -> Bool {
-//		if nameField.text == "" || locationField.text == "" { return false }
+		//		if nameField.text == "" || locationField.text == "" { return false }
 		return true
 	}
 	
@@ -228,47 +274,6 @@ class UserRestaurantDetailsViewController: UIViewController {
 		return false
 	}
 	
-	@objc func back(_ sender: Any) {
-		if hasChanges() {
-			if !fieldsAreOkay() {
-				let alert = UIAlertController(title: "Empty Fields", message: "Some fields are empty. Leave without saving changes?", preferredStyle: UIAlertControllerStyle.alert)
-				alert.addAction(UIAlertAction(title: "Keep Editing", style: UIAlertActionStyle.default, handler: nil))
-				alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { _ in
-					self.navigationController?.popViewController(animated: true)
-				}))
-				present(alert, animated: true)
-				return
-			} else {
-				save()
-				navigationController?.popViewController(animated: true)
-			}
-		} else {
-			cancel([])
-		}
-	}
-	
-	@IBAction func cancel(_ sender: Any) {
-		navigationController?.popViewController(animated: true)
-	}
-	
-	fileprivate func geocodeLocation(_ r: UserRestaurant) {
-		// TODO: we need to geocode this
-		let geocoder = CLGeocoder()
-		geocoder.geocodeAddressString(locationField.text!) { placemarks, error in
-			if error != nil {
-				let alert = UIAlertController(title: "Error", message: "We couldn't geocode that location: \(error!.localizedDescription.contains("error 2") ? "The internet connection appears to be offline" : error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
-				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-				self.present(alert, animated: true)
-			} else {
-				let placemark = placemarks?.first
-				r.latitude = placemark?.location?.coordinate.latitude ?? 0
-				r.longitude = placemark?.location?.coordinate.longitude ?? 0
-				print("GEOCODER - Lat: \(r.latitude), Lon: \(r.longitude)")
-				try? self.dataController.viewContext.save()
-			}
-		}
-	}
-	
 	func save() {
 		if let r = dataController.viewContext.object(with: self.r!.objectID) as? UserRestaurant {
 			r.name = nameField.text != "" ? nameField.text : r.name
@@ -277,34 +282,38 @@ class UserRestaurantDetailsViewController: UIViewController {
 			r.rating = rating.rating
 			r.price = Int16(priceRating.rating)
 			
-			// Implement cats!
-			r.category = "ohshit"
+			// Implement categories!
+			r.category = ""
 			
 			if !isYelp {
 				geocodeLocation(r)
 			}
 		}
 		
-		// What do with these?
+		// TODO: Figure out how to deal with
 		//			r.lastVisited = Date()
-		//			r.yelpId = // don't have one, yeeee
+		// and
+		//			r.yelpId = // Cuz we might not have one, eh?
 		
 		try? dataController.viewContext.save()
 	}
 	
-	func geocodeAddress(_ address: String) -> CLLocation? {
-		let geocoder = CLGeocoder()
-		var location: CLLocation?
-		
-		geocoder.geocodeAddressString(locationField.text!) { placemarks, _ in
-			let placemark = placemarks?.first
-			let lat = placemark?.location?.coordinate.latitude
-			let lon = placemark?.location?.coordinate.longitude
-			print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
-			location = placemark?.location ?? nil
+	// MARK: Maps Links
+	@IBAction func goToPlace(_ sender: Any) {
+		if r?.longitude != 0, r?.latitude != 0 {
+			let url = "http://maps.apple.com/maps?daddr=\(r!.latitude),\(r!.longitude)"
+			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
+				print("Success I guess")
+			}
+		} else {
+			print("Invalid Coordinates")
 		}
-		
-		return location
+	}
+	
+	@objc func openLink() {
+		if yelpURL != nil {
+			UIApplication.shared.open(yelpURL!)
+		}
 	}
 	
 	func getURL(yelpId: String?) -> URL? {
@@ -332,14 +341,4 @@ class UserRestaurantDetailsViewController: UIViewController {
 			return nil
 		}
 	}
-	
-    /*
-    // MARK: - Navigation
-	
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

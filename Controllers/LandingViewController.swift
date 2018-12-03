@@ -62,21 +62,14 @@ class LandingViewController: UIViewController {
 		})
 	}
 	
-//	@IBAction func customSearch(_ sender: Any) {
-//		// Guides user through setup of custom restaurants
-//	}
-	
-//	@IBAction func skipLanding(_ sender: Any) {
-//		performSegue(withIdentifier: "landingToTabBar", sender: nil)
-//	}
-	
 	@IBAction func cancel(_ sender: Any) {
-		// Cancels the search. Appears when loading is taking longer than 5s or so
+		// Cancels the search. Should appear when loading is taking longer than 5s or so
+		// Not yet implemented (generally long load times will just error out as appropriate)
 	}
 	
 	@objc func showInfo() {
-		let alert = UIAlertController(title: "Info", message: "Explore mode chooses a random nearby restaurant from Yelp, using your distance filters. Customize mode lets you build your own meal wheel", preferredStyle: UIAlertControllerStyle.alert)
-		alert.addAction(UIAlertAction(title: "Cool.", style: UIAlertActionStyle.default, handler: nil))
+		let alert = UIAlertController(title: "Info", message: "Explore mode chooses a random nearby restaurant from Yelp using your current filters. Customize mode lets you build your own Meal Wheel.", preferredStyle: UIAlertControllerStyle.alert)
+		alert.addAction(UIAlertAction(title: "Cool", style: UIAlertActionStyle.default, handler: nil))
 		self.present(alert, animated: true)
 	}
 	

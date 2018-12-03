@@ -34,19 +34,3 @@ query Restaurants($term: String, $limit: Int, $long: Float, $lat: Float, $cat: S
 		total
 	}
 }
-
-#query Restaurants {
-#	business(id: "garaje-san-francisco") {
-#		name
-#		id
-#		is_claimed
-#		is_closed
-#		url
-#		phone
-#		display_phone
-#		review_count
-#		rating
-#		photos
-#	}
-#}
-

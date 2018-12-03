@@ -10,6 +10,7 @@ import CoreData
 import SpinWheelControl
 import UIKit
 
+// TODO: Implement categories, custom types
 class CuisineTypesTableViewController: UITableViewController {
 	@IBOutlet var switchCategories: UISwitch!
 	@IBOutlet var switchBlacklist: UISwitch!
@@ -67,7 +68,7 @@ class CuisineTypesTableViewController: UITableViewController {
 			try categoryResultsController.performFetch()
 			numberOfCategories = categoryResultsController.fetchedObjects?.count ?? 0
 		} catch {
-			fatalError("MyPlacesViewController - The fetch could not be performed: \(error.localizedDescription)")
+			fatalError("CuisineTypesTableViewController - The fetch could not be performed: \(error.localizedDescription)")
 		}
 		
 		let blacklistFetchRequest: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
@@ -78,7 +79,7 @@ class CuisineTypesTableViewController: UITableViewController {
 			try blacklistResultsController.performFetch()
 			numberOfBlacklistedPlaces = blacklistResultsController.fetchedObjects?.count ?? 0
 		} catch {
-			fatalError("MyPlacesViewController - The fetch could not be performed: \(error.localizedDescription)")
+			fatalError("CuisineTypesTableViewController - The fetch could not be performed: \(error.localizedDescription)")
 		}
 		
 		let whitelistFetchRequest: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
@@ -89,11 +90,11 @@ class CuisineTypesTableViewController: UITableViewController {
 			try whitelistResultsController.performFetch()
 			numberOfWhitelistedPlaces = whitelistResultsController.fetchedObjects?.count ?? 0
 		} catch {
-			fatalError("MyPlacesViewController - The fetch could not be performed: \(error.localizedDescription)")
+			fatalError("CuisineTypesTableViewController - The fetch could not be performed: \(error.localizedDescription)")
 		}
 	}
 	
-	// TODO: Rename to Categories
+	// MARK: Show Lists
 	@IBAction func showCategories(_ sender: Any) {
 		parent?.performSegue(withIdentifier: "showCategories", sender: "Categories") // TODO: sender doesn't need to be anything here
 	}
@@ -106,14 +107,14 @@ class CuisineTypesTableViewController: UITableViewController {
 		parent?.performSegue(withIdentifier: "showList", sender: "Whitelist")
 	}
 	
-	// TODO: Axe this
+	// Currently not implemented
 	@IBAction func showCustomTypes(_ sender: Any) {
 		parent?.performSegue(withIdentifier: "showList", sender: "Custom Types")
 	}
 	
-	// DISCLOSURES
+	// MARK: Disclosures
 	@IBAction func showCategoriesDisclosure(_ sender: Any) {
-		let alert = UIAlertController(title: "Categories", message: "Press \"Categories\" to define which cuisine types to include. Categories includes types such as \"Mexican\", \"Thai\", and \"Fast Food.\" You may also toggle filtering by cuisine on and off.", preferredStyle: .alert)
+		let alert = UIAlertController(title: "Categories", message: "COMING SOON! Press \"Categories\" to define which cuisine types to include. Categories includes types such as \"Mexican\", \"Thai\", and \"Fast Food.\" You may also toggle filtering by cuisine on and off.", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 		present(alert, animated: true, completion: nil)
 	}
@@ -136,6 +137,7 @@ class CuisineTypesTableViewController: UITableViewController {
 		present(alert, animated: true, completion: nil)
 	}
 	
+	// MARK: Labels
 	func updateCategoryLabelText() {
 		let isOn = switchCategories.isOn
 		labelCategories.text = isOn ? numberOfCategories > 0 ? "Filtering \(numberOfCategories) types" : "No categories" : "Filter off"
@@ -151,7 +153,7 @@ class CuisineTypesTableViewController: UITableViewController {
 		labelWhitelist.text = isOn ? numberOfWhitelistedPlaces > 0 ? "Including \(numberOfWhitelistedPlaces) places" : "Nothing whitelisted" : "Filter off"
 	}
 	
-	// SWITCHES
+	// MARK: Switches
 	@IBAction func blacklistSwitchValueChanged(_ sender: Any) {
 		UserDefaults.standard.set(switchBlacklist.isOn, forKey: "blacklistEnabled")
 		updateBlacklistLabelText()
@@ -167,10 +169,10 @@ class CuisineTypesTableViewController: UITableViewController {
 		updateCategoryLabelText()
 	}
 	
+	// Currently not implemented
 	@IBAction func customTypesSwitchValueChanged(_ sender: Any) {
 		let isOn = switchCustomTypes.isOn
 		UserDefaults.standard.set(isOn, forKey: "customTypesEnabled")
 		print("Filtering by custom types is now \(isOn ? "on" : "off")")
-		// TODO: Add label for custom types
 	}
 }

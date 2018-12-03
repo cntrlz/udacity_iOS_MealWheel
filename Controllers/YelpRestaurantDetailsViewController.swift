@@ -31,27 +31,20 @@ class YelpRestaurantDetailsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		navigationItem.title = b.fragments.businessDetails.name ?? "No Name"
-//		ratingCosmosView.rating = b.fragments.businessDetails.rating ?? 0.0
-//		priceCosmosView.rating = Double((b.fragments.businessDetails.price ?? "").count)
 		navigationItem.title = nb.name ?? "No Name"
 		ratingCosmosView.rating = nb.yelpRating ?? 0.0
 		priceCosmosView.rating = Double(nb.priceRating ?? 0)
 		
-		let metersInMiles = 1609.344 // move to constants
-//		addressLabel.text = b.fragments.businessDetails.location?.address1
+		let metersInMiles = 1609.344 // TODO: Move this and similar to a constants file
 		addressLabel.text = nb.address ?? ""
 		let location = (UIApplication.shared.delegate as! AppDelegate).lastLocation
-//		if b.fragments.businessDetails.coordinates?.latitude != nil && b.fragments.businessDetails.coordinates?.longitude != nil {
 		if nb.latitude != nil && nb.longitude != nil {
-//			let distance = location.distance(from: CLLocation(latitude: b.fragments.businessDetails.coordinates!.latitude!, longitude: b.fragments.businessDetails.coordinates!.longitude!))
 			let distance = location.distance(from: CLLocation(latitude: nb.latitude!, longitude: nb.longitude!))
 			distanceLabel.text = "\(String(format: "%.2f", distance / metersInMiles)) mi"
 		} else {
 			distanceLabel.text = ""
 		}
 		
-//		if b.fragments.businessDetails.url != nil {
 		if nb.yelpUrl != nil {
 			yelpButton.isHidden = false
 			yelpButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
@@ -84,22 +77,22 @@ class YelpRestaurantDetailsViewController: UIViewController {
 		} else if nb?.longitude != 0, nb?.latitude != 0 {
 			let url = "http://maps.apple.com/maps?daddr=\(nb!.latitude!),\(nb!.longitude!)"
 			UIApplication.shared.open(URL(string: url)!, options: [:]) { (success) in
-				print("Success I guess")
+				if success { print("YelpRestaurantDetails: Successfully opened link") } else {
+					print("YelpRestaurantDetails: Error opening link")
+				}
 			}
 		} else {
-			print("Invalid Coordinates")
+			print("YelpRestaurantDetails: Invalid Coordinates sent to \(#function)")
 		}
 	}
 	
 	@objc func openLink() {
-//		if let url = URL(string: b.fragments.businessDetails.url!) {
 		if let url = URL(string: nb.yelpUrl!) {
 			UIApplication.shared.open(url)
 		}
 	}
 	
 	func isCached() -> Bool {
-//		if let id = b.fragments.businessDetails.id {
 		if let id = nb.yelpId {
 			let appDelegate = UIApplication.shared.delegate as! AppDelegate
 			let dataController = appDelegate.dataController
@@ -123,14 +116,4 @@ class YelpRestaurantDetailsViewController: UIViewController {
 		}
 		return false
 	}
-	
-    /*
-    // MARK: - Navigation
-	
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

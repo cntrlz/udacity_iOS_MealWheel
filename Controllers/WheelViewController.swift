@@ -41,6 +41,7 @@ class WheelViewController: UIViewController {
 			spinWheelControl.reloadData()
 		}
 	}
+	
 	var tableViewExpanded: Bool = false
 	var refreshControl: UIRefreshControl!
 	let locationManager = CLLocationManager()
@@ -58,6 +59,8 @@ class WheelViewController: UIViewController {
 		dataController = appDelegate.dataController
 		
 		setUpSpinWheelControl()
+		// Uncomment to add a refresh control to the table view. It's kinda
+		// awkward to activate so it's not being used right now.
 		//		setUpRefreshControl()
 		setUpFetchedResultsController()
 		
@@ -87,8 +90,6 @@ class WheelViewController: UIViewController {
 			spinAtLoad = false
 		}
 		
-		// Maybe move this to AppDelegate? Or do we perhaps want this only once
-		// they've viewed this VC...
 		UserDefaults.standard.set(true, forKey: "firstRun")
 	}
 	
@@ -108,10 +109,11 @@ class WheelViewController: UIViewController {
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		// stop alerts from showing on other controllers.
-		// Stop wheel motion, or pause...?
+		// TODO: Stop alerts from showing on other controllers.
+		// TODO: Stop wheel motion, or suspend until user returns to this tab...?
 	}
 	
+	// MARK: Setup
 	fileprivate func setUpSpinWheelControl() {
 		spinWheelControl.dataSource = self
 		spinWheelControl.delegate = self
@@ -133,7 +135,6 @@ class WheelViewController: UIViewController {
 		fetchRequest.sortDescriptors = [sortDescriptor]
 		
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-		fetchedResultsController.delegate = self
 		
 		do {
 			try fetchedResultsController.performFetch()
@@ -147,8 +148,31 @@ class WheelViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func wheelControlTouched(_ sender: Any) {
-		spinWheelControl.randomSpin()
+	// MARK: Networking
+	@objc @IBAction func refresh(_ sender: Any) {
+		if temporaryResults != nil {
+			let alert = UIAlertController(title: "Temporary Places", message: "Refreshing will run a search using your currently set filters, and you will lose any temporary places you have added that were not otherwise saved.", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+			alert.addAction(UIAlertAction(title: "Refresh", style: UIAlertActionStyle.destructive, handler: { _ in
+				self.temporaryResults = nil
+				self.refresh([])
+			}))
+			present(alert, animated: true)
+		} else {
+			toggleBlur()
+			temporaryResults = nil
+			myResults = nil
+			filteredResults = nil
+			yelpSearchWithTerm("")
+		}
+	}
+	
+	@objc func refreshControlRefreshed() {
+		toggleBlur()
+		temporaryResults = nil
+		myResults = nil
+		yelpSearchWithTerm()
+		filteredResults = nil
 	}
 	
 	fileprivate func yelpSearchWithTerm(_ term: String! = "") {
@@ -192,6 +216,7 @@ class WheelViewController: UIViewController {
 		})
 	}
 	
+	// MARK: Results validation and filtering
 	func checkValidNumberOfResults() {
 		if !needsUpdate && filteredResults?.count ?? 0 <= 1 {
 			let alert = UIAlertController(title: "Not Enough Places", message: "Please loosen your filters! You must always have at least two places to choose between. Check your filters and reload to make sure you have at least two options.", preferredStyle: UIAlertControllerStyle.alert)
@@ -261,7 +286,7 @@ class WheelViewController: UIViewController {
 				nr.visits = Int(r.visits)
 				nr.lastVisited = r.lastVisited
 				nr.dateCreated = r.dateCreated
-//				nr.address = r.address
+				// nr.address = r.address // TODO: Check - Are we storing addresses this way?
 				newResults.append(nr)
 			}
 		} else if results is [String] {
@@ -373,81 +398,20 @@ class WheelViewController: UIViewController {
 		}
 		
 		filteredResults = filtered
-		
-		// Does the id match one stored in our personal DB? If so, we have data on it
-		// Apply frequency filters
-		
-		// Does the category or parents category of this match a category filter we have?
-		// Apply category filters
-	}
-	
-	@objc @IBAction func refresh(_ sender: Any) {
-		if temporaryResults != nil {
-			let alert = UIAlertController(title: "Temporary Places", message: "Refreshing will run a search using your currently set filters, and you will lose any temporary places you have added that were not otherwise saved.", preferredStyle: UIAlertControllerStyle.alert)
-			alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
-			alert.addAction(UIAlertAction(title: "Refresh", style: UIAlertActionStyle.destructive, handler: { _ in
-				self.temporaryResults = nil
-				self.refresh([])
-			}))
-			present(alert, animated: true)
-		} else {
-			toggleBlur()
-			temporaryResults = nil
-			myResults = nil
-			filteredResults = nil
-			yelpSearchWithTerm("")
-		}
-	}
-	
-	@objc func refreshControlRefreshed() {
-		toggleBlur()
-		temporaryResults = nil
-		myResults = nil
-		yelpSearchWithTerm()
-		filteredResults = nil
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
-	
-	// 89248 starbucks restroom code
-	
-	@IBAction func toggleExpandTableView(_ sender: Any) {
-		tableViewExpanded = !tableViewExpanded
-		
-		UIView.animate(withDuration: 0.5, animations: {
-			self.detailsViewCollapsedConstraint.isActive = !self.tableViewExpanded
-			self.detailsViewExpandedConstraint.isActive = self.tableViewExpanded
-			self.view.layoutIfNeeded()
-		})
-		
-		if tableViewExpanded {
-			toggleExpandButton.setTitle("Collapse", for: .normal)
-			pinImageView.isHidden = true
-		} else {
-			toggleExpandButton.setTitle("Expand", for: .normal)
-			pinImageView.isHidden = false
-		}
+
+	// MARK: WheelView
+	@IBAction func wheelControlTouched(_ sender: Any) {
+		spinWheelControl.randomSpin()
 	}
 	
 	@objc func spinWheelDidChangeValue(sender: AnyObject) {
-		// sloppy flipflop
-//		var searchBusiness: RestaurantsQuery.Data.Search.Business?
-//		var myPlace: UserRestaurant?
-//		var temporaryPlace: String?
-//
-//		if let tr = temporaryResults {
-//			temporaryPlace = tr[spinWheelControl.selectedIndex]
-//		} else if let mr = myResults {
-//			myPlace = mr[spinWheelControl.selectedIndex]
-//		} else {
-//			searchBusiness = searchResults[spinWheelControl.selectedIndex]!
-//		}
-		
 		let place = filteredResults?[spinWheelControl.selectedIndex]
 		
-		//		let alert = UIAlertController(title: "WINNER", message: "MealWheel hath spoken, and the word is: \(temporaryPlace != nil ? temporaryPlace! : searchBusiness?.fragments.businessDetails.name! ?? myPlace?.name ?? "")", preferredStyle: .alert)
 		let alert = UIAlertController(title: "WINNER", message: "MealWheel hath spoken, and the word is: \(place?.name ?? "")", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "Somewhere Else", style: UIAlertActionStyle.destructive, handler: nil))
 		alert.addAction(UIAlertAction(title: "I'm Eating Here!", style: UIAlertActionStyle.default, handler: { _ in
@@ -455,7 +419,6 @@ class WheelViewController: UIViewController {
 			// Otherwise make a new object
 			let autoSave = UserDefaults.standard.bool(forKey: "autoSave")
 			
-			// if autoSave, let id = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId, temporaryPlace == nil {
 			// CoreData things are already saved. Custom/Yelp things are the only ones we can actually save
 			if autoSave && place?.type != .CoreData {
 				// Do we really need to cache anything?
@@ -463,10 +426,8 @@ class WheelViewController: UIViewController {
 				
 				if place?.type == .Yelp {
 					let fetch: NSFetchRequest<UserRestaurant> = UserRestaurant.fetchRequest()
-					//				fetch.predicate = NSPredicate(format: "yelpId == %@", id)
 					fetch.predicate = NSPredicate(format: "yelpId == %@", place!.yelpId!) // TODO: Probrems?
 					fetch.fetchLimit = 1
-					//				fetch.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
 					let r: UserRestaurant
 					do {
 						let result = try self.dataController.viewContext.fetch(fetch)
@@ -488,11 +449,6 @@ class WheelViewController: UIViewController {
 							r.name = place?.name
 							r.latitude = place?.latitude ?? 0
 							r.longitude = place?.longitude ?? 0
-							//						r.yelpId = searchBusiness?.fragments.businessDetails.id ?? myPlace?.yelpId
-							//						r.category = searchBusiness?.fragments.businessDetails.categories?.first!?.alias ?? myPlace?.category
-							//						r.name = searchBusiness?.fragments.businessDetails.name ?? myPlace?.name
-							//						r.latitude = searchBusiness?.fragments.businessDetails.coordinates?.latitude ?? myPlace?.latitude ?? 0.0
-							//						r.longitude = searchBusiness?.fragments.businessDetails.coordinates?.longitude ?? myPlace?.longitude ?? 0.0
 						}
 					} catch {
 						fatalError("WheelViewController - The fetch for existing ID in \(#function) could not be performed: \(error.localizedDescription)")
@@ -519,6 +475,26 @@ class WheelViewController: UIViewController {
 		present(alert, animated: true, completion: nil)
 	}
 	
+	// MARK: UI
+	@IBAction func toggleExpandTableView(_ sender: Any) {
+		tableViewExpanded = !tableViewExpanded
+		
+		UIView.animate(withDuration: 0.5, animations: {
+			self.detailsViewCollapsedConstraint.isActive = !self.tableViewExpanded
+			self.detailsViewExpandedConstraint.isActive = self.tableViewExpanded
+			self.view.layoutIfNeeded()
+		})
+		
+		if tableViewExpanded {
+			toggleExpandButton.setTitle("Collapse", for: .normal)
+			pinImageView.isHidden = true
+		} else {
+			toggleExpandButton.setTitle("Expand", for: .normal)
+			pinImageView.isHidden = false
+		}
+	}
+	
+	
 	func showConfirmDialog(_ place: RestaurantResult) {
 		let details = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "yelpDetails") as! YelpRestaurantDetailsViewController
 		details.nb = place
@@ -541,7 +517,6 @@ class WheelViewController: UIViewController {
 
 extension WheelViewController: SpinWheelControlDataSource {
 	func numberOfWedgesInSpinWheel(spinWheel: SpinWheelControl) -> UInt {
-//		return UInt(temporaryResults != nil ? temporaryResults!.count : myResults != nil ? myResults!.count : searchResults.count)
 		return UInt(filteredResults?.count ?? 0)
 	}
 	
@@ -558,17 +533,6 @@ extension WheelViewController: SpinWheelControlDataSource {
 			wedge.label.text = "Unknown"
 		}
 		
-//		if let tr = temporaryResults {
-//			wedge.label.text = tr[Int(index)]
-//		} else if let mr = myResults {
-//			wedge.label.text = mr[Int(index)].name ?? "Unknown"
-//		} else if let business = searchResults[Int(index)] {
-//			wedge.label.text = business.fragments.businessDetails.name?.truncate(length: 15)
-//		} else {
-//			wedge.label.text = "Unknown"
-//		}
-		
-//		wedge.label.text = fetchedResultsController.object(at: IndexPath(row: Int(index), section: 0)).name
 		return wedge
 	}
 }
@@ -576,13 +540,11 @@ extension WheelViewController: SpinWheelControlDataSource {
 extension WheelViewController: SpinWheelControlDelegate {
 	// Triggered at various intervals. The variable radians describes how many radians the spin wheel control has moved since the last time this method was called.
 	func spinWheelDidRotateByRadians(radians: Radians) {
-//		print("rotated \(String(describing: radians))")
 		spinWheelControl.isUserInteractionEnabled = false
 	}
 	
 	func spinWheelDidUpdateSelectedIndex(radians: Radians, description: String) {
-		// print("rotated \(String(describing: radians)) in " + description)
-		print(description)
+		print("\(#function) - rotated \(String(describing: radians)) in " + description)
 	}
 	
 	// Triggered when the spin wheel control has come to rest after spinning.
@@ -596,18 +558,6 @@ extension WheelViewController: SpinWheelControlDelegate {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let yrd = segue.destination as? YelpRestaurantDetailsViewController {
-//			if let tr = temporaryResults {
-//				let alert = UIAlertController(title: "Wat", message: "Can we even show details for this shit?", preferredStyle: UIAlertControllerStyle.alert)
-//				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
-//				present(alert, animated: true)
-//			} else if let mr = myResults {
-//				let alert = UIAlertController(title: "Shit", message: "You Done Goofed. YelpRestaurantDetails needs a funny business type. Make a fucking enum already.", preferredStyle: UIAlertControllerStyle.alert)
-//				alert.addAction(UIAlertAction(title: "NOT OK", style: UIAlertActionStyle.default, handler: nil))
-//				present(alert, animated: true)
-//			} else {
-//				let business = searchResults[tableView.indexPathForSelectedRow!.row]!
-//				yrd.b = business
-//			}
 			yrd.nb = filteredResults![tableView.indexPathForSelectedRow!.row]
 		}
 		if segue.destination is LandingViewController {
@@ -621,14 +571,15 @@ extension WheelViewController: SpinWheelControlDelegate {
 
 extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//		return temporaryResults != nil ? temporaryResults!.count : myResults != nil ? myResults!.count : searchResults.count
 		return filteredResults?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		if indexPath.row >= 8 {
 			if !tableViewExpanded {
-//				toggleExpandTableView([])
+				// Uncomment this to make the tableview auto-expand once the user has scrolled to the bottom.
+				// Situationally useful, but awkward in the same way as the refresh control, and therefore commented-out.
+				// toggleExpandTableView([])
 			}
 		}
 	}
@@ -640,49 +591,12 @@ extension WheelViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
 		cell.accessoryType = .disclosureIndicator
-		
-//		if temporaryResults != nil {
-//			cell.textLabel?.text = temporaryResults![indexPath.row]
-//		} else if myResults != nil {
-//			cell.textLabel?.text = myResults![indexPath.row].name ?? "Unknown"
-//		} else {
-//			if let business = searchResults[indexPath.row] {
-//				cell.textLabel!.text = business.fragments.businessDetails.name
-//			} else {
-//				cell.textLabel!.text = "Unknown"
-//			}
-//		}
-		
 		cell.textLabel!.text = filteredResults![indexPath.row].name ?? "Unknown"
 		return cell
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
-	}
-}
-
-// Is this even needed?
-extension WheelViewController: NSFetchedResultsControllerDelegate {
-	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-		switch type {
-		case .insert:
-			let yr = anObject as! YelpRestaurant
-			print("insert:", yr)
-			break
-		case .delete:
-			let yr = anObject as! YelpRestaurant
-			print("delete:", yr)
-			break
-		case .update:
-			let yr = anObject as! YelpRestaurant
-			print("update:", yr)
-			break
-		case .move:
-			let yr = anObject as! YelpRestaurant
-			print("move:", yr)
-			break
-		}
 	}
 }
 

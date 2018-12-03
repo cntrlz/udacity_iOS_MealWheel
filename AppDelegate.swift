@@ -6,11 +6,6 @@
 //  Copyright © 2018 Viktor Lantos. All rights reserved.
 //
 
-
-// TODO: Rebase old commit messages with multiple "initial commit"
-// TODO: Create README
-// TODO: Fix distance calculation being screwy. Is YelpAPI getting proper lat/long? Or is local calculation shit?
-
 import UIKit
 import CoreLocation
 
@@ -19,17 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	let locationManager = CLLocationManager()
 	var lastLocation: CLLocation = CLLocation()
-	
-
 	let apiClient = YelpAPI()
 	let dataController = DataController(modelName: "MealWheel")
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Use this for inspecting the Core Data
-//		if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
-//			print("Documents Directory: \(directoryLocation)Application Support")
-//			print("Home Directory: \(NSHomeDirectory())")
-//		}
 		
 		let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 		print(urls[urls.count-1] as URL)
@@ -52,24 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			window?.rootViewController = initialViewController
 			window?.makeKeyAndVisible()
 		}
-
-//		let tabController = window?.rootViewController as! UITabBarController
-//		let navController = tabController.viewControllers?.first as! UINavigationController
-//		let wheelViewController = navController.topViewController as! WheelViewController
-//		wheelViewController.dataController = dataController
-		
-		
-
-//		let fileName = "appGUID.txt"
-//		let path = NSURL(fileURLWithPath:
-//			NSTemporaryDirectory()).appendingPathComponent(fileName)
-//		let myText = "\(NSHomeDirectory())"
-//		do {
-//			try myText.write(to: path!, atomically: true, encoding: .utf8)
-//
-//		} catch {
-//			// Handle error
-//		}
 
 		return true
 	}
@@ -122,7 +92,6 @@ extension AppDelegate: CLLocationManagerDelegate {
 	}
 	
 	func updateLocation(_ location: CLLocation) {
-//		print("updated location")
 		lastLocation = location
 	}
 	

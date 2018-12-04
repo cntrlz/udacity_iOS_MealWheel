@@ -18,34 +18,39 @@ class DataController {
 		return persistentContainer.viewContext
 	}
 	
-	var backgroundContext: NSManagedObjectContext!
+// Uncomment for background context use
+//	 var backgroundContext: NSManagedObjectContext!
 	
 	init(modelName:String){
 		persistentContainer = NSPersistentContainer(name: modelName)
-		// TODO: I don't think we use a background context in this app...
-		backgroundContext = persistentContainer.newBackgroundContext()
-		//				Cool methods
-		//				On the container...
-		//				persistentContainer.performBackgroundTask { (context) in
-		//					doSomeWork()
-		//					try save
-		//				}
-		//				And on the context...
-		//				viewContext.perform {
-		//					someStuffAsynchronouslyOnCorrectQueueForContext()
-		//				}
+// Uncomment for background context use
+//		backgroundContext = persistentContainer.newBackgroundContext()
+		
+		//	Cool methods, for reference
+		//		On the container...
+		//			persistentContainer.performBackgroundTask { (context) in
+		//				doSomeWork()
+		//				try save
+		//			}
+		//		And on the context...
+		//			viewContext.perform {
+		//				someStuffAsynchronouslyOnCorrectQueueForContext()
+		//			}
 		//
-		//				viewContext.performAndWait {
-		//					someStuffSynchronouslyOnCorrectQueue()
-		//				}
+		//			viewContext.performAndWait {
+		//				someStuffSynchronouslyOnCorrectQueue()
+		//			}
 	}
 	
 	func configureContexts() {
 		// Both contexts will merge in chages from parent
 		viewContext.automaticallyMergesChangesFromParent = true
-		backgroundContext.automaticallyMergesChangesFromParent = true
-		// Background changes will override view context
-		backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+		
+// Uncomment for background context use
+//		backgroundContext.automaticallyMergesChangesFromParent = true
+// 		Background changes will override view context
+//		backgroundContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+		
 		viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
 	}
 	

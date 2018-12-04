@@ -421,7 +421,7 @@ class WheelViewController: UIViewController {
 			
 			// CoreData things are already saved. Custom/Yelp things are the only ones we can actually save
 			if autoSave && place?.type != .CoreData {
-				// Do we really need to cache anything?
+				// Do we really need to cache anything? If so, uncomment method in YelpAPI
 //				(UIApplication.shared.delegate as! AppDelegate).apiClient.cacheResults(results: [searchBusiness])
 				
 				if place?.type == .Yelp {

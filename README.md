@@ -1,5 +1,5 @@
 # MealWheel
-MealWheel is an iOS 12+ app developed as part of [Udacity's iOS program](https://www.udacity.com/school-of-programming).
+MealWheel is an iOS 11.4+ app developed as part of [Udacity's iOS program](https://www.udacity.com/school-of-programming).
 
 MealWheel offers a quick and fun way to decide where to eat, when the momentary consensus game among peers simply isn't cutting it.
 
@@ -26,15 +26,18 @@ This data is persisted using the **CoreData** stack, and while others settings a
 * One of the xibs might be causing an Xcode view refresh loop. Unknown if this is an Xcode problem or something with the code. Try disabling "Automatically Refresh Views" under "Editor >" when focused on the storyboard. 
 
 ## Todo
-* [ ] Clean up UI elements which correspond to features not yet implemented
-* [ ] Remove unnecessary YelpAPI methods
+* [x] Clean up UI elements which correspond to features not yet implemented
+* [x] Remove unnecessary YelpAPI methods
 * [ ] Remove duplicate and commented-out code
 * [ ] Remove unused assets
-* [ ] Add license info
-* [ ] Geocoding is still clunky
+* [x] Add license info
+* [ ] Fix geocoding - it's still clunky
+
+## Notes
+* Apollo's build-time configuration should be all set, but if for some reason you're getting errors with the API, see [here](https://www.apollographql.com/docs/ios/installation.html#adding-build-step)
 
 ## Contributing
-* Do what thou wilt
+* Do as thou wilt. The author would be more than flattered if anyone thinks this project is neat.
 
 ## Acknowledgements
 This project gratefully implements the following third party libraries and services:

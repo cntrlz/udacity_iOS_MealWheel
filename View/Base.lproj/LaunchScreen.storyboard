@@ -24,9 +24,16 @@
                                     <constraint firstAttribute="width" secondItem="o7E-fv-7td" secondAttribute="height" multiplier="1:1" id="Tdt-He-4mg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MealWheel" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5g-r0-Wof">
+                                <rect key="frame" x="114.5" y="525.5" width="146" height="52"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="32"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="i5g-r0-Wof" firstAttribute="top" secondItem="o7E-fv-7td" secondAttribute="bottom" constant="32" id="60x-Tj-etk"/>
+                            <constraint firstItem="i5g-r0-Wof" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HWp-7U-5Wu"/>
                             <constraint firstItem="o7E-fv-7td" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MTD-3M-Bdn"/>
                             <constraint firstItem="o7E-fv-7td" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="khP-IE-wgP"/>
                         </constraints>

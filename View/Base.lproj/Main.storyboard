@@ -132,7 +132,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="74O-Sz-a7s" userLabel="resultTypeControl">
+                                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="74O-Sz-a7s" userLabel="resultTypeControl">
                                                 <rect key="frame" x="72.5" y="227" width="230" height="29"/>
                                                 <segments>
                                                     <segment title="My Places"/>

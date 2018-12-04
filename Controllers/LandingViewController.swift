@@ -101,9 +101,5 @@ class LandingViewController: UIViewController {
 				}
 			}
 		}
-		
-		if segue.identifier == "landingToOptions" {
-			navigationController?.pushViewController(segue.destination, animated: true)
-		}
 	}
 }

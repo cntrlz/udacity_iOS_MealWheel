@@ -46,12 +46,12 @@ This project gratefully implements the following third party libraries and servi
 * [Apollo](https://github.com/apollographql/apollo-ios) for its networking layer
 * [Cosmos](https://github.com/evgenyneu/Cosmos) for ratings views
 
-## Privacy Policy
-MealWheel does not collect any user data. All data remains on the device. 
-
 The author would also like to thank
 * The [StackOverflow](https://stackoverflow.com/) community, which has saved countless hours of frustration
 * [Udacity](https://www.udacity.com/) courses, for their intuitive and direct learning environment
+
+## Privacy Policy
+MealWheel does not collect any user data. All data remains on the device.
 
 ## License
 * MealWheel is distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)

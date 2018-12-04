@@ -34,6 +34,7 @@ This data is persisted using the **CoreData** stack, and while others settings a
 * [ ] Fix geocoding - it's still clunky
 
 ## Notes
+* Do not open _MealWheel.xcworkspace_ before doing `pod install`. You might need to close and re-open _MealWheel.xcworkspace_ after running `pod install`
 * Apollo's build-time configuration should be all set, but if for some reason you're getting errors with the API, see [here](https://www.apollographql.com/docs/ios/installation.html#adding-build-step)
 
 ## Contributing

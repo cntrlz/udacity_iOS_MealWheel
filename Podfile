@@ -9,8 +9,6 @@ use_frameworks!
 
 # Pods for MealWheel
 pod 'SpinWheelControl'
-#pod 'CDYelpFusionKit', '1.5.0'
-#pod 'YelpAPI'
 pod 'Apollo'
 pod 'Cosmos', '~> 17.0'
 

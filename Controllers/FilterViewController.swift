@@ -39,6 +39,7 @@ class FilterViewController: UIViewController {
 		cuisineTypesDisclosure.isHidden = !shouldShowTips
 	}
 	
+	// MARK: UI Events
 	@IBAction func distanceChanged(_ sender: UISlider) {
 		updateDistanceLabelText()
 		UserDefaults.standard.set(distanceSlider.value, forKey: "filterDistance")
@@ -79,6 +80,7 @@ class FilterViewController: UIViewController {
 		frequencyLabel.text = text
 	}
 	
+	// MARK: Disclosures
 	@IBAction func showDistanceDisclosure(_ sender: Any) {
 		let alert = UIAlertController(title: "Distance", message: "Drag the slider to filter out any restaurants that are too far", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -90,7 +92,14 @@ class FilterViewController: UIViewController {
 		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 		present(alert, animated: true, completion: nil)
 	}
+
+	@IBAction func showFiltersDisclosure(_ sender: Any) {
+		let alert = UIAlertController(title: "Custom Filters", message: "Use the filters below to have more control over the things that go into your MealWheel!", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+		present(alert, animated: true, completion: nil)
+	}
 	
+	// MARK: Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showList" {
 			let listTvc = segue.destination as! ListTableViewController

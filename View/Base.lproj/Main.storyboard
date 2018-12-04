@@ -102,14 +102,17 @@
                                                     <action selector="showFrequencyDisclosure:" destination="NAk-5d-1q5" eventType="touchUpInside" id="QlE-LG-dV4"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuisine Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-ca-FRQ" userLabel="labelCuisineTypes">
-                                                <rect key="frame" x="134" y="287" width="107" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-ca-FRQ" userLabel="labelCuisineTypes">
+                                                <rect key="frame" x="132.5" y="287" width="110.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06A-dO-E4v" userLabel="disclosureFrequency">
                                                 <rect key="frame" x="333" y="286.5" width="22" height="22"/>
+                                                <connections>
+                                                    <action selector="showFiltersDisclosure:" destination="NAk-5d-1q5" eventType="touchUpInside" id="RKc-Gx-zva"/>
+                                                </connections>
                                             </button>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhM-3I-Jsy">
                                                 <rect key="frame" x="0.0" y="328" width="375" height="176"/>

@@ -17,6 +17,7 @@ class YelpRestaurantDetailsViewController: UIViewController {
 	@IBOutlet var yelpButton: UIButton!
 	@IBOutlet var addressLabel: UILabel!
 	@IBOutlet var distanceLabel: UILabel!
+	@IBOutlet weak var customLabel: UILabel!
 	
 	@IBOutlet var myStatisticsView: UIView!
 	@IBOutlet var frequencySlider: UISlider!
@@ -34,6 +35,10 @@ class YelpRestaurantDetailsViewController: UIViewController {
 		navigationItem.title = nb.name ?? "No Name"
 		ratingCosmosView.rating = nb.yelpRating ?? 0.0
 		priceCosmosView.rating = Double(nb.priceRating ?? 0)
+		
+		if nb.type == .Custom {
+			customLabel.isHidden = false
+		}
 		
 		let metersInMiles = 1609.344 // TODO: Move this and similar to a constants file
 		addressLabel.text = nb.address ?? ""

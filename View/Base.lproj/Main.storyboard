@@ -649,13 +649,22 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="Yelp_trademark_RGB"/>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings unavailable for quick-added places. Save this place to show details." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySk-0L-h6R" userLabel="customLabel">
+                                        <rect key="frame" x="56.5" y="140" width="262.5" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2rF-Si-Kq1" firstAttribute="leading" secondItem="qnM-Y6-qnu" secondAttribute="leading" id="3hh-Me-6hj"/>
                                     <constraint firstAttribute="trailing" secondItem="2rF-Si-Kq1" secondAttribute="trailing" id="7cQ-bC-FCg"/>
                                     <constraint firstItem="RVC-pa-KjW" firstAttribute="top" secondItem="qnM-Y6-qnu" secondAttribute="top" constant="16" id="Kyh-ru-CqG"/>
+                                    <constraint firstItem="ySk-0L-h6R" firstAttribute="top" secondItem="ISk-Fq-qdg" secondAttribute="bottom" constant="32" id="MtG-bB-kHJ"/>
+                                    <constraint firstItem="ySk-0L-h6R" firstAttribute="width" secondItem="qnM-Y6-qnu" secondAttribute="width" multiplier="0.7" id="Pht-Bt-yhd"/>
                                     <constraint firstItem="eFE-p1-VNm" firstAttribute="centerX" secondItem="qnM-Y6-qnu" secondAttribute="centerX" id="QZS-hZ-3GE"/>
+                                    <constraint firstItem="ySk-0L-h6R" firstAttribute="centerX" secondItem="qnM-Y6-qnu" secondAttribute="centerX" id="SO6-x9-sIx"/>
                                     <constraint firstAttribute="bottom" secondItem="R5E-sl-ocA" secondAttribute="bottom" constant="16" id="UBU-RV-q7K"/>
                                     <constraint firstAttribute="trailing" secondItem="R5E-sl-ocA" secondAttribute="trailing" constant="16" id="XL6-zW-h5n"/>
                                     <constraint firstItem="ISk-Fq-qdg" firstAttribute="centerX" secondItem="qnM-Y6-qnu" secondAttribute="centerX" id="e9w-8v-pQe"/>
@@ -684,6 +693,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="qcj-PK-xts" id="pvE-2B-Gn3"/>
                         <outlet property="clusivityControl" destination="yca-fL-7xI" id="yhx-Aa-yCK"/>
+                        <outlet property="customLabel" destination="ySk-0L-h6R" id="QSq-GR-hT6"/>
                         <outlet property="distanceLabel" destination="eFE-p1-VNm" id="sKD-8X-vnB"/>
                         <outlet property="frequencyLabel" destination="Phk-X5-wGW" id="uvv-Vn-Uhi"/>
                         <outlet property="frequencySlider" destination="dTg-mJ-I2N" id="k7W-Tk-OYq"/>
